@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IT Spaxios Innovation - Digital Marketing Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+</head>
+<body>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        main {
+            flex-grow: 1;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        /* Header & Navbar Styles */
+        .header {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background-color: white;
+        }
+        .top-bar {
+            background-color: #bdbfc7;
+            color: black;
+            display: flex;
+            justify-content: flex-end; 
+            align-items: center;
+            padding: 8px 5%;
+            font-size: 14px;
+            gap: 15px;
+        }
+        .top-bar-content {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .contact-info span {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .social-icons {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+        .social-icons a {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+        }
+        .social-icons a:hover {
+            transform: translateY(-3px);
+            color: #0d2a81;
+        }
+
+        .main-nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 5%;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #2c2c2c;
+            white-space: nowrap;
+            line-height: 1.2;
+        }
+        .header-right {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        .cta-button {
+            background-color: #0d2a81;
+            color: white;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 50px;
+            white-space: nowrap;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #1a3cb0;
+            transform: translateY(-2px);
+        }
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #2c2c2c;
+        }
+
+        /* Desktop Navigation */
+        .desktop-nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-grow: 1;
+            gap: 30px;
+        }
+        .desktop-nav-links li {
+            position: relative;
+            white-space: nowrap;
+        }
+        .desktop-nav-links > li > a {
+            text-decoration: none;
+            color: #2c2c2c;
+            font-weight: 500;
+            padding: 20px 0;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            transition: color 0.3s;
+        }
+        .desktop-nav-links li a:hover {
+            color: #0e35ab;
+        }
+        .desktop-nav-links .chevron {
+            width: 0.75em;
+            height: 0.75em;
+            transition: transform 0.3s ease;
+        }
+        .desktop-nav-links .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%) rotateX(-90deg);
+            background-color: whitesmoke;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            border-radius: 8px;
+            padding: 10px;
+            margin-top: 5px;
+            width: 340px;
+            opacity: 0;
+            visibility: hidden;
+            transform-origin: top center;
+            transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
+        }
+        .desktop-nav-links .dropdown:hover > .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(-50%) rotateX(0deg);
+        }
+        .desktop-nav-links .dropdown-column {
+            list-style: none;
+            width: 100%;
+            padding: 0;
+        }
+        .desktop-nav-links .dropdown-column > li > a {
+            color: #333;
+            font-weight: normal;
+            padding: 12px 15px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-decoration: none;
+        }
+        .desktop-nav-links .submenu {
+            list-style: none;
+            position: absolute;
+            top: 0;
+            left: 100%; 
+            width: 100%;
+            background-color: white;
+            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 10px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(10px);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        }
+        .desktop-nav-links .submenu-trigger:hover > .submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+        .desktop-nav-links .submenu li a {
+            color: #333;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        /* Mobile Menu Overlay */
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        .mobile-menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        .mobile-nav-links {
+            list-style: none;
+            padding: 0;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 85%;
+            max-width: 350px;
+            height: 100%;
+            background-color: white;
+            box-shadow: 5px 0 15px rgba(0,0,0,0.1);
+            overflow-y: auto;
+            transform: translateX(-100%);
+            transition: transform 0.4s ease-in-out;
+        }
+        .mobile-menu-overlay.active .mobile-nav-links {
+            transform: translateX(0);
+        }
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            border-bottom: 1px solid #eee;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 1;
+        }
+        .mobile-menu-title { font-size: 1.2rem; font-weight: bold; }
+        .close-btn { 
+            display: block; 
+            background: none; 
+            border: none; 
+            font-size: 1.5rem; 
+            cursor: pointer; 
+            color: #333;
+        }
+        .mobile-nav-links li a { 
+            padding: 18px 5%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            border-bottom: 1px solid #f5f5f5; 
+            font-weight: 500; 
+            color: #333; 
+            text-decoration: none; 
+        }
+        .mobile-nav-links .dropdown.active > a > .chevron,
+        .mobile-nav-links .submenu-trigger.active > a > .chevron { 
+            transform: rotate(90deg); 
+        }
+        .mobile-nav-links .dropdown-menu, 
+        .mobile-nav-links .submenu { 
+            background-color: #f7f7f7; 
+            padding-left: 0; 
+            max-height: 0; 
+            overflow: hidden; 
+            transition: max-height 0.4s ease-out; 
+            list-style: none; 
+        }
+        .mobile-nav-links .dropdown.active > .dropdown-menu,
+        .mobile-nav-links .submenu-trigger.active > .submenu { 
+            max-height: 500px; 
+        }
+        .mobile-nav-links .dropdown-column { 
+            padding: 0; 
+        }
+        .mobile-nav-links .dropdown-column > li > a { 
+            border-bottom: 1px solid #eee; 
+            padding-left: 15%; 
+        }
+        .mobile-cta-button-container { 
+            padding: 25px 5%; 
+            margin-top: auto; 
+        }
+        .mobile-cta-button-container .cta-button {
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Digital Marketing Hero Section */
+        .hero-section {
+            width: 100%; 
+            background-color: rgb(247, 244, 244); 
+            padding: 80px 5% 100px; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .hero-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-text { 
+            flex: 0 1 55%; 
+            text-align: left; 
+            z-index: 2;
+        }
+        .hero-image { 
+            flex: 0 1 45%; 
+            position: relative;
+        }
+        .hero-text h1 {
+            font-size: 42px; 
+            font-weight: 700;
+            color: #0d2a81;
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+        .hero-text p { 
+            font-size: 16px; 
+            color: #555e68; 
+            line-height: 1.8; 
+            margin-bottom: 30px; 
+            max-width: 600px; 
+        }
+        .hero-buttons { 
+            display: flex; 
+            gap: 20px; 
+            flex-wrap: wrap; 
+        }
+        .hero-btn { 
+            padding: 14px 35px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            color: white; 
+            background-image: linear-gradient(to bottom, #24eef5, #1ba6b3); 
+            border: none; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+            transition: all 0.3s ease; 
+            display: inline-block;
+        }
+        .hero-btn:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
+        }
+        
+        /* Digital Marketing Animation Container */
+        .digital-marketing-vectors {
+            position: relative;
+            width: 100%;
+            min-height: 400px;
+        }
+        
+        .main-marketing-vector {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            z-index: 2;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .marketing-element {
+            position: absolute;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+            animation: float 4s ease-in-out infinite;
+            animation-delay: var(--delay);
+            z-index: 3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .marketing-element.seo {
+            width: 180px;
+            height: 180px;
+            bottom: 50px;
+            left: 0;
+            background: #f8f9fa;
+        }
+        
+        .marketing-element.social {
+            width: 150px;
+            height: 150px;
+            top: 100px;
+            right: 50px;
+            background: #f8f9fa;
+            border-radius: 15px;
+        }
+        
+        .marketing-element.ppc {
+            width: 120px;
+            height: 120px;
+            bottom: 100px;
+            right: 100px;
+            background: #f8f9fa;
+            border-radius: 12px;
+        }
+        
+        .marketing-icon {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            animation: float 5s ease-in-out infinite;
+            animation-delay: var(--delay);
+            z-index: 1;
+        }
+        
+        .marketing-icon:nth-child(1) {
+            top: 20%;
+            left: 10%;
+        }
+        
+        .marketing-icon:nth-child(2) {
+            bottom: 20%;
+            right: 10%;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(2deg); }
+        }
+        
+        /* About Section Styles */
+        .about-section {
+            width: 100%;
+            background-color: #ffffff;
+            padding: 80px 5% 90px;
+        }
+        .about-container { 
+            max-width: 1200px; 
+            width: 100%; 
+            margin: 0 auto; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        .section-headline { 
+            text-align: center; 
+            margin-bottom: 50px; 
+        }
+        .section-headline h2 { 
+            font-size: 38px; 
+            color: #0d2a81; 
+            font-weight: 400; 
+            line-height: 1.4; 
+        }
+        .section-headline h2 strong { 
+            font-weight: 700; 
+        }
+        .about-content { 
+            display: flex; 
+            align-items: center; 
+            gap: 60px; 
+            width: 100%; 
+        }
+        .about-image { 
+            flex: 0 0 45%; 
+            text-align: center; 
+        }
+        .about-image img { 
+            max-width: 100%; 
+            height: auto; 
+        }
+        .about-text { 
+            flex: 1 1 55%; 
+        }
+        .about-text p { 
+            font-size: 16px; 
+            color: #555e68; 
+            line-height: 1.8; 
+            margin-bottom: 20px; 
+        }
+        .section-cta { 
+            text-align: left; 
+            margin-top: 30px; 
+        }
+        .section-cta .btn-primary { 
+            padding: 14px 35px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            color: white; 
+            background-image: linear-gradient(to bottom, #24eef5, #1ba6b3); 
+            border: none; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+            transition: all 0.3s ease; 
+            display: inline-block; 
+        }
+        .section-cta .btn-primary:hover { 
+            transform: translateY(-3px); 
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .digital-marketing-vectors {
+                min-height: 350px;
+            }
+            .marketing-element.seo {
+                width: 150px;
+                height: 150px;
+            }
+            .marketing-element.social {
+                width: 130px;
+                height: 130px;
+                right: 30px;
+            }
+            .marketing-element.ppc {
+                width: 100px;
+                height: 100px;
+                right: 70px;
+            }
+            .hero-text h1 {
+                font-size: 36px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .hero-container {
+                flex-direction: column;
+                gap: 60px;
+            }
+            .hero-text, .hero-image {
+                flex: 1 1 100%;
+                text-align: center;
+            }
+            .hero-text {
+                order: 2;
+            }
+            .hero-image {
+                order: 1;
+            }
+            .hero-text h1 {
+                margin-bottom: 20px;
+            }
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .hero-buttons {
+                justify-content: center;
+            }
+            .digital-marketing-vectors {
+                min-height: 300px;
+            }
+            .marketing-element {
+                transform: scale(0.8);
+            }
+            .about-content {
+                flex-direction: column;
+            }
+            .section-cta {
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 60px 5% 80px;
+            }
+            .hero-text h1 {
+                font-size: 32px;
+            }
+            .section-headline h2 {
+                font-size: 28px;
+            }
+            .hamburger {
+                display: block;
+            }
+            .desktop-nav-links {
+                display: none;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .hero-btn {
+                width: 100%;
+                text-align: center;
+            }
+            .marketing-element.seo {
+                left: 0;
+                bottom: 30px;
+            }
+            .marketing-element.social {
+                right: 20px;
+                top: 80px;
+            }
+            .marketing-element.ppc {
+                right: 50px;
+                bottom: 70px;
+            }
+            .header-right {
+                gap: 15px;
+            }
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero-section {
+                padding: 50px 5% 70px;
+            }
+            .hero-text h1 {
+                font-size: 28px;
+            }
+            .top-bar-content {
+                justify-content: center;
+            }
+            .contact-info {
+                justify-content: center;
+            }
+            .marketing-element.seo {
+                width: 120px;
+                height: 120px;
+                bottom: 20px;
+            }
+            .marketing-element.social {
+                width: 100px;
+                height: 100px;
+                right: 10px;
+                top: 60px;
+            }
+            .marketing-element.ppc {
+                width: 80px;
+                height: 80px;
+                right: 30px;
+                bottom: 50px;
+            }
+            .about-section {
+                padding: 60px 5% 70px;
+            }
+            .contact-info span {
+                font-size: 13px;
+            }
+            .social-icons a {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-text h1 {
+                font-size: 24px;
+            }
+            .hero-text p {
+                font-size: 15px;
+            }
+            .hero-btn {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+            .section-headline h2 {
+                font-size: 24px;
+            }
+            .about-text p {
+                font-size: 15px;
+            }
+            .section-cta .btn-primary {
+                padding: 12px 25px;
+                font-size: 14px;
+            }
+            .main-nav {
+                padding: 15px 3%;
+            }
+            .top-bar {
+                padding: 8px 3%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .contact-info {
+                gap: 10px;
+            }
+            .top-bar-content {
+                gap: 15px;
+            }
+            .hero-text h1 {
+                font-size: 22px;
+            }
+            .hero-btn {
+                padding: 10px 20px;
+            }
+        }
+    </style>
+
+    <header class="header">
+        <div class="top-bar">
+            <div class="top-bar-content">
+                <div class="contact-info">
+                    <span><i class="fa-solid fa-envelope"></i> info@itspaxiosinnovation.in</span>
+                    <span class="phone-number"><i class="fa-solid fa-phone"></i> IND +91 99622 14790</span>
+                </div>
+                <div class="social-icons">
+                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://wa.me/919962214790" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="#" aria-label="Microsoft Teams"><i class="fa-brands fa-teamspeak"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="main-nav">
+            <a href="#" class="logo">IT Spaxios <br> Innovation</a>
+            <ul class="desktop-nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">IT Solution</a></li>
+                <li><a href="#">Marketing</a></li>
+                <li class="dropdown">
+                    <a href="#">Our Services <i class="fa-solid fa-chevron-down chevron"></i></a>
+                    <div class="dropdown-menu">
+                       <ul class="dropdown-column">
+                            <li><a href="#">Website Designing and Development</a></li>
+                            <li><a href="#">Branding</a></li>
+                            <li class="submenu-trigger">
+                                <a href="#">Digital Marketing Services <i class="fa-solid fa-chevron-right chevron"></i></a>
+                                <ul class="submenu">
+                                    <li><a href="#">SEO Services</a></li>
+                                    <li><a href="#">Paid Marketing (PPC)</a></li>
+                                    <li><a href="#">Social Media Marketing</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="#">App Development</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li><a href="#">Application</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <div class="header-right">
+                <a href="#" class="cta-button">Request Demo</a>
+                <button class="hamburger" id="hamburger-open" aria-label="Open Menu">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li class="mobile-menu-header">
+                <span class="mobile-menu-title">Menu</span>
+                <button class="close-btn" id="hamburger-close" aria-label="Close Menu">
+                    <i class="fa-solid fa-times"></i>
+                </button>
+            </li>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">IT Solution</a></li>
+            <li><a href="#">Marketing</a></li>
+            <li class="dropdown">
+                <a href="#">Our Services <i class="fa-solid fa-chevron-down chevron"></i></a>
+                <div class="dropdown-menu">
+                    <ul class="dropdown-column">
+                        <li><a href="#">Website Designing and Development</a></li>
+                        <li><a href="#">Branding</a></li>
+                        <li class="submenu-trigger">
+                            <a href="#">Digital Marketing Services <i class="fa-solid fa-chevron-right chevron"></i></a>
+                            <ul class="submenu">
+                                <li><a href="#">SEO Services</a></li>
+                                <li><a href="#">Paid Marketing (PPC)</a></li>
+                                <li><a href="#">Social Media Marketing</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">App Development</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="#">Application</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Contact Us</a></li>
+            <li class="mobile-cta-button-container">
+                <a href="#" class="cta-button">Request Demo</a>
+            </li>
+        </ul>
+    </div>
+
+    <main>
+        <!-- Digital Marketing Hero Section -->
+        <section class="hero-section">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <h1>WHAT IS DIGITAL MARKETING?</h1>
+                    <p>
+                        Digital marketing is the promotion of brands using digital channels to connect with potential customers. It encompasses all marketing efforts that use electronic devices or the internet, including search engines, social media, email, and websites to connect with current and prospective customers.
+                    </p>
+                   
+                    <div class="hero-buttons">
+                        <a href="#" class="hero-btn">Get Free Consultation</a>
+                        <a href="#" class="hero-btn">View Our Services</a>
+                    </div>
+                </div>
+                
+                <!-- Digital Marketing Vector Container -->
+                <div class="hero-image">
+                    <div class="digital-marketing-vectors">
+                        <!-- Main Digital Marketing Animation -->
+                        <div id="digital-marketing-vector" class="main-marketing-vector"></div>
+                        
+                        <!-- Marketing Elements -->
+                        <div class="marketing-element seo" style="--delay: 0.2s">
+                            <div id="seo-animation"></div>
+                        </div>
+                        <div class="marketing-element social" style="--delay: 0.3s">
+                            <div id="social-animation"></div>
+                        </div>
+                        <div class="marketing-element ppc" style="--delay: 0.4s">
+                            <div id="ppc-animation"></div>
+                        </div>
+                        
+                        <!-- Marketing Icons -->
+                        <div class="marketing-icon" style="--delay: 0.5s">
+                            <div id="analytics-animation"></div>
+                        </div>
+                        <div class="marketing-icon" style="--delay: 0.7s">
+                            <div id="email-animation"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section class="about-section">
+            <div class="about-container">
+                <div class="section-headline margin-bottom:10px margin-top:10px">
+                    <h2>Our <strong>Digital Marketing</strong> Approach</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-image">
+                        <div id="strategy-animation"></div>
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            We take a data-driven approach to digital marketing, combining creativity with analytics to deliver measurable results. Our team of experts specializes in creating customized strategies that align with your business goals and target audience.
+                        </p>
+                        <p>
+                            From search engine optimization (SEO) to pay-per-click (PPC) advertising and social media marketing, we leverage the latest tools and techniques to maximize your online visibility and return on investment.
+                        </p>
+                        <div class="section-cta">
+                            <a href="#" class="btn-primary">Learn More About Our Services</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const openBtn = document.getElementById('hamburger-open');
+        const closeBtn = document.getElementById('hamburger-close');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        // Open the mobile menu
+        if (openBtn) {
+            openBtn.addEventListener('click', (event) => {
+                event.stopPropagation();
+                mobileMenu.classList.add('active');
+                document.body.classList.add('no-scroll');
+            });
+        }
+
+        // Close the mobile menu with the close button
+        if (closeBtn) {
+            closeBtn.addEventListener('click', (event) => {
+                event.stopPropagation();
+                mobileMenu.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            });
+        }
+        
+        // Close the mobile menu by clicking on the background overlay
+        if (mobileMenu) {
+            mobileMenu.addEventListener('click', function(event) {
+                if (event.target === mobileMenu) {
+                    mobileMenu.classList.remove('active');
+                    document.body.classList.remove('no-scroll');
+                }
+            });
+        }
+
+        // Handle dropdown clicks inside the mobile menu
+        const menuItemsWithChildren = document.querySelectorAll('.mobile-nav-links .dropdown, .mobile-nav-links .submenu-trigger');
+        menuItemsWithChildren.forEach(function(item) {
+            const link = item.querySelector(':scope > a');
+            
+            if (link) {
+                link.addEventListener('click', function(event) {
+                    if (mobileMenu && mobileMenu.classList.contains('active')) {
+                        event.preventDefault();
+                        item.classList.toggle('active');
+                    }
+                });
+            }
+        });
+
+        // Initialize Lottie animations for digital marketing
+        const digitalMarketingAnimations = [
+            { id: 'digital-marketing-vector', path: 'https://assets1.lottiefiles.com/packages/lf20_5tkzkblw.json' },
+            { id: 'seo-animation', path: 'https://assets1.lottiefiles.com/packages/lf20_vybwn7df.json' },
+            { id: 'social-animation', path: 'https://assets1.lottiefiles.com/packages/lf20_ismypfdn.json' },
+            { id: 'ppc-animation', path: 'https://assets1.lottiefiles.com/packages/lf20_ikvz7qhc.json' },
+            { id: 'analytics-animation', path: 'https://assets1.lottiefiles.com/packages/lf20_qp1q3mcb.json' },
+            { id: 'email-animation', path: 'https://assets5.lottiefiles.com/packages/lf20_sk5h1kfn.json' },
+            { id: 'strategy-animation', path: 'https://assets1.lottiefiles.com/packages/lf20_5tkzkblw.json' }
+        ];
+
+        digitalMarketingAnimations.forEach(anim => {
+            const element = document.getElementById(anim.id);
+            if (element) {
+                lottie.loadAnimation({
+                    container: element,
+                    renderer: 'svg',
+                    loop: true,
+                    autoplay: true,
+                    path: anim.path
+                });
+            }
+        });
+    });
+</script>
+</body>
+</html>
