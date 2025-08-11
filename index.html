@@ -549,6 +549,159 @@
 
 
 /* =================================== */
+/* TECHNOLOGIES SECTION STYLES         */
+/* =================================== */
+.tech-section {
+    padding: 80px 5%;
+    background-color: rgb(247, 244, 244);
+}
+.tech-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.tech-section .section-headline h2 {
+    color: #1A2C5B;
+    margin-bottom: 40px;
+    text-align: center;
+}
+.tech-section .section-headline h2 strong {
+    color: #1abec4; /* Green color for 'we work with' */
+    font-weight: 700;
+}
+
+/* Filter Navigation */
+.tech-filter-nav {
+    margin-bottom: 50px;
+    transition: all 0.3s ease-in-out;
+}
+.tech-filter-nav.sticky {
+    position: sticky;
+    top: 80px;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 15px 0;
+    z-index: 900;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    border-radius: 15px;
+    margin-top: -15px;
+}
+.tech-filter-nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+.tech-filter-nav li {
+    padding: 10px 20px;
+    cursor: pointer;
+    font-weight: 600;
+    color: #555e68;
+    background-color: transparent;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden; /* For running border */
+}
+/* FIX: New Running Border Hover Effect for Nav items */
+.tech-filter-nav li::before, .tech-filter-nav li::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #0d2a81;
+    transition: width 0.4s ease;
+}
+/* Top line runs from right to left */
+.tech-filter-nav li::before {
+    top: 0;
+    right: 0;
+}
+/* Bottom line runs from left to right */
+.tech-filter-nav li::after {
+    bottom: 0;
+    left: 0;
+}
+.tech-filter-nav li:hover::before, .tech-filter-nav li:hover::after {
+    width: 100%;
+}
+
+/* FIX: Active (clicked) state with 3D button effect */
+.tech-filter-nav li.active {
+    background-color: #0d2a81;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 15px rgba(13, 42, 129, 0.3);
+}
+/* Hide running border on active button */
+.tech-filter-nav li.active::before, .tech-filter-nav li.active::after {
+    width: 0;
+}
+
+
+/* Technology Grid */
+.tech-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+.tech-item {
+    flex: 0 0 150px;
+    padding: 25px;
+    border-radius: 20px;
+    background-color: transparent;
+    position: relative;
+    transition: transform 0.4s ease;
+    text-align: center;
+    overflow: hidden;
+}
+/* Running Square Border Effect for Tech Items */
+.tech-item .border-span {
+    position: absolute;
+    display: block;
+    background-color: #1abec4;
+    transition: all 0.4s ease-in-out;
+}
+.tech-item .border-span:nth-child(1) { top: 0; left: -100%; width: 100%; height: 2px; }
+.tech-item .border-span:nth-child(2) { top: -100%; right: 0; width: 2px; height: 100%; }
+.tech-item .border-span:nth-child(3) { bottom: 0; right: -100%; width: 100%; height: 2px; }
+.tech-item .border-span:nth-child(4) { bottom: -100%; left: 0; width: 2px; height: 100%; }
+
+.tech-item:hover .border-span:nth-child(1) { left: 0; }
+.tech-item:hover .border-span:nth-child(2) { top: 0; }
+.tech-item:hover .border-span:nth-child(3) { right: 0; }
+.tech-item:hover .border-span:nth-child(4) { bottom: 0; }
+
+.tech-item i {
+    font-size: 48px;
+    color: #1A2C5B;
+    margin-bottom: 15px;
+    transition: color 0.4s ease, transform 0.4s ease;
+}
+.tech-item:hover i {
+    color: #0ce1e8;
+    transform: scale(1.1);
+}
+.tech-item p {
+    font-weight: 600;
+    color: #333;
+    transition: color 0.4s ease;
+}
+.tech-item:hover p {
+    color: #0d2a81;
+}
+.tech-item.hide {
+    display: none;
+}
+
+
+
+/* =================================== */
 /* DISTRACTION STATS SECTION STYLES    */
 /* =================================== */
 .distraction-stats-section {
@@ -821,6 +974,125 @@
         </div>
     </div>
 </section>
+
+
+<!-- =================================== -->
+        <!-- =================================== -->
+        <!-- NEW TECHNOLOGIES SECTION            -->
+        <!-- =================================== -->
+        <section class="tech-section">
+            <div class="tech-container">
+                <div class="section-headline">
+                    <h2>Technologies <strong>we work with</strong></h2>
+                </div>
+                
+                <nav class="tech-filter-nav" id="tech-filters">
+                    <ul>
+                        <li class="active" data-filter="all"><i class="fa-solid fa-layer-group"></i> All</li>
+                        <li data-filter="mobile"><i class="fa-solid fa-mobile-alt"></i> Mobile</li>
+                        <li data-filter="frontend"><i class="fa-solid fa-desktop"></i> Front End</li>
+                        <li data-filter="database"><i class="fa-solid fa-database"></i> Database</li>
+                        <li data-filter="backend"><i class="fa-solid fa-server"></i> Backend</li>
+                        <li data-filter="cms"><i class="fa-solid fa-pen-ruler"></i> CMS</li>
+                        <li data-filter="devops"><i class="fa-solid fa-infinity"></i> Infra and DevOps</li>
+                    </ul>
+                </nav>
+
+                <div class="tech-grid">
+                    <!-- Mobile -->
+                    <div class="tech-item" data-category="mobile">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-apple"></i>
+                        <p>iOS</p>
+                    </div>
+                    <div class="tech-item" data-category="mobile">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-android"></i>
+                        <p>Android</p>
+                    </div>
+                    <div class="tech-item" data-category="mobile frontend">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-react"></i>
+                        <p>React Native</p>
+                    </div>
+                    <div class="tech-item" data-category="mobile frontend">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fa-solid fa-feather-pointed"></i>
+                        <p>Flutter</p>
+                    </div>
+                    <div class="tech-item" data-category="mobile">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fa-solid fa-atom"></i>
+                        <p>Ionic</p>
+                    </div>
+                    
+                    <!-- Frontend -->
+                    <div class="tech-item" data-category="frontend">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-angular"></i>
+                        <p>Angular</p>
+                    </div>
+                    <div class="tech-item" data-category="frontend">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-vuejs"></i>
+                        <p>Vue.js</p>
+                    </div>
+                     <div class="tech-item" data-category="frontend">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-js-square"></i>
+                        <p>JavaScript</p>
+                    </div>
+
+                    <!-- Backend -->
+                    <div class="tech-item" data-category="backend">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-node-js"></i>
+                        <p>Node.js</p>
+                    </div>
+                    <div class="tech-item" data-category="backend">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-python"></i>
+                        <p>Python</p>
+                    </div>
+                    
+                    <!-- Database -->
+                    <div class="tech-item" data-category="database">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fa-solid fa-database"></i>
+                        <p>MySQL</p>
+                    </div>
+                     <div class="tech-item" data-category="database">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fa-solid fa-leaf"></i>
+                        <p>MongoDB</p>
+                    </div>
+
+                    <!-- CMS -->
+                    <div class="tech-item" data-category="cms">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-wordpress"></i>
+                        <p>WordPress</p>
+                    </div>
+                    <div class="tech-item" data-category="cms">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-shopify"></i>
+                        <p>Shopify</p>
+                    </div>
+
+                    <!-- DevOps -->
+                    <div class="tech-item" data-category="devops">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-docker"></i>
+                        <p>Docker</p>
+                    </div>
+                    <div class="tech-item" data-category="devops">
+                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
+                        <i class="fab fa-aws"></i>
+                        <p>AWS</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
 
@@ -1315,6 +1587,38 @@ if (faqItemsFinal.length > 0) {
         });
     });
 }
+
+
+
+// --- Technologies Section Logic (Filtering and Sticky Nav) ---
+    const techSection = document.querySelector('.tech-section');
+    if (techSection) {
+        const filterNav = document.getElementById('tech-filters');
+        const filterButtons = filterNav.querySelectorAll('li');
+        const techItems = document.querySelectorAll('.tech-item');
+        const navOffsetTop = filterNav.offsetTop;
+
+        // Filtering Logic
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Set active button
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+
+                const filter = button.getAttribute('data-filter');
+
+                // Show/hide tech items
+                techItems.forEach(item => {
+                    const category = item.getAttribute('data-category');
+                    if (filter === 'all' || category.includes(filter)) {
+                        item.classList.remove('hide');
+                    } else {
+                        item.classList.add('hide');
+                    }
+                });
+            });
+        });
+      }
 
 
 
