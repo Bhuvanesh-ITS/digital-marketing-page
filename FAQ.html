@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- FAQ Section Start -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
+<!-- FAQ Section Start -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+
+<style>
+  .faq-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: 60px auto;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 20px 60px rgba(13, 42, 129, 0.1);
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    transition: transform 0.5s ease;
+  }
+
+  .faq-container[data-aos] {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.8s ease;
+  }
+
+  .faq-image {
+    flex: 1;
+    background: #e6f0ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+  }
+
+  .faq-image img {
+    max-width: 350px;
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .faq-content {
+    flex: 2;
+    padding: 40px 50px;
+    background-color: #fff;
+  }
+
+  .faq-content h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+    color: #0d2a81;
+    font-weight: 700;
+  }
+
+  .faq-item {
+    border-bottom: 1px solid #ddd;
+    padding: 12px 0;
+  }
+
+  .question {
+    font-size: 16px;
+    font-weight: 500;
+    color: #0d2a81;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .question:hover {
+    color: #24eef5;
+  }
+
+  .question .icon {
+    font-size: 20px;
+    font-weight: bold;
+    color: #0d2a81;
+    transition: transform 0.3s ease;
+  }
+
+  .question.active .icon {
+    transform: rotate(45deg);
+    color: #24eef5;
+  }
+
+  .answer {
+    display: none;
+    margin-top: 10px;
+    font-size: 15px;
+    color: #666;
+    line-height: 1.6;
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 768px) {
+    .faq-container {
+      flex-direction: column;
+    }
+
+    .faq-image, .faq-content {
+      padding: 30px;
+    }
+
+    .faq-image img {
+      max-width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="faq-container" data-aos="fade-up">
+  <!-- Left image -->
+  <div class="faq-image">
+    <img src="https://static.vecteezy.com/system/resources/previews/010/873/254/non_2x/3d-man-standing-behind-faq-png.png" alt="FAQ">
+  </div>
+
+  <!-- FAQ Content -->
+  <div class="faq-content">
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-item">
+      <div class="question">
+        <span>What services do you offer?</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="answer">We offer digital marketing, web development, SEO, and branding services.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">
+        <span>How can I contact support?</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="answer">You can reach us at support@company.com or via our contact form.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">
+        <span>Do you offer custom solutions?</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="answer">Yes, our services are tailored to meet your business needs and goals.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">
+        <span>What industries do you serve?</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="answer">We serve e-commerce, education, healthcare, real estate, and more.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">
+        <span>Is there a free consultation?</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="answer">Yes! We offer a complimentary first consultation to understand your goals.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">
+        <span>Do you handle social media management?</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="answer">Absolutely! We manage social platforms, create content, and increase reach.</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="question">
+        <span>What is your delivery timeline?</span>
+        <span class="icon">+</span>
+      </div>
+      <div class="answer">Projects are typically delivered in 2–6 weeks based on scope and complexity.</div>
+    </div>
+  </div>
+</div>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+
+  const questions = document.querySelectorAll('.question');
+
+  questions.forEach((question) => {
+    question.addEventListener('click', () => {
+      const answer = question.nextElementSibling;
+
+      // Close all other answers
+      document.querySelectorAll('.answer').forEach((a) => {
+        if (a !== answer) a.style.display = 'none';
+      });
+
+      // Reset all icons
+      document.querySelectorAll('.question').forEach((q) => {
+        if (q !== question) {
+          q.classList.remove('active');
+        }
+      });
+
+      // Toggle current
+      const isOpen = answer.style.display === 'block';
+      answer.style.display = isOpen ? 'none' : 'block';
+      question.classList.toggle('active', !isOpen);
+    });
+  });
+</script>
+<!-- FAQ Section End -->
+</body></html>

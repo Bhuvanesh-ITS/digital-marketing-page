@@ -1,973 +1,1322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IT Spaxios Innovation - Digital Marketing Services</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Link to Font Awesome for all icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie.min.js"></script>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Bundle JS (includes Popper) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Digital Marketing</title>
+  <style>
+
+
+
+     /* Common Styles */
+    body {
+      padding: 0 !important;
+      margin: 0 !important;
+      box-sizing:   border-box !important;
+      font-family: 'Poppins', sans-serif;
+      background:linear-gradient(whitesmoke) ;
+    }
+    
+     /* Common Styles */
+   
+      /* Common Styles */
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: whitesmoke;
+    }
+    
+    .section-title {
+      color: #0D2A81;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+    
+    /* Hero Section Styles */
+    .hero-section {
+      width: 100%;
+      background: linear-gradient(135deg, whitesmoke, #bcbfc6);
+      padding: 80px 5% 100px 5%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+      
+    }
+    
+    .hero-container {
+      max-width: 1200px;
+      width: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+      margin-top: -30px;
+      margin-bottom: -30px;
+    }
+    
+    .hero-text { 
+      flex: 1 1 60%; 
+      text-align: left; 
+    }
+    
+    .hero-text h1 {
+      font-size: 42px;
+      font-weight: 700;
+      color: #0d2a81;
+      line-height: 1.3;
+      margin-bottom: 20px;
+    }
+    
+    .hero-text p { 
+      font-size: 16px; 
+      color: #555e68; 
+      line-height: 1.8; 
+      margin-bottom: 30px; 
+      max-width: 600px; 
+    }
+    
+    .hero-buttons { 
+      display: flex; 
+      gap: 20px; 
+      flex-wrap: wrap; 
+    }
+    
+    .hero-btn { 
+      padding: 14px 35px; 
+      border-radius: 8px; 
+      text-decoration: none; 
+      font-weight: bold; 
+      color: white; 
+      background-image: linear-gradient(to bottom, #24eef5, #1ba6b3); 
+      border: none; 
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+      transition: all 0.3s ease; 
+      font-size: 16px;
+    }
+    
+    .hero-btn:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
+    }
+    
+    .hero-image-container {
+        flex: 1 1 45%;
+        min-height: 450px;
+        background-image: url('upscalemedia-transformed (2).webp');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+        z-index: 3;
+        
+    }
+    
+    /* About Section Styles - Simplified */
+    .about-section {
+      width: 100%;
+      background-color: whitesmoke;
+      padding: 80px 5%;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .about-container { 
+      max-width: 1200px; 
+      width: 100%; 
+      margin: 0 auto; 
+      display: flex; 
+      flex-direction: column; 
+      align-items: center; 
+      position: relative;
+      z-index: 2;
+    }
+    
+    .section-headline {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .section-headline h2 { 
+      font-size: 38px; 
+      color: #0d2a81; 
+      font-weight: 400; 
+      line-height: 1.4; 
+    }
+    
+    .section-headline h2 strong { 
+      font-weight: 700; 
+    }
+    
+    /* MODIFIED: About Content Layout restored to 2 columns */
+    .about-content { 
+      display: flex; 
+      align-items: center;
+      gap: 60px;
+      width: 100%; 
+    }
+    
+    /* ADDED: About Image Container for the left column */
+    .about-image-container {
+        flex: 1 1 45%;
+        min-height: 400px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: relative;
+    }
+
+    /* NEW: PNG image that appears in front of the irregular shape */
+    .about-png-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('female-removebg-preview.png');
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 2;
+    }
+
+    /* MODIFIED: Irregular Vector Shape now behind the PNG */
+    .about-irregular-vector {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        z-index: 1;
+        /* New Irregular Vector for About Section */
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='%23D1E8F8' d='M57.9,-54.6C72.5,-39.9,80.1,-19.9,78.2,-1.8C76.2,16.2,64.7,32.4,50.1,45.4C35.5,58.3,17.8,68,2.1,65.9C-13.5,63.9,-27,50.1,-41.8,36.9C-56.6,23.7,-72.7,11.8,-75.9,-2.7C-79.1,-17.2,-69.5,-34.4,-56,-49.3C-42.5,-64.2,-21.2,-76.8,-1.2,-75.7C18.9,-74.7,38.2,-69.2,57.9,-54.6Z' transform='translate(100 100)' /%3e%3c/svg%3e");
+    }
+
+    /* MODIFIED: About Text Styling for the right column */
+    .about-text { 
+      flex: 1 1 55%;
+      text-align: left;
+      margin-top: -20px;
+    }
+    
+    .about-text p { 
+      font-size: 16px; 
+      color: #555e68; 
+      line-height: 1.8; 
+       
+    }
+    
+    .section-cta { 
+      text-align: center; 
+      margin-top: 10px; 
+    }
+    
+    .section-cta .btn-primary { 
+      padding: 14px 35px; 
+      border-radius: 8px;  
+      text-decoration: none; 
+      font-weight: bold; 
+      color: white; 
+      background-image: linear-gradient(to bottom, #24eef5, #1ba6b3); 
+      border: none; 
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
+      transition: all 0.3s ease; 
+      display: inline-block; 
+      white-space: nowrap; 
+    }
+    
+    .section-cta .btn-primary:hover { 
+      transform: translateY(-3px); 
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
+    }
+    
+    /* Irregular Vector Shape for Hero Background */
+    .hero-irregular-vector {
+        position: absolute;
+        width: 700px;
+        height: 700px;
+        top: -150px;
+        left: -200px;
+        transform: rotate(-15deg);
+        z-index: 1;
+        opacity: 0.7;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='%23D0D8E9' d='M48.2,-64.8C62.2,-55.4,73.1,-41.2,78.2,-25.1C83.3,-9,82.6,8.9,76.5,23.6C70.4,38.3,58.9,49.8,45.8,58.2C32.7,66.6,18.1,72,-0.2,72.2C-18.4,72.4,-36.8,67.4,-49.5,57.1C-62.2,46.8,-69.2,31.2,-72.2,14.7C-75.2,-1.8,-74.2,-19.2,-66.9,-33.4C-59.6,-47.6,-46,-58.5,-31.6,-66.1C-17.3,-73.7,-2.1,-78,13.6,-76.1C29.3,-74.2,34.1,-74.1,48.2,-64.8Z' transform='translate(100 100)' /%3e%3c/svg%3e");
+    }
+
+    /* Responsive Adjustments */
+    @media (max-width: 1200px) {
+      .hero-image-container, .about-image-container {
+        min-height: 350px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .hero-container,
+      .about-content {
+        flex-direction: column;
+      }
+      
+      .hero-image-container {
+        width: 80%;
+        min-height: 300px;
+        margin: 0 auto 40px auto;
+        flex-basis: auto;
+      }
+
+      .about-image-container {
+          width: 70%;
+          min-height: 280px;
+          margin-bottom: 30px;
+          flex-basis: auto;
+      }
+      
+      .hero-text, .about-text {
+        text-align: center;
+      }
+      
+      .hero-text p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .hero-buttons {
+        justify-content: center;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 32px;
+      }
+      
+      .section-headline h2 {
+        font-size: 28px;
+      }
+      
+      .about-text p {
+        font-size: 15px;
+      }
+
+      .hero-irregular-vector {
+          width: 400px;
+          height: 400px;
+      }
+    }
+
+    /* Custom button styling */
+
+
+    .card-color{
+        background: linear-gradient(90deg, #ffe0e9, #ffffff);
+
+
+    }
+
+
+    .tab-btn {
+      position: relative;
+      overflow: hidden;
+      font-size: 1.1rem;
+      border-radius: 32px;
+      padding: 1rem 2rem;
+      font-weight: 600;
+      min-width: 160px;
+      border: 1px solid #0D2A81;
+      background: white;
+      color: #0D2A81;
+      transition: all 0.3s ease;
+      margin: 0.3rem;
+      z-index: 1;
+    }
+    
+    .tab-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -10%; /* Extend beyond the left edge */
+      width: 120%; /* Make wider than the button */
+      height: 100%;
+      background: linear-gradient(to right, #24eef5, #1ba6b3);
+      transition: all 0.3s ease;
+      z-index: -1;
+      opacity: 0;
+      transform: translateX(-100%);
+      border-radius: 32px;
+    }
+    
+    .tab-btn:hover::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .tab-btn:hover, .tab-btn.active-btn {
+      transform: translateY(-5px) scale(1.05);
+      box-shadow: 0 8px 20px rgba(13, 42, 129, 0.3);
+      z-index: 10;
+      color: white;
+      border-color: transparent;
+    }
+    
+    .tab-btn.active-btn {
+      background: linear-gradient(to right, #24eef5, #1ba6b3);
+      color: white;
+      border-color: transparent;
+    }
+    
+    .tab-btn.active-btn::before {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Card styling */
+    .service-card {
+      transition: all 0.3s ease;
+      border: 1px solid rgba(13, 42, 129, 0.1);
+      background: white;
+      border-radius: 24px;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(13, 42, 129, 0.2);
+      border-color: rgba(36, 238, 245, 0.3);
+    }
+    
+    .benefit-item {
+      position: relative;
+      padding-left: 2rem;
+      margin-bottom: 1rem;
+    }
+    
+    .benefit-item::before {
+      content: ">";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 24px;
+      height: 24px;
+      background-color: #0d2a81;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+    }
+    
+    .benefits-container {
+      background: #f8f9ff;
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    
+    .description-box {
+      background: #f8f9ff;
+      border-radius: 16px;
+      padding: 1.5rem;
+      height: 100%;
+    }
+
+
+    /* style for treeeeeeeeeeeeeeeeeeee */
+
+
+    /* ======================================================== */
+/* FINAL SCROLL-DRIVEN ZIGZAG WORKFLOW STYLES (CORRECTED)   */
+/* ======================================================== */
+.final-workflow-section {
+    padding: 80px 5%;
+    background-color: linear-gradient(135deg, whitesmoke, #bcbfc6);
+}
+.final-workflow-section .section-headline { text-align: center; margin-bottom: 60px; }
+.final-workflow-section .section-headline p { color: #0d2a81; }
+ 
+.center-timeline-container {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+ 
+.center-timeline-line {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 0;
+    width: 4px;
+    height: 100%;
+    background: #0d2a81;
+    z-index: 1;
+}
+ 
+.center-timeline-marker {
+    position: absolute;
+    left: 50%;
+    top: 0; /* Set by JS */
+    width: 24px;
+    height: 24px;
+    background: #fff;
+    border: 4px solid #0d2a81;
+    border-radius: 50%;
+    z-index: 3;
+    transform: translate(-50%, -50%);
+    transition: top 0.8s cubic-bezier(0.6, 0, 0.4, 1);
+}
+ 
+.timeline-item {
+    position: relative;
+    width: 50%;
+    padding: 10px 40px;
+    min-height: 170px;
+    opacity: 1;
+    visibility: visible;
+}
+ 
+.timeline-item::after { /* The dot on the timeline */
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    background-color: #0d2a81;
+    border: 4px solid #f8f9fa;
+    top: 50%;
+    border-radius: 50%;
+    z-index: 2;
+}
+ 
+/* --- CORRECTED Zigzag Logic & Dot Alignment --- */
+.timeline-item:nth-child(odd) {
+    left: 0;
+}
+.timeline-item:nth-child(odd) .timeline-item-content { text-align: right; }
+.timeline-item:nth-child(odd)::after {
+    right: 0;
+    transform: translate(50%, -50%);
+}
+ 
+.timeline-item:nth-child(even) {
+    left: 50%;
+}
+.timeline-item:nth-child(even)::after {
+    left: 0;
+    transform: translate(-50%, -50%);
+}
+ 
+/* --- Content Styling --- */
+.timeline-item-content h3 {
+    font-size: 20px; color: #f7f7f7; font-weight: 700;
+    margin-bottom: 10px; background: #0d2a81; display: inline-block;
+    padding: 8px 15px; border-radius: 50px; white-space: nowrap;
+}
+.timeline-item-content h3 span { color: #f5f5f5; margin-right: 10px; }
+.timeline-item-content p {
+    color: #555;
+    line-height: 1.7;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.timeline-item.is-visible .timeline-item-content p {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+ 
+@media (max-width: 768px) {
+    .center-timeline-line, .center-timeline-marker { display: none; }
+    .timeline-item, .timeline-item:nth-child(even) {
+        width: 100%; left: 0; padding: 0 10px;
+        text-align: center !important; transform: none;
+    }
+    .timeline-item .timeline-item-content { text-align: center !important; }
+    .timeline-item::after { display: none; }
+}
+
+
+
+/* =================================== */
+/* DISTRACTION STATS SECTION STYLES    */
+/* =================================== */
+.distraction-stats-section {
+    padding: 40px 5%;
+    background-color:linear-gradient(135deg, #0d2a81, #dddfe6);
+    box-shadow: 0 -5px 15px rgba(0,0,0,0.05), 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 1px solid #e0e0e0;
+    border-bottom: 1px solid #e0e0e0;
+    background: linear-gradient(135deg, rgb(245, 240, 240));
+}
+.distraction-stats-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+.distraction-stat-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px;
+    background-color:linear-gradient(135deg, rgb(144, 138, 138), #72757b);
+    border-radius: 10px;
+}
+.distraction-stat-item i {
+    font-size: 36px;
+    color: #395dcb;
+}
+.distraction-stat-text h3 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #1A2C5B;
+}
+.distraction-stat-text p {
+    font-size: 15px;
+    color: #555e68;
+}
+
+
+
+/* ======================================================== */
+/* FINAL PROFESSIONAL FAQ SECTION (CORRECT ICONS)           */
+/* ======================================================== */
+.faq-section-final {
+    padding: 100px 5%;
+    background-color: #f8f9fa;
+}
+ 
+.faq-container-final {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+ 
+.faq-container-final .section-headline {
+    text-align: center;
+    margin-bottom: 50px;
+}
+ 
+.faq-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 50px;
+}
+ 
+.faq-item {
+    border-bottom: 1px solid #e0e6f3;
+}
+ 
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    text-align: left;
+    padding: 25px 0;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1A2C5B;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease;
+}
+.faq-question:hover {
+    background-color: #f0f2f5;
+}
+ 
+.faq-question span {
+    padding-right: 15px;
+}
+ 
+/* Styles for the dropdown icon container */
+.faq-icon {
+    width: 28px;
+    height: 28px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0d2a81;
+    border-radius: 50%;
+}
+.faq-icon i {
+    font-size: 15px;
+    color: whitesmoke;
+    transition: transform 0.4s cubic-bezier(0.6, 0, 0.4, 1);
+}
+ 
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+}
+ 
+.faq-answer p {
+    padding: 0 0 25px 0; /* Removed left padding */
+    font-size: 13px;
+    line-height: 1.8;
+    color: #555;
+}
+ 
+/* --- Active State --- */
+.faq-item.active .faq-question {
+    font-weight: 700;
+}
+.faq-item.active .faq-icon i {
+    transform: rotate(180deg); /* Rotates chevron 'v' to '^' */
+}
+ 
+@media (max-width: 768px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+}
+
+  </style>
+  
 </head>
-<body>
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
-        main {
-            flex-grow: 1;
-        }
-
-        body.no-scroll {
-            overflow: hidden;
-        }
-
-        /* Header & Navbar Styles */
-        .header {
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            background-color: white;
-        }
-        .top-bar {
-            background-color: #bdbfc7;
-            color: black;
-            display: flex;
-            justify-content: flex-end; 
-            align-items: center;
-            padding: 8px 5%;
-            font-size: 14px;
-            gap: 15px;
-        }
-        .top-bar-content {
-            display: flex;
-            align-items: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            justify-content: flex-end;
-        }
-        .contact-info {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-        .contact-info span {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .social-icons {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
-        .social-icons a {
-            color: #333;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
-        .social-icons a:hover {
-            transform: translateY(-3px);
-            color: #0d2a81;
-        }
-
-        .main-nav {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 5%;
-        }
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            text-decoration: none;
-            color: #2c2c2c;
-            white-space: nowrap;
-            line-height: 1.2;
-        }
-        .header-right {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-        .cta-button {
-            background-color: #0d2a81;
-            color: white;
-            padding: 12px 25px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 50px;
-            white-space: nowrap;
-            display: inline-block;
-            transition: background-color 0.3s, transform 0.3s;
-        }
-        .cta-button:hover {
-            background-color: #1a3cb0;
-            transform: translateY(-2px);
-        }
-        .hamburger {
-            display: none;
-            background: none;
-            border: none;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #2c2c2c;
-        }
-
-        /* Desktop Navigation */
-        .desktop-nav-links {
-            list-style: none;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-grow: 1;
-            gap: 30px;
-        }
-        .desktop-nav-links li {
-            position: relative;
-            white-space: nowrap;
-        }
-        .desktop-nav-links > li > a {
-            text-decoration: none;
-            color: #2c2c2c;
-            font-weight: 500;
-            padding: 20px 0;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            transition: color 0.3s;
-        }
-        .desktop-nav-links li a:hover {
-            color: #0e35ab;
-        }
-        .desktop-nav-links .chevron {
-            width: 0.75em;
-            height: 0.75em;
-            transition: transform 0.3s ease;
-        }
-        .desktop-nav-links .dropdown-menu {
-            position: absolute;
-            top: 100%;
-            left: 50%;
-            transform: translateX(-50%) rotateX(-90deg);
-            background-color: whitesmoke;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-            border-radius: 8px;
-            padding: 10px;
-            margin-top: 5px;
-            width: 340px;
-            opacity: 0;
-            visibility: hidden;
-            transform-origin: top center;
-            transition: opacity 0.4s ease, transform 0.4s ease, visibility 0.4s;
-        }
-        .desktop-nav-links .dropdown:hover > .dropdown-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(-50%) rotateX(0deg);
-        }
-        .desktop-nav-links .dropdown-column {
-            list-style: none;
-            width: 100%;
-            padding: 0;
-        }
-        .desktop-nav-links .dropdown-column > li > a {
-            color: #333;
-            font-weight: normal;
-            padding: 12px 15px;
-            border-radius: 5px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            text-decoration: none;
-        }
-        .desktop-nav-links .submenu {
-            list-style: none;
-            position: absolute;
-            top: 0;
-            left: 100%; 
-            width: 100%;
-            background-color: white;
-            box-shadow: 5px 5px 15px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            padding: 10px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateX(10px);
-            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
-        }
-        .desktop-nav-links .submenu-trigger:hover > .submenu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(0);
-        }
-        .desktop-nav-links .submenu li a {
-            color: #333;
-            padding: 10px 15px;
-            border-radius: 5px;
-            text-decoration: none;
-        }
-
-        /* Mobile Menu Overlay */
-        .mobile-menu-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-            z-index: 9999;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s, visibility 0.3s;
-        }
-        .mobile-menu-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-        .mobile-nav-links {
-            list-style: none;
-            padding: 0;
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 85%;
-            max-width: 350px;
-            height: 100%;
-            background-color: white;
-            box-shadow: 5px 0 15px rgba(0,0,0,0.1);
-            overflow-y: auto;
-            transform: translateX(-100%);
-            transition: transform 0.4s ease-in-out;
-        }
-        .mobile-menu-overlay.active .mobile-nav-links {
-            transform: translateX(0);
-        }
-        .mobile-menu-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 5%;
-            border-bottom: 1px solid #eee;
-            position: sticky;
-            top: 0;
-            background: white;
-            z-index: 1;
-        }
-        .mobile-menu-title { font-size: 1.2rem; font-weight: bold; }
-        .close-btn { 
-            display: block; 
-            background: none; 
-            border: none; 
-            font-size: 1.5rem; 
-            cursor: pointer; 
-            color: #333;
-        }
-        .mobile-nav-links li a { 
-            padding: 18px 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            border-bottom: 1px solid #f5f5f5; 
-            font-weight: 500; 
-            color: #333; 
-            text-decoration: none; 
-        }
-        .mobile-nav-links .dropdown.active > a > .chevron,
-        .mobile-nav-links .submenu-trigger.active > a > .chevron { 
-            transform: rotate(90deg); 
-        }
-        .mobile-nav-links .dropdown-menu, 
-        .mobile-nav-links .submenu { 
-            background-color: #f7f7f7; 
-            padding-left: 0; 
-            max-height: 0; 
-            overflow: hidden; 
-            transition: max-height 0.4s ease-out; 
-            list-style: none; 
-        }
-        .mobile-nav-links .dropdown.active > .dropdown-menu,
-        .mobile-nav-links .submenu-trigger.active > .submenu { 
-            max-height: 500px; 
-        }
-        .mobile-nav-links .dropdown-column { 
-            padding: 0; 
-        }
-        .mobile-nav-links .dropdown-column > li > a { 
-            border-bottom: 1px solid #eee; 
-            padding-left: 15%; 
-        }
-        .mobile-cta-button-container { 
-            padding: 25px 5%; 
-            margin-top: auto; 
-        }
-        .mobile-cta-button-container .cta-button {
-            width: 100%;
-            text-align: center;
-        }
-
-        /* Digital Marketing Hero Section */
-        .hero-section {
-            width: 100%; 
-            background-color: rgb(247, 244, 244); 
-            padding: 80px 5% 100px; 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-        .hero-container {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 40px;
-        }
-        .hero-text { 
-            flex: 0 1 55%; 
-            text-align: left; 
-            z-index: 2;
-        }
-        .hero-image { 
-            flex: 0 1 45%; 
-            position: relative;
-        }
-        .hero-text h1 {
-            font-size: 42px; 
-            font-weight: 700;
-            color: #0d2a81;
-            line-height: 1.3;
-            margin-bottom: 20px;
-        }
-        .hero-text p { 
-            font-size: 16px; 
-            color: #555e68; 
-            line-height: 1.8; 
-            margin-bottom: 30px; 
-            max-width: 600px; 
-        }
-        .hero-buttons { 
-            display: flex; 
-            gap: 20px; 
-            flex-wrap: wrap; 
-        }
-        .hero-btn { 
-            padding: 14px 35px; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            color: white; 
-            background-image: linear-gradient(to bottom, #24eef5, #1ba6b3); 
-            border: none; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-            transition: all 0.3s ease; 
-            display: inline-block;
-        }
-        .hero-btn:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
-        }
+<section class="hero-section">
+    <div class="hero-irregular-vector"></div>
+    
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Premium Digital Marketing<br>Services in Chennai <br><p><b>Boost Your Visibility / Engage Your Audience / Grow Your Business</b></p></h1>
         
-        /* Digital Marketing Animation Container */
-        .digital-marketing-vectors {
-            position: relative;
-            width: 100%;
-            min-height: 400px;
-        }
-        
-        .main-marketing-vector {
-            width: 100%;
-            height: 100%;
-            position: relative;
-            z-index: 2;
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        .marketing-element {
-            position: absolute;
-            background: white;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            border-radius: 10px;
-            overflow: hidden;
-            animation: float 4s ease-in-out infinite;
-            animation-delay: var(--delay);
-            z-index: 3;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .marketing-element.seo {
-            width: 180px;
-            height: 180px;
-            bottom: 50px;
-            left: 0;
-            background: #f8f9fa;
-        }
-        
-        .marketing-element.social {
-            width: 150px;
-            height: 150px;
-            top: 100px;
-            right: 50px;
-            background: #f8f9fa;
-            border-radius: 15px;
-        }
-        
-        .marketing-element.ppc {
-            width: 120px;
-            height: 120px;
-            bottom: 100px;
-            right: 100px;
-            background: #f8f9fa;
-            border-radius: 12px;
-        }
-        
-        .marketing-icon {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            animation: float 5s ease-in-out infinite;
-            animation-delay: var(--delay);
-            z-index: 1;
-        }
-        
-        .marketing-icon:nth-child(1) {
-            top: 20%;
-            left: 10%;
-        }
-        
-        .marketing-icon:nth-child(2) {
-            bottom: 20%;
-            right: 10%;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-15px) rotate(2deg); }
-        }
-        
-        /* About Section Styles */
-        .about-section {
-            width: 100%;
-            background-color: #ffffff;
-            padding: 80px 5% 90px;
-        }
-        .about-container { 
-            max-width: 1200px; 
-            width: 100%; 
-            margin: 0 auto; 
-            display: flex; 
-            flex-direction: column; 
-            align-items: center; 
-        }
-        .section-headline { 
-            text-align: center; 
-            margin-bottom: 50px; 
-        }
-        .section-headline h2 { 
-            font-size: 38px; 
-            color: #0d2a81; 
-            font-weight: 400; 
-            line-height: 1.4; 
-        }
-        .section-headline h2 strong { 
-            font-weight: 700; 
-        }
-        .about-content { 
-            display: flex; 
-            align-items: center; 
-            gap: 60px; 
-            width: 100%; 
-        }
-        .about-image { 
-            flex: 0 0 45%; 
-            text-align: center; 
-        }
-        .about-image img { 
-            max-width: 100%; 
-            height: auto; 
-        }
-        .about-text { 
-            flex: 1 1 55%; 
-        }
-        .about-text p { 
-            font-size: 16px; 
-            color: #555e68; 
-            line-height: 1.8; 
-            margin-bottom: 20px; 
-        }
-        .section-cta { 
-            text-align: left; 
-            margin-top: 30px; 
-        }
-        .section-cta .btn-primary { 
-            padding: 14px 35px; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            color: white; 
-            background-image: linear-gradient(to bottom, #24eef5, #1ba6b3); 
-            border: none; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-            transition: all 0.3s ease; 
-            display: inline-block; 
-        }
-        .section-cta .btn-primary:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 1200px) {
-            .digital-marketing-vectors {
-                min-height: 350px;
-            }
-            .marketing-element.seo {
-                width: 150px;
-                height: 150px;
-            }
-            .marketing-element.social {
-                width: 130px;
-                height: 130px;
-                right: 30px;
-            }
-            .marketing-element.ppc {
-                width: 100px;
-                height: 100px;
-                right: 70px;
-            }
-            .hero-text h1 {
-                font-size: 36px;
-            }
-        }
+        <p>
+          Struggling to get noticed online? Our award-winning digital marketing agency helps businesses attract more customers, generate quality leads, and increase sales through strategic online marketing solutions.
+        </p>
+        <div class="hero-buttons">
+          <a href="#" class="hero-btn">Get Free Audit</a>
+          <a href="#" class="hero-btn">Book Consultation</a>
+        </div>
+      </div>
+      
+      <div class="hero-image-container"></div>
+    </div>
+  </section>
+  
+  <section class="about-section">
+    <div class="about-container">
+      <div class="section-headline">
+        <h2>Why your business needs<br><strong>digital marketing</strong></h2>
+      </div>
+      <div class="about-content">
+        <div class="about-image-container">
+          <div class="about-png-image"></div>
+          <div class="about-irregular-vector"></div>
+        </div>
+        <div class="about-text">
+          <p>
+            In today's digital world, having an online presence isn't enough. Your potential customers are searching for solutions online every day, but without digital marketing, your business remains invisible to them.
+          </p>
+          <p>
+            Our data-driven strategies help you reach customers who are actively looking for what you offer. We create measurable results through SEO, social media, and targeted campaigns that convert visitors into customers.
+          </p>
+        </div>
+      </div>
+      <div class="section-cta">
+        <a href="#" class="btn-primary"><b>Discover Our Strategies ></b></a>
+      </div>
+    </div>
+  </section>
 
-        @media (max-width: 992px) {
-            .hero-container {
-                flex-direction: column;
-                gap: 60px;
-            }
-            .hero-text, .hero-image {
-                flex: 1 1 100%;
-                text-align: center;
-            }
-            .hero-text {
-                order: 2;
-            }
-            .hero-image {
-                order: 1;
-            }
-            .hero-text h1 {
-                margin-bottom: 20px;
-            }
-            .hero-text p {
-                margin-left: auto;
-                margin-right: auto;
-            }
-            .hero-buttons {
-                justify-content: center;
-            }
-            .digital-marketing-vectors {
-                min-height: 300px;
-            }
-            .marketing-element {
-                transform: scale(0.8);
-            }
-            .about-content {
-                flex-direction: column;
-            }
-            .section-cta {
-                text-align: center;
-            }
-        }
 
-        @media (max-width: 768px) {
-            .hero-section {
-                padding: 60px 5% 80px;
-            }
-            .hero-text h1 {
-                font-size: 32px;
-            }
-            .section-headline h2 {
-                font-size: 28px;
-            }
-            .hamburger {
-                display: block;
-            }
-            .desktop-nav-links {
-                display: none;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-            .hero-btn {
-                width: 100%;
-                text-align: center;
-            }
-            .marketing-element.seo {
-                left: 0;
-                bottom: 30px;
-            }
-            .marketing-element.social {
-                right: 20px;
-                top: 80px;
-            }
-            .marketing-element.ppc {
-                right: 50px;
-                bottom: 70px;
-            }
-            .header-right {
-                gap: 15px;
-            }
-            .cta-button {
-                padding: 10px 20px;
-                font-size: 14px;
-            }
-        }
 
-        @media (max-width: 576px) {
-            .hero-section {
-                padding: 50px 5% 70px;
-            }
-            .hero-text h1 {
-                font-size: 28px;
-            }
-            .top-bar-content {
-                justify-content: center;
-            }
-            .contact-info {
-                justify-content: center;
-            }
-            .marketing-element.seo {
-                width: 120px;
-                height: 120px;
-                bottom: 20px;
-            }
-            .marketing-element.social {
-                width: 100px;
-                height: 100px;
-                right: 10px;
-                top: 60px;
-            }
-            .marketing-element.ppc {
-                width: 80px;
-                height: 80px;
-                right: 30px;
-                bottom: 50px;
-            }
-            .about-section {
-                padding: 60px 5% 70px;
-            }
-            .contact-info span {
-                font-size: 13px;
-            }
-            .social-icons a {
-                font-size: 1rem;
-            }
-        }
 
-        @media (max-width: 480px) {
-            .hero-text h1 {
-                font-size: 24px;
-            }
-            .hero-text p {
-                font-size: 15px;
-            }
-            .hero-btn {
-                padding: 12px 25px;
-                font-size: 14px;
-            }
-            .section-headline h2 {
-                font-size: 24px;
-            }
-            .about-text p {
-                font-size: 15px;
-            }
-            .section-cta .btn-primary {
-                padding: 12px 25px;
-                font-size: 14px;
-            }
-            .main-nav {
-                padding: 15px 3%;
-            }
-            .top-bar {
-                padding: 8px 3%;
-            }
-        }
+<section class="font-[Poppins] p-6 md:p-10 card-color">
 
-        @media (max-width: 400px) {
-            .contact-info {
-                gap: 10px;
-            }
-            .top-bar-content {
-                gap: 15px;
-            }
-            .hero-text h1 {
-                font-size: 22px;
-            }
-            .hero-btn {
-                padding: 10px 20px;
-            }
-        }
-    </style>
+  <!-- Service Heading -->
+  <div class="text-center mb-6">
+    <h1 class="text-3xl md:text-4xl font-bold text-[#0D2A81] mb-2">Our Digital Services</h1>
+  </div>
 
-    <header class="header">
-        <div class="top-bar">
-            <div class="top-bar-content">
-                <div class="contact-info">
-                    <span><i class="fa-solid fa-envelope"></i> info@itspaxiosinnovation.in</span>
-                    <span class="phone-number"><i class="fa-solid fa-phone"></i> IND +91 99622 14790</span>
+  <!-- TAB BUTTONS -->
+  <div class="flex flex-wrap justify-center gap-2 w-full mb-4"> <!-- Reduced margin-bottom -->
+    <button class="tab-btn active-btn" data-tab="SEO">SEO</button>
+    <button class="tab-btn" data-tab="SMM">SMM</button>
+    <button class="tab-btn" data-tab="SME">SME</button>
+    <button class="tab-btn" data-tab="OS">OS</button>
+    <button class="tab-btn" data-tab="CART">CART</button>
+    <button class="tab-btn" data-tab="SURAJ">SURAJ</button>
+    <button class="tab-btn" data-tab="UIUX">UI/UX</button>
+    <button class="tab-btn" data-tab="FULLSTACK">Full Stack</button>
+    <button class="tab-btn" data-tab="MARKETING">Marketing</button>
+  </div>
+
+  <!-- BIG CARD SECTION -->
+  <div id="contentArea" class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 p-8 md:p-12 rounded-3xl shadow-lg max-w-7xl mx-auto transition-all duration-500 items-stretch service-card">
+    <div id="leftContent" class="text-left animate-fade-in-up"></div>
+    <div id="centerContent" class="flex justify-center items-center animate-fade-in-up"></div>
+    <div id="rightContent" class="text-left animate-fade-in-up"></div>
+  </div>
+</section>
+
+
+  <!-- treeeeeeeeeeeeeeeeeeeeee -->
+
+  <section class="final-workflow-section">
+    <div class="container">
+        <div class="section-headline">
+            <h2>Our Proven Development Path</h2>
+            <p>We follow a transparent and structured process to ensure quality and success.</p>
+        </div>
+ 
+        <div class="center-timeline-container" id="center-timeline-container">
+            <div class="center-timeline-line" id="timeline-line"></div>
+            <div class="center-timeline-marker" id="timeline-marker"></div>
+ 
+            <div class="timeline-item" data-stage="0">
+                <div class="timeline-item-content">
+                    <h3><span>01</span>Business Analysis</h3>
+                    <p>We start by deeply understanding your business goals, target audience, and market to build a solid foundation.</p>
                 </div>
-                <div class="social-icons">
-                    <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-                    <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
-                    <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                    <a href="https://wa.me/919962214790" target="_blank" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
-                    <a href="#" aria-label="Microsoft Teams"><i class="fa-brands fa-teamspeak"></i></a>
+            </div>
+            <div class="timeline-item" data-stage="1">
+                 <div class="timeline-item-content">
+                    <h3><span>02</span>Wireframes</h3>
+                    <p>Next, we create structural blueprints to map out the user journey, information architecture, and core functionalities.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-stage="2">
+                <div class="timeline-item-content">
+                    <h3><span>03</span>Coding</h3>
+                    <p>Our expert developers write clean, efficient, and scalable code using the latest web technologies to build your website.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-stage="3">
+                <div class="timeline-item-content">
+                    <h3><span>04</span>UI/UX Design</h3>
+                    <p>We craft visually stunning and user-friendly interfaces that ensure an engaging, intuitive, and seamless experience.</p>
+                </div>
+            </div>
+             <div class="timeline-item" data-stage="4">
+                <div class="timeline-item-content">
+                    <h3><span>05</span>Testing</h3>
+                    <p>Rigorous testing is performed across all devices and browsers to ensure your website is bug-free, fast, secure, and reliable.</p>
+                </div>
+            </div>
+            <div class="timeline-item" data-stage="5">
+                <div class="timeline-item-content">
+                    <h3><span>06</span>Deployment</h3>
+                    <p>After final approval, we handle the seamless deployment process to make your website live and provide ongoing support.</p>
                 </div>
             </div>
         </div>
-
-        <nav class="main-nav">
-            <a href="#" class="logo">IT Spaxios <br> Innovation</a>
-            <ul class="desktop-nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">IT Solution</a></li>
-                <li><a href="#">Marketing</a></li>
-                <li class="dropdown">
-                    <a href="#">Our Services <i class="fa-solid fa-chevron-down chevron"></i></a>
-                    <div class="dropdown-menu">
-                       <ul class="dropdown-column">
-                            <li><a href="#">Website Designing and Development</a></li>
-                            <li><a href="#">Branding</a></li>
-                            <li class="submenu-trigger">
-                                <a href="#">Digital Marketing Services <i class="fa-solid fa-chevron-right chevron"></i></a>
-                                <ul class="submenu">
-                                    <li><a href="#">SEO Services</a></li>
-                                    <li><a href="#">Paid Marketing (PPC)</a></li>
-                                    <li><a href="#">Social Media Marketing</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="#">App Development</a></li>
-                        </ul>
-                    </div>
-                </li>
-                <li><a href="#">Application</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Contact Us</a></li>
-            </ul>
-            <div class="header-right">
-                <a href="#" class="cta-button">Request Demo</a>
-                <button class="hamburger" id="hamburger-open" aria-label="Open Menu">
-                    <i class="fa-solid fa-bars"></i>
-                </button>
-            </div>
-        </nav>
-    </header>
-
-    <div class="mobile-menu-overlay" id="mobile-menu">
-        <ul class="mobile-nav-links">
-            <li class="mobile-menu-header">
-                <span class="mobile-menu-title">Menu</span>
-                <button class="close-btn" id="hamburger-close" aria-label="Close Menu">
-                    <i class="fa-solid fa-times"></i>
-                </button>
-            </li>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">IT Solution</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li class="dropdown">
-                <a href="#">Our Services <i class="fa-solid fa-chevron-down chevron"></i></a>
-                <div class="dropdown-menu">
-                    <ul class="dropdown-column">
-                        <li><a href="#">Website Designing and Development</a></li>
-                        <li><a href="#">Branding</a></li>
-                        <li class="submenu-trigger">
-                            <a href="#">Digital Marketing Services <i class="fa-solid fa-chevron-right chevron"></i></a>
-                            <ul class="submenu">
-                                <li><a href="#">SEO Services</a></li>
-                                <li><a href="#">Paid Marketing (PPC)</a></li>
-                                <li><a href="#">Social Media Marketing</a></li>
-                            </ul>
-                        </li>
-                        <li><a href="#">App Development</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li><a href="#">Application</a></li>
-            <li><a href="#">Blog</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li class="mobile-cta-button-container">
-                <a href="#" class="cta-button">Request Demo</a>
-            </li>
-        </ul>
     </div>
+</section>
 
-    <main>
-        <!-- Digital Marketing Hero Section -->
-        <section class="hero-section">
-            <div class="hero-container">
-                <div class="hero-text">
-                    <h1>WHAT IS DIGITAL MARKETING?</h1>
-                    <p>
-                        Digital marketing is the promotion of brands using digital channels to connect with potential customers. It encompasses all marketing efforts that use electronic devices or the internet, including search engines, social media, email, and websites to connect with current and prospective customers.
-                    </p>
-                   
-                    <div class="hero-buttons">
-                        <a href="#" class="hero-btn">Get Free Consultation</a>
-                        <a href="#" class="hero-btn">View Our Services</a>
+
+
+<!-- NEW DISTRACTION STATS SECTION       -->
+        <!-- =================================== -->
+        <section class="distraction-stats-section">
+            <div class="distraction-stats-container">
+                <div class="distraction-stat-item">
+                    <i class="fa-regular fa-face-smile"></i>
+                    <div class="distraction-stat-text">
+                        <h3 class="distraction-counter" data-target="18">0</h3>
+                        <p>Happy Clients</p>
                     </div>
                 </div>
-                
-                <!-- Digital Marketing Vector Container -->
-                <div class="hero-image">
-                    <div class="digital-marketing-vectors">
-                        <!-- Main Digital Marketing Animation -->
-                        <div id="digital-marketing-vector" class="main-marketing-vector"></div>
-                        
-                        <!-- Marketing Elements -->
-                        <div class="marketing-element seo" style="--delay: 0.2s">
-                            <div id="seo-animation"></div>
-                        </div>
-                        <div class="marketing-element social" style="--delay: 0.3s">
-                            <div id="social-animation"></div>
-                        </div>
-                        <div class="marketing-element ppc" style="--delay: 0.4s">
-                            <div id="ppc-animation"></div>
-                        </div>
-                        
-                        <!-- Marketing Icons -->
-                        <div class="marketing-icon" style="--delay: 0.5s">
-                            <div id="analytics-animation"></div>
-                        </div>
-                        <div class="marketing-icon" style="--delay: 0.7s">
-                            <div id="email-animation"></div>
-                        </div>
+                <div class="distraction-stat-item">
+                    <i class="fa-solid fa-print"></i>
+                    <div class="distraction-stat-text">
+                        <h3 class="distraction-counter" data-target="230000">0</h3>
+                        <p>Assessments completed</p>
+                    </div>
+                </div>
+                <div class="distraction-stat-item">
+                    <i class="fa-solid fa-headset"></i>
+                    <div class="distraction-stat-text">
+                        <h3 class="distraction-counter" data-target="100">0</h3>
+                        <p>Qualified Assessors</p>
+                    </div>
+                </div>
+                <div class="distraction-stat-item">
+                    <i class="fa-solid fa-users-gear"></i>
+                    <div class="distraction-stat-text">
+                        <h3 class="distraction-counter" data-target="15">0</h3>
+                        <p>Years of experience</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- About Section -->
-        <section class="about-section">
-            <div class="about-container">
-                <div class="section-headline margin-bottom:10px margin-top:10px">
-                    <h2>Our <strong>Digital Marketing</strong> Approach</h2>
+
+        <!---Faq Section-->
+<!--------------------------------------->
+<section class="faq-section-final">
+    <div class="faq-container-final">
+        <div class="section-headline">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        <div class="faq-grid">
+            <div class="faq-column">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How many team members can I invite?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>You can invite up to 10 team members on the Pro plan. For more members, please contact our sales team for an enterprise solution.</p></div>
                 </div>
-                <div class="about-content">
-                    <div class="about-image">
-                        <div id="strategy-animation"></div>
-                    </div>
-                    <div class="about-text">
-                        <p>
-                            We take a data-driven approach to digital marketing, combining creativity with analytics to deliver measurable results. Our team of experts specializes in creating customized strategies that align with your business goals and target audience.
-                        </p>
-                        <p>
-                            From search engine optimization (SEO) to pay-per-click (PPC) advertising and social media marketing, we leverage the latest tools and techniques to maximize your online visibility and return on investment.
-                        </p>
-                        <div class="section-cta">
-                            <a href="#" class="btn-primary">Learn More About Our Services</a>
-                        </div>
-                    </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the maximum file upload size?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>No more than 2GB. All files in your account must fit your allotted storage space. You can upgrade your storage at any time.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How do I reset my password?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>Click "Forgot password" on the login page, and we will send you a secure link to reset your password via email.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can I cancel my subscription?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>Yes, you can cancel your subscription at any time from your account settings. Your plan will remain active until the end of the current billing cycle.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you provide additional support?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>Absolutely! We offer 24/7 premium support via chat and email for all our Pro and Enterprise plan customers.</p></div>
                 </div>
             </div>
-        </section>
-    </main>
+            <div class="faq-column">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What technologies do you use?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>We use a modern tech stack including React, Node.js, and Python, but we always choose the best technology for your specific project needs.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>How long does a project take?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>A typical website project takes 4-6 weeks from start to launch, but this can vary depending on the complexity and scope of the project.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Will my website be mobile-friendly?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>Yes, all websites we build are fully responsive, meaning they will look great and function perfectly on all devices.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Do you offer SEO services?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>Yes, we provide comprehensive SEO services, including on-page optimization, keyword research, and content strategy to help your site rank higher.</p></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Can you redesign my existing site?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>Definitely. We specialize in redesigning existing websites to improve their look, feel, performance, and user experience.</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const openBtn = document.getElementById('hamburger-open');
-        const closeBtn = document.getElementById('hamburger-close');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        // Open the mobile menu
-        if (openBtn) {
-            openBtn.addEventListener('click', (event) => {
-                event.stopPropagation();
-                mobileMenu.classList.add('active');
-                document.body.classList.add('no-scroll');
-            });
-        }
 
-        // Close the mobile menu with the close button
-        if (closeBtn) {
-            closeBtn.addEventListener('click', (event) => {
-                event.stopPropagation();
-                mobileMenu.classList.remove('active');
-                document.body.classList.remove('no-scroll');
-            });
+  <script>
+    const data = {
+      SEO: {
+        title: "Search Engine Optimization",
+        desc: "Our SEO services employ cutting-edge techniques to improve your website's visibility in search engine results. We analyze your current performance, identify key opportunities, and implement strategies that drive organic traffic to your site. Our comprehensive approach includes technical optimizations, content strategy development, and continuous performance monitoring to ensure sustainable growth.",
+        img: "https://cdn-icons-png.flaticon.com/512/2819/2819697.png",
+        benefits: [
+          "In-depth keyword research and optimization",
+          "Technical SEO audits and fixes",
+          "Content strategy development",
+          "Quality backlink building",
+          "Local SEO optimization",
+          "Ongoing performance tracking"
+        ],
+      },
+      SMM: {
+        title: "Social Media Marketing",
+        desc: "We craft engaging social media campaigns that connect with your target audience across all major platforms. Our team develops platform-specific content strategies that align with your brand voice and business objectives. From content creation to community management and paid advertising, we handle every aspect of your social media presence to maximize engagement and conversions.",
+        img: "https://cdn-icons-png.flaticon.com/512/1384/1384031.png",
+        benefits: [
+          "Platform-specific content strategies",
+          "Comprehensive content calendars",
+          "Community engagement management",
+          "Targeted paid social campaigns",
+          "Influencer partnerships",
+          "Performance analytics"
+        ],
+      },
+      SME: {
+        title: "Search Marketing Excellence",
+        desc: "Our search marketing services combine data-driven insights with creative execution to maximize your paid search performance. We optimize every aspect of your campaigns - from keyword selection to ad copy and landing pages - to improve quality scores and reduce cost-per-acquisition. Our continuous testing and optimization approach ensures you get the maximum return from your advertising budget.",
+        img: "https://cdn-icons-png.flaticon.com/512/1048/1048940.png",
+        benefits: [
+          "Strategic PPC campaign management",
+          "Conversion rate optimization",
+          "Smart remarketing strategies",
+          "Landing page optimization",
+          "Competitor analysis",
+          "Detailed performance reporting"
+        ],
+      },
+      OS: {
+        title: "Operating Systems",
+        desc: "We provide comprehensive operating system solutions tailored to your specific needs. Our expertise covers all major platforms, including Windows, macOS, and Linux. Whether you need system configuration, security hardening, performance tuning, or cross-platform integration, our team delivers reliable solutions that keep your systems running smoothly and securely.",
+        img: "https://cdn-icons-png.flaticon.com/512/2255/2255326.png",
+        benefits: [
+          "System configuration and optimization",
+          "Security hardening and updates",
+          "Performance monitoring and tuning",
+          "Cross-platform integration",
+          "Troubleshooting and support",
+          "Custom system modifications"
+        ],
+      },
+      CART: {
+        title: "E-commerce Solutions",
+        desc: "Our e-commerce services transform your online store into a high-converting sales machine. We optimize every step of the customer journey - from product discovery to checkout - to maximize conversions and average order value. Our solutions include cart abandonment recovery, secure payment integrations, mobile optimization, and data-driven merchandising strategies that boost your bottom line.",
+        img: "https://cdn-icons-png.flaticon.com/512/1170/1170678.png",
+        benefits: [
+          "Streamlined checkout processes",
+          "Cart abandonment solutions",
+          "Secure payment gateway integration",
+          "Inventory management systems",
+          "Product recommendation engines",
+          "Mobile-optimized shopping"
+        ],
+      },
+      SURAJ: {
+        title: "Web Development",
+        desc: "We build custom websites and web applications that deliver exceptional user experiences and drive business results. Our development process combines clean code with intuitive design to create fast, responsive, and scalable solutions. Whether you need a simple brochure site or a complex web application, we have the expertise to bring your vision to life with pixel-perfect execution.",
+        img: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
+        benefits: [
+          "Responsive, mobile-first design",
+          "Modern frontend development",
+          "Performance optimization",
+          "Technical consulting",
+          "Progressive web apps",
+          "Ongoing maintenance"
+        ],
+      },
+      UIUX: {
+        title: "UI/UX Design",
+        desc: "Our design services focus on creating intuitive, visually appealing interfaces that delight users and drive engagement. We follow a user-centered design process that begins with research and ends with pixel-perfect prototypes. Our designs balance aesthetics with functionality, ensuring your digital products are both beautiful to look at and effortless to use.",
+        img: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
+        benefits: [
+          "Comprehensive user research",
+          "Interactive wireframing",
+          "High-fidelity prototyping",
+          "Accessibility-focused design",
+          "Usability testing",
+          "Design system creation"
+        ],
+      },
+      FULLSTACK: {
+        title: "Full Stack Development",
+        desc: "Our full stack development services cover every layer of your application, from frontend interfaces to backend systems and databases. We build robust, scalable solutions using modern technologies and best practices. Whether you need API development, cloud integration, or complete application architecture, our team delivers end-to-end solutions that perform reliably at scale.",
+        img: "https://cdn-icons-png.flaticon.com/512/2721/2721293.png",
+        benefits: [
+          "Custom database architecture",
+          "RESTful API development",
+          "Cloud integration services",
+          "DevOps implementation",
+          "Microservices architecture",
+          "Continuous deployment"
+        ],
+      },
+      MARKETING: {
+        title: "Digital Marketing",
+        desc: "Our integrated marketing services deliver measurable business growth through data-driven strategies. We develop omnichannel campaigns that reach your audience at every touchpoint in their journey. From lead generation to conversion optimization, we implement tactics that drive results while providing transparent reporting so you can see exactly how your marketing dollars are performing.",
+        img: "https://cdn-icons-png.flaticon.com/512/4149/4149632.png",
+        benefits: [
+          "Omnichannel campaign strategies",
+          "Targeted lead generation",
+          "Marketing automation setup",
+          "ROI tracking and analysis",
+          "Customer journey mapping",
+          "Brand positioning"
+        ],
+      }
+    };
+
+    function updateContent(tab) {
+      const fadeClass = "animate-fade-in-up";
+
+      document.querySelectorAll(".tab-btn").forEach(b => {
+        b.classList.remove("active-btn");
+      });
+
+      const activeBtn = [...document.querySelectorAll(".tab-btn")].find(btn => btn.getAttribute("data-tab") === tab);
+      activeBtn.classList.add("active-btn");
+
+      document.getElementById("leftContent").innerHTML = `
+        <div class="${fadeClass} description-box">
+          <h2 class="text-2xl font-bold mb-4 text-[#0D2A81]">${data[tab].title}</h2>
+          <p class="text-gray-600">${data[tab].desc}</p>
+        </div>
+      `;
+      
+      document.getElementById("centerContent").innerHTML = `
+        <div class="${fadeClass} flex justify-center items-center">
+          <img src="${data[tab].img}" alt="${tab} Image" class="w-48 h-48 object-contain transition-transform duration-300 hover:scale-110">
+        </div>
+      `;
+      
+      document.getElementById("rightContent").innerHTML = `
+        <div class="${fadeClass}">
+          <div class="benefits-container">
+            <h3 class="text-xl font-semibold mb-4 text-[#0D2A81]">Key Benefits</h3>
+            <div class="space-y-3">
+              ${data[tab].benefits.map(benefit => `
+                <div class="benefit-item">${benefit}</div>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // Tab button click handler
+    document.querySelectorAll(".tab-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        updateContent(btn.getAttribute("data-tab"));
+      });
+    });
+
+    // Default selection on load
+    window.addEventListener("DOMContentLoaded", () => {
+      updateContent("SEO");
+    });
+
+
+
+    // ======================================================== //
+// FINAL SCROLL-DRIVEN ZIGZAG LOGIC (CONTENT ONLY)          //
+// ======================================================== //
+const centerTimelineContainer = document.getElementById('center-timeline-container');
+ 
+if (centerTimelineContainer) {
+    const marker = document.getElementById('timeline-marker');
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    let revealedCount = 0;
+    let isScrolling = false;
+ 
+    const revealContent = () => {
+        if (revealedCount >= timelineItems.length) {
+            window.removeEventListener('wheel', handleScroll);
+            return;
         }
-        
-        // Close the mobile menu by clicking on the background overlay
-        if (mobileMenu) {
-            mobileMenu.addEventListener('click', function(event) {
-                if (event.target === mobileMenu) {
-                    mobileMenu.classList.remove('active');
-                    document.body.classList.remove('no-scroll');
+ 
+        // Reveal content for the next two items
+        const nextItem1 = timelineItems[revealedCount];
+        const nextItem2 = timelineItems[revealedCount + 1];
+ 
+        if (nextItem1) {
+            nextItem1.classList.add('is-visible');
+        }
+        if (nextItem2) {
+            nextItem2.classList.add('is-visible');
+        }
+ 
+        // Move marker to the latest revealed item's position
+        const targetItem = nextItem2 || nextItem1;
+        if (targetItem) {
+            const newTop = targetItem.offsetTop + (targetItem.offsetHeight / 2);
+            marker.style.top = `${newTop}px`;
+        }
+       
+        revealedCount += 2;
+    };
+ 
+    const handleScroll = (event) => {
+        if (event.deltaY < 0) return; // Only scroll down
+       
+        if (!isScrolling) {
+            isScrolling = true;
+            revealContent();
+            setTimeout(() => {
+                isScrolling = false;
+            }, 1000); // 1-second cooldown between scrolls
+        }
+    };
+ 
+    const observer = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) {
+            window.addEventListener('wheel', handleScroll);
+        } else {
+            window.removeEventListener('wheel', handleScroll);
+        }
+    }, { threshold: 0.1 });
+ 
+    // --- Initial Setup ---
+    // Reveal the first item's CONTENT by default
+    if (timelineItems[0]) {
+        timelineItems[0].classList.add('is-visible');
+        revealedCount = 1;
+ 
+        // Position marker at the first item
+        const firstItemTop = timelineItems[0].offsetTop + (timelineItems[0].offsetHeight / 2);
+        marker.style.top = `${firstItemTop}px`;
+    }
+ 
+    // Start observing the container
+    observer.observe(centerTimelineContainer);
+}
+
+
+// --- Distraction Stats Counter Logic (Runs every time it's visible) ---
+    const distractionSection = document.querySelector('.distraction-stats-section');
+ 
+    if (distractionSection) {
+        const distractionCounters = distractionSection.querySelectorAll('.distraction-counter');
+ 
+        const startDistractionCounter = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            counter.innerText = '0'; // Reset to 0
+           
+            const duration = 2000; // Animation duration
+            const startTime = performance.now();
+           
+            const update = (currentTime) => {
+                const elapsedTime = currentTime - startTime;
+                const progress = Math.min(elapsedTime / duration, 1);
+                const currentCount = Math.floor(progress * target);
+               
+                counter.innerText = currentCount.toLocaleString(); // Adds commas to large numbers
+               
+                if (progress < 1) {
+                    requestAnimationFrame(update);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            };
+            requestAnimationFrame(update);
+        };
+ 
+        const distractionObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // When visible, start animation
+                    distractionCounters.forEach(startDistractionCounter);
+                } else {
+                    // When not visible, reset to 0
+                    distractionCounters.forEach(counter => {
+                        counter.innerText = '0';
+                    });
                 }
             });
-        }
-
-        // Handle dropdown clicks inside the mobile menu
-        const menuItemsWithChildren = document.querySelectorAll('.mobile-nav-links .dropdown, .mobile-nav-links .submenu-trigger');
-        menuItemsWithChildren.forEach(function(item) {
-            const link = item.querySelector(':scope > a');
-            
-            if (link) {
-                link.addEventListener('click', function(event) {
-                    if (mobileMenu && mobileMenu.classList.contains('active')) {
-                        event.preventDefault();
-                        item.classList.toggle('active');
-                    }
-                });
-            }
+        }, {
+            threshold: 0.8 // Trigger when 80% of the element is in view
         });
+ 
+        distractionObserver.observe(distractionSection);
+    }
 
-        // Initialize Lottie animations for digital marketing
-        const digitalMarketingAnimations = [
-            { id: 'digital-marketing-vector', path: 'https://assets1.lottiefiles.com/packages/lf20_5tkzkblw.json' },
-            { id: 'seo-animation', path: 'https://assets1.lottiefiles.com/packages/lf20_vybwn7df.json' },
-            { id: 'social-animation', path: 'https://assets1.lottiefiles.com/packages/lf20_ismypfdn.json' },
-            { id: 'ppc-animation', path: 'https://assets1.lottiefiles.com/packages/lf20_ikvz7qhc.json' },
-            { id: 'analytics-animation', path: 'https://assets1.lottiefiles.com/packages/lf20_qp1q3mcb.json' },
-            { id: 'email-animation', path: 'https://assets5.lottiefiles.com/packages/lf20_sk5h1kfn.json' },
-            { id: 'strategy-animation', path: 'https://assets1.lottiefiles.com/packages/lf20_5tkzkblw.json' }
-        ];
 
-        digitalMarketingAnimations.forEach(anim => {
-            const element = document.getElementById(anim.id);
-            if (element) {
-                lottie.loadAnimation({
-                    container: element,
-                    renderer: 'svg',
-                    loop: true,
-                    autoplay: true,
-                    path: anim.path
-                });
+
+    // FAQ ACCORDION LOGIC                 //
+// =================================== //
+const accordionItems = document.querySelectorAll('.accordion-item');
+ 
+if (accordionItems.length > 0) {
+    accordionItems.forEach(item => {
+        const header = item.querySelector('.accordion-header');
+        const content = item.querySelector('.accordion-content');
+ 
+        header.addEventListener('click', () => {
+            // Check if this item is already active
+            const isActive = item.classList.contains('active');
+ 
+            // First, close all other items
+            accordionItems.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.accordion-content').style.maxHeight = '0px';
+            });
+ 
+            // If the clicked item was not active, open it
+            if (!isActive) {
+                item.classList.add('active');
+                content.style.maxHeight = content.scrollHeight + 'px';
             }
         });
     });
-</script>
+}
+// =================================== //
+// HIDE TOP BAR ON SCROLL LOGIC        //
+// =================================== //
+document.addEventListener('DOMContentLoaded', function () {
+    const header = document.querySelector('.header');
+   
+    if (header) {
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { // When scrolled more than 50px
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+    }
+});
+// ======================================================== //
+// FINAL 3D CARD ANIMATED FAQ LOGIC                         //
+// ======================================================== //
+const faqItemsFinal = document.querySelectorAll('.faq-section-final .faq-item');
+ 
+if (faqItemsFinal.length > 0) {
+    faqItemsFinal.forEach(item => {
+        const questionBtn = item.querySelector('.faq-question');
+        const answerDiv = item.querySelector('.faq-answer');
+ 
+        questionBtn.addEventListener('click', () => {
+            const isActive = item.classList.contains('active');
+ 
+            // Close all other items first
+            faqItemsFinal.forEach(otherItem => {
+                otherItem.classList.remove('active');
+                otherItem.querySelector('.faq-answer').style.maxHeight = '0px';
+                otherItem.querySelector('.faq-answer').style.paddingTop = '0px';
+            });
+ 
+            // If the clicked item was not already active, open it
+            if (!isActive) {
+                item.classList.add('active');
+                answerDiv.style.paddingTop = '20px';
+                answerDiv.style.maxHeight = answerDiv.scrollHeight + 'px';
+            }
+        });
+    });
+}
+
+
+
+  </script>
 </body>
 </html>
