@@ -3,6 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="keywords" content="Digital Marketing Agency,Best Digital Marketing Company in Chennai,Digital Marketing Agency in Chennai,Online Marketing in Chennai,Digital Marketing Services in Chennai">
+
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Link to Font Awesome for all icons -->
@@ -12,7 +15,7 @@
   <!-- Bootstrap Bundle JS (includes Popper) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Digital Marketing</title>
+  <title> Digital Marketing Agency in chennai: IT Spaxios Innovation</title>
   <style>
 
 
@@ -314,11 +317,374 @@
       }
     }
 
+
+       /* market-banner-section */
+
+
+      /* Marketing Banner Section - Exact size matching uploaded image */
+        .marketing-banner {
+            position: relative;
+            height: 200px;
+            background: linear-gradient(135deg, #0d2a81 0%, #1e40af 50%, #3b82f6 100%);
+            overflow: hidden;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .marketing-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 20%, rgba(36, 238, 245, 0.15) 0%, transparent 40%),
+                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
+                radial-gradient(circle at 60% 30%, rgba(36, 238, 245, 0.1) 0%, transparent 30%),
+                linear-gradient(45deg, transparent 30%, rgba(36, 238, 245, 0.05) 50%, transparent 70%);
+        }
+
+        .marketing-banner::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: 5%;
+            width: 150px;
+            height: 150px;
+            background: radial-gradient(circle, rgba(36, 238, 245, 0.2) 0%, rgba(36, 238, 245, 0.05) 50%, transparent 100%);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .marketing-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="1.5" fill="white" opacity="0.1"/></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+
+        .marketing-banner::after {
+            content: '';
+            position: absolute;
+            top: -20%;
+            right: 5%;
+            width: 150px;
+            height: 150px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            animation: pulse 4s ease-in-out infinite;
+        }
+
+        .banner-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .banner-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 100%;
+        }
+
+        .banner-text {
+            flex: 1;
+        }
+
+        .banner-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 0;
+            line-height: 1.2;
+            color: white;
+        }
+
+        .banner-title .highlight {
+            color: #24eef5;
+            text-shadow: 0 0 10px rgba(36, 238, 245, 0.3);
+        }
+
+        .banner-cta {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background:  linear-gradient(to bottom, #24eef5, #1ba6b3);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            
+            backdrop-filter: blur(10px);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.6s ease;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            background:  linear-gradient(to bottom, #24eef5, #1ba6b3);
+           
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        .phone-icon {
+            width: 16px;
+            height: 16px;
+            fill: currentColor;
+        }
+
+        /* Decorative quote marks */
+        .quote-mark {
+            position: absolute;
+            font-size: 120px;
+            opacity: 0.1;
+            color: white;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        .quote-mark.top-right {
+            top: 20px;
+            right: 15%;
+            transform: rotate(15deg);
+        }
+
+        .quote-mark.bottom-left {
+            bottom: 20px;
+            left: 15%;
+            transform: rotate(180deg) scaleX(-1);
+        }
+
+        /* Add floating elements */
+        .floating-elements {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .floating-icon {
+            position: absolute;
+            font-size: 24px;
+            opacity: 0.15;
+            animation: floatIcons 12s ease-in-out infinite;
+            color: #24eef5;
+            text-shadow: 0 0 10px rgba(36, 238, 245, 0.3);
+        }
+
+        .floating-icon.chart {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-icon.target {
+            top: 70%;
+            right: 15%;
+            animation-delay: 3s;
+            font-size: 20px;
+        }
+
+        .floating-icon.graph {
+            top: 30%;
+            right: 25%;
+            animation-delay: 6s;
+            font-size: 22px;
+        }
+
+        .floating-icon.seo {
+            bottom: 25%;
+            left: 20%;
+            animation-delay: 9s;
+            font-size: 18px;
+        }
+
+        .floating-icon.social {
+            top: 45%;
+            left: 5%;
+            animation-delay: 2s;
+            font-size: 16px;
+        }
+
+        .floating-icon.email {
+            top: 60%;
+            left: 75%;
+            animation-delay: 7s;
+            font-size: 19px;
+        }
+
+        /* CSS-based icons */
+        .floating-icon::before {
+            content: '';
+            display: inline-block;
+        }
+
+        .floating-icon.chart::before { content: '📊'; }
+        .floating-icon.target::before { content: '🎯'; }
+        .floating-icon.graph::before { content: '📈'; }
+        .floating-icon.seo::before { content: '🔍'; }
+        .floating-icon.social::before { content: '📱'; }
+        .floating-icon.email::before { content: '✉️'; }
+
+        /* Additional floating elements */
+        .floating-shape {
+            position: absolute;
+            border: 2px solid rgba(36, 238, 245, 0.2);
+            background: rgba(36, 238, 245, 0.05);
+            animation: floatShapes 10s ease-in-out infinite;
+        }
+
+        .floating-shape.circle {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            top: 20%;
+            right: 10%;
+            animation-delay: 1s;
+        }
+
+        .floating-shape.square {
+            width: 25px;
+            height: 25px;
+            border-radius: 4px;
+            top: 80%;
+            left: 70%;
+            animation-delay: 4s;
+            transform: rotate(45deg);
+        }
+
+        .floating-shape.triangle {
+            width: 0;
+            height: 0;
+            border: none;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 26px solid rgba(36, 238, 245, 0.2);
+            background: transparent;
+            top: 35%;
+            left: 85%;
+            animation-delay: 8s;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-10px) rotate(2deg); }
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 0.1; }
+            50% { transform: scale(1.1); opacity: 0.2; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .marketing-banner {
+                height: 160px;
+            }
+
+            .banner-title {
+                font-size: 1.4rem;
+            }
+
+            .cta-button {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+
+            .quote-mark {
+                font-size: 80px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .marketing-banner {
+                height: 140px;
+            }
+
+            .banner-content {
+                flex-direction: column;
+                justify-content: center;
+                text-align: center;
+                gap: 15px;
+            }
+
+            .banner-title {
+                font-size: 1.2rem;
+                margin-bottom: 10px;
+            }
+
+            .cta-button {
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+
+            .quote-mark {
+                display: none;
+            }
+
+            .floating-icon {
+                font-size: 16px;
+            }
+
+            .floating-shape {
+                transform: scale(0.7);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
     /* Custom button styling */
 
 
     .card-color{
-        background: linear-gradient(90deg, #ffe0e9, #ffffff);
+        background: whitesmoke;
 
 
     }
@@ -546,156 +912,120 @@
 
 
 /* =================================== */
-/* TECHNOLOGIES SECTION STYLES         */
+/* RUNNING LOGOS         */
 /* =================================== */
-.tech-section {
-    padding: 80px 5%;
-    background-color: rgb(247, 244, 244);
-}
-.tech-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-.tech-section .section-headline h2 {
-    color: #1A2C5B;
-    margin-bottom: 40px;
-    text-align: center;
-}
-.tech-section .section-headline h2 strong {
-    color: #1abec4; /* Green color for 'we work with' */
-    font-weight: 700;
-}
-
-/* Filter Navigation */
-.tech-filter-nav {
-    margin-bottom: 50px;
-    transition: all 0.3s ease-in-out;
-}
-.tech-filter-nav.sticky {
-    position: sticky;
-    top: 80px;
-    background-color: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    padding: 15px 0;
-    z-index: 900;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-    border-radius: 15px;
-    margin-top: -15px;
-}
-.tech-filter-nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 25px;
-}
-.tech-filter-nav li {
-    padding: 10px 20px;
-    cursor: pointer;
-    font-weight: 600;
-    color: #555e68;
-    background-color: transparent;
-    transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    position: relative;
-    border-radius: 10px;
-    overflow: hidden; /* For running border */
-}
-/* FIX: New Running Border Hover Effect for Nav items */
-.tech-filter-nav li::before, .tech-filter-nav li::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 2px;
-    background-color: #0d2a81;
-    transition: width 0.4s ease;
-}
-/* Top line runs from right to left */
-.tech-filter-nav li::before {
-    top: 0;
-    right: 0;
-}
-/* Bottom line runs from left to right */
-.tech-filter-nav li::after {
-    bottom: 0;
-    left: 0;
-}
-.tech-filter-nav li:hover::before, .tech-filter-nav li:hover::after {
-    width: 100%;
-}
-
-/* FIX: Active (clicked) state with 3D button effect */
-.tech-filter-nav li.active {
-    background-color: #0d2a81;
-    color: #ffffff;
-    transform: translateY(-2px);
-    box-shadow: 0 8px 15px rgba(13, 42, 129, 0.3);
-}
-/* Hide running border on active button */
-.tech-filter-nav li.active::before, .tech-filter-nav li.active::after {
-    width: 0;
-}
 
 
-/* Technology Grid */
-.tech-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 30px;
-}
-.tech-item {
-    flex: 0 0 150px;
-    padding: 25px;
-    border-radius: 20px;
-    background-color: transparent;
-    position: relative;
-    transition: transform 0.4s ease;
-    text-align: center;
-    overflow: hidden;
-}
-/* Running Square Border Effect for Tech Items */
-.tech-item .border-span {
-    position: absolute;
-    display: block;
-    background-color: #1abec4;
-    transition: all 0.4s ease-in-out;
-}
-.tech-item .border-span:nth-child(1) { top: 0; left: -100%; width: 100%; height: 2px; }
-.tech-item .border-span:nth-child(2) { top: -100%; right: 0; width: 2px; height: 100%; }
-.tech-item .border-span:nth-child(3) { bottom: 0; right: -100%; width: 100%; height: 2px; }
-.tech-item .border-span:nth-child(4) { bottom: -100%; left: 0; width: 2px; height: 100%; }
-
-.tech-item:hover .border-span:nth-child(1) { left: 0; }
-.tech-item:hover .border-span:nth-child(2) { top: 0; }
-.tech-item:hover .border-span:nth-child(3) { right: 0; }
-.tech-item:hover .border-span:nth-child(4) { bottom: 0; }
-
-.tech-item i {
-    font-size: 48px;
-    color: #1A2C5B;
-    margin-bottom: 15px;
-    transition: color 0.4s ease, transform 0.4s ease;
-}
-.tech-item:hover i {
-    color: #0ce1e8;
-    transform: scale(1.1);
-}
-.tech-item p {
-    font-weight: 600;
-    color: #333;
-    transition: color 0.4s ease;
-}
-.tech-item:hover p {
-    color: #0d2a81;
-}
-.tech-item.hide {
-    display: none;
-}
-
+ .partners-section {
+            padding: 4rem 1rem;
+            background-color: whitesmoke;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .partners-section h2 {
+            margin-bottom: 2.5rem;
+            font-size: 2rem;
+            color: #0d2a81;
+            font-weight: 600;
+        }
+        
+        .partners-container {
+            width: 100%;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .partners-slider {
+            display: flex;
+            width: max-content;
+            animation: slide 25s linear infinite;
+            will-change: transform;
+        }
+        
+        .partners-slider:hover {
+            animation-play-state: paused;
+        }
+        
+        .partner-logo {
+            margin: 0 2rem; /* Equal spacing on both sides */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        .partner-logo img {
+            width: 150px; /* Fixed width */
+            height: 80px; /* Fixed height */
+            object-fit: contain;
+            transition: transform 0.3s ease;
+        }
+        
+        .partner-logo img:hover {
+            transform: scale(1.1);
+        }
+        
+        /* Animation */
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .partner-logo {
+                margin: 0 1.5rem;
+            }
+            
+            .partner-logo img {
+                width: 130px;
+                height: 70px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .partners-section {
+                padding: 3rem 1rem;
+            }
+            
+            .partners-section h2 {
+                font-size: 1.75rem;
+                margin-bottom: 2rem;
+            }
+            
+            .partner-logo {
+                margin: 0 1.2rem;
+            }
+            
+            .partner-logo img {
+                width: 110px;
+                height: 60px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .partners-section h2 {
+                font-size: 1.5rem;
+            }
+            
+            .partner-logo {
+                margin: 0 1rem;
+            }
+            
+            .partner-logo img {
+                width: 90px;
+                height: 50px;
+            }
+            
+            .partners-slider {
+                animation-duration: 20s;
+            }
+        }
 
 
 /* =================================== */
@@ -847,10 +1177,10 @@
     
     <div class="hero-container">
       <div class="hero-text">
-        <h1>Premium Digital Marketing<br>Services in Chennai <br><p><b>Boost Your Visibility / Engage Your Audience / Grow Your Business</b></p></h1>
+        <h1> Leading Result-driven <br>digital marketing agency in chennai <br><p><b>Digital presence / Boost traffic / More conversion</b></p></h1>
         
         <p>
-          Struggling to get noticed online? Our award-winning digital marketing agency helps businesses attract more customers, generate quality leads, and increase sales through strategic online marketing solutions.
+          We deliver the best digital marketing service for your business. By collaborating with us, Increase your businesses’ Digital presence, Boost your sales and Multiply ROI.
         </p>
         <div class="hero-buttons">
           <a href="#" class="hero-btn">Get Free Audit</a>
@@ -865,7 +1195,7 @@
   <section class="about-section">
     <div class="about-container">
       <div class="section-headline">
-        <h2>Why your business needs<br><strong>digital marketing</strong></h2>
+        <h2>Why <strong>digital marketing </strong> is a perfect solution<br> for your business?</h2>
       </div>
       <div class="about-content">
         <div class="about-image-container">
@@ -874,10 +1204,11 @@
         </div>
         <div class="about-text">
           <p>
-            In today's digital world, having an online presence isn't enough. Your potential customers are searching for solutions online every day, but without digital marketing, your business remains invisible to them.
+            Struggle to generate leads? Then you are lagging in digital presence. In the current competitive generation, even an offline store needs digital marketing support to pull their audience/visitors. People are engaging in the digital world. 
           </p>
           <p>
-            Our data-driven strategies help you reach customers who are actively looking for what you offer. We create measurable results through SEO, social media, and targeted campaigns that convert visitors into customers.
+            <br>
+             You can't grow your business only with pamphlets, posters and offline marketing tricks. Your audience are roaming like a fish in the ocean. Only a great fisherman can catch those fishes not with hooks, with equipped fishing nets and tricks.
           </p>
         </div>
       </div>
@@ -888,26 +1219,66 @@
   </section>
 
 
+  <!-- ===========banner section=========== -->
+
+ 
+
+  <!-- Marketing Banner Section -->
+    <section class="marketing-banner">
+        <!-- Floating elements -->
+        <div class="floating-elements">
+            <!-- Digital Marketing Icons -->
+            <div class="floating-icon chart"></div>
+            <div class="floating-icon target"></div>
+            <div class="floating-icon graph"></div>
+            <div class="floating-icon seo"></div>
+            <div class="floating-icon social"></div>
+            <div class="floating-icon email"></div>
+            
+            <!-- Geometric Shapes -->
+            <div class="floating-shape circle"></div>
+            <div class="floating-shape square"></div>
+            <div class="floating-shape triangle"></div>
+        </div>
+        
+        <!-- Decorative quote marks -->
+        <div class="quote-mark top-right">"</div>
+        <div class="quote-mark bottom-left">"</div>
+        
+        <div class="banner-container">
+            <div class="banner-content">
+                <div class="banner-text">
+                    <h2 class="banner-title">"Drive More Sales and Conversion with <span class="highlight">Digital Marketing Service"</span></h2>
+                </div>
+                <div class="banner-cta">
+                    <a href="#contact" class="cta-button">
+                        <svg class="phone-icon" viewBox="0 0 24 24">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                        </svg>
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
 
 <section class="font-[Poppins] p-6 md:p-10 card-color">
 
   <!-- Service Heading -->
   <div class="text-center mb-6">
-    <h1 class="text-3xl md:text-4xl font-bold text-[#0D2A81] mb-2">Our Digital Services</h1>
+    <h1 class="text-3xl md:text-4xl font-bold text-[#0D2A81] mb-2">Our digital marketing services </h1>
   </div>
 
   <!-- TAB BUTTONS -->
   <div class="flex flex-wrap justify-center gap-2 w-full mb-4"> <!-- Reduced margin-bottom -->
     <button class="tab-btn active-btn" data-tab="SEO">SEO</button>
     <button class="tab-btn" data-tab="SMM">SMM</button>
-    <button class="tab-btn" data-tab="SME">SME</button>
-    <button class="tab-btn" data-tab="OS">OS</button>
-    <button class="tab-btn" data-tab="CART">CART</button>
-    <button class="tab-btn" data-tab="SSM">SSM</button>
-    <button class="tab-btn" data-tab="UIUX">UI/UX</button>
-    <button class="tab-btn" data-tab="FULLSTACK">Full Stack</button>
-    <button class="tab-btn" data-tab="MARKETING">Marketing</button>
+    <button class="tab-btn" data-tab="SEM">SEM</button>
+    <button class="tab-btn" data-tab="SMO">SMO</button>
+    
   </div>
 
   <!-- BIG CARD SECTION -->
@@ -974,122 +1345,42 @@
 
 
 <!-- =================================== -->
+ <!-- ----RUNNING LOGOS----- -->
         <!-- =================================== -->
-        <!-- NEW TECHNOLOGIES SECTION            -->
-        <!-- =================================== -->
-        <section class="tech-section">
-            <div class="tech-container">
-                <div class="section-headline">
-                    <h2>Technologies <strong>we work with</strong></h2>
+        
+        <section class="partners-section">
+        <h2>Technologies We Partner With</h2>
+        <div class="partners-container">
+            <div class="partners-slider" id="partnersSlider">
+                <!-- Real tech company logos (colorful) with fixed dimensions -->
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
                 </div>
-                
-                <nav class="tech-filter-nav" id="tech-filters">
-                    <ul>
-                        <li class="active" data-filter="all"><i class="fa-solid fa-layer-group"></i> All</li>
-                        <li data-filter="mobile"><i class="fa-solid fa-mobile-alt"></i> Mobile</li>
-                        <li data-filter="frontend"><i class="fa-solid fa-desktop"></i> Front End</li>
-                        <li data-filter="database"><i class="fa-solid fa-database"></i> Database</li>
-                        <li data-filter="backend"><i class="fa-solid fa-server"></i> Backend</li>
-                        <li data-filter="cms"><i class="fa-solid fa-pen-ruler"></i> CMS</li>
-                        <li data-filter="devops"><i class="fa-solid fa-infinity"></i> Infra and DevOps</li>
-                    </ul>
-                </nav>
-
-                <div class="tech-grid">
-                    <!-- Mobile -->
-                    <div class="tech-item" data-category="mobile">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-apple"></i>
-                        <p>iOS</p>
-                    </div>
-                    <div class="tech-item" data-category="mobile">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-android"></i>
-                        <p>Android</p>
-                    </div>
-                    <div class="tech-item" data-category="mobile frontend">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-react"></i>
-                        <p>React Native</p>
-                    </div>
-                    <div class="tech-item" data-category="mobile frontend">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fa-solid fa-feather-pointed"></i>
-                        <p>Flutter</p>
-                    </div>
-                    <div class="tech-item" data-category="mobile">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fa-solid fa-atom"></i>
-                        <p>Ionic</p>
-                    </div>
-                    
-                    <!-- Frontend -->
-                    <div class="tech-item" data-category="frontend">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-angular"></i>
-                        <p>Angular</p>
-                    </div>
-                    <div class="tech-item" data-category="frontend">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-vuejs"></i>
-                        <p>Vue.js</p>
-                    </div>
-                     <div class="tech-item" data-category="frontend">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-js-square"></i>
-                        <p>JavaScript</p>
-                    </div>
-
-                    <!-- Backend -->
-                    <div class="tech-item" data-category="backend">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-node-js"></i>
-                        <p>Node.js</p>
-                    </div>
-                    <div class="tech-item" data-category="backend">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-python"></i>
-                        <p>Python</p>
-                    </div>
-                    
-                    <!-- Database -->
-                    <div class="tech-item" data-category="database">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fa-solid fa-database"></i>
-                        <p>MySQL</p>
-                    </div>
-                     <div class="tech-item" data-category="database">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fa-solid fa-leaf"></i>
-                        <p>MongoDB</p>
-                    </div>
-
-                    <!-- CMS -->
-                    <div class="tech-item" data-category="cms">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-wordpress"></i>
-                        <p>WordPress</p>
-                    </div>
-                    <div class="tech-item" data-category="cms">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-shopify"></i>
-                        <p>Shopify</p>
-                    </div>
-
-                    <!-- DevOps -->
-                    <div class="tech-item" data-category="devops">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-docker"></i>
-                        <p>Docker</p>
-                    </div>
-                    <div class="tech-item" data-category="devops">
-                        <span class="border-span"></span><span class="border-span"></span><span class="border-span"></span><span class="border-span"></span>
-                        <i class="fab fa-aws"></i>
-                        <p>AWS</p>
-                    </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg" alt="Microsoft">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/IBM_logo.svg" alt="IBM">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Intel_logo_%282006-2020%29.svg" alt="Intel">
+                </div>
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/50/Oracle_logo.svg" alt="Oracle">
+                </div>
+               
+                <div class="partner-logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/59/SAP_2011_logo.svg" alt="SAP">
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
 
 
@@ -1244,7 +1535,7 @@
           "Performance analytics"
         ],
       },
-      SME: {
+      SEM: {
         title: "Search Marketing Excellence",
         desc: "Our search marketing services combine data-driven insights with creative execution to maximize your paid search performance. We optimize every aspect of your campaigns - from keyword selection to ad copy and landing pages - to improve quality scores and reduce cost-per-acquisition. Our continuous testing and optimization approach ensures you get the maximum return from your advertising budget.",
         img: "https://cdn-icons-png.flaticon.com/512/1048/1048940.png",
@@ -1257,7 +1548,7 @@
           "Detailed performance reporting"
         ],
       },
-      OS: {
+      SMO: {
         title: "Operating Systems",
         desc: "We provide comprehensive operating system solutions tailored to your specific needs. Our expertise covers all major platforms, including Windows, macOS, and Linux. Whether you need system configuration, security hardening, performance tuning, or cross-platform integration, our team delivers reliable solutions that keep your systems running smoothly and securely.",
         img: "https://cdn-icons-png.flaticon.com/512/2255/2255326.png",
@@ -1268,71 +1559,6 @@
           "Cross-platform integration",
           "Troubleshooting and support",
           "Custom system modifications"
-        ],
-      },
-      CART: {
-        title: "E-commerce Solutions",
-        desc: "Our e-commerce services transform your online store into a high-converting sales machine. We optimize every step of the customer journey - from product discovery to checkout - to maximize conversions and average order value. Our solutions include cart abandonment recovery, secure payment integrations, mobile optimization, and data-driven merchandising strategies that boost your bottom line.",
-        img: "https://cdn-icons-png.flaticon.com/512/1170/1170678.png",
-        benefits: [
-          "Streamlined checkout processes",
-          "Cart abandonment solutions",
-          "Secure payment gateway integration",
-          "Inventory management systems",
-          "Product recommendation engines",
-          "Mobile-optimized shopping"
-        ],
-      },
-      SSM: {
-        title: "Web Development",
-        desc: "We build custom websites and web applications that deliver exceptional user experiences and drive business results. Our development process combines clean code with intuitive design to create fast, responsive, and scalable solutions. Whether you need a simple brochure site or a complex web application, we have the expertise to bring your vision to life with pixel-perfect execution.",
-        img: "https://cdn-icons-png.flaticon.com/512/3135/3135715.png",
-        benefits: [
-          "Responsive, mobile-first design",
-          "Modern frontend development",
-          "Performance optimization",
-          "Technical consulting",
-          "Progressive web apps",
-          "Ongoing maintenance"
-        ],
-      },
-      UIUX: {
-        title: "UI/UX Design",
-        desc: "Our design services focus on creating intuitive, visually appealing interfaces that delight users and drive engagement. We follow a user-centered design process that begins with research and ends with pixel-perfect prototypes. Our designs balance aesthetics with functionality, ensuring your digital products are both beautiful to look at and effortless to use.",
-        img: "https://cdn-icons-png.flaticon.com/512/1828/1828884.png",
-        benefits: [
-          "Comprehensive user research",
-          "Interactive wireframing",
-          "High-fidelity prototyping",
-          "Accessibility-focused design",
-          "Usability testing",
-          "Design system creation"
-        ],
-      },
-      FULLSTACK: {
-        title: "Full Stack Development",
-        desc: "Our full stack development services cover every layer of your application, from frontend interfaces to backend systems and databases. We build robust, scalable solutions using modern technologies and best practices. Whether you need API development, cloud integration, or complete application architecture, our team delivers end-to-end solutions that perform reliably at scale.",
-        img: "https://cdn-icons-png.flaticon.com/512/2721/2721293.png",
-        benefits: [
-          "Custom database architecture",
-          "RESTful API development",
-          "Cloud integration services",
-          "DevOps implementation",
-          "Microservices architecture",
-          "Continuous deployment"
-        ],
-      },
-      MARKETING: {
-        title: "Digital Marketing",
-        desc: "Our integrated marketing services deliver measurable business growth through data-driven strategies. We develop omnichannel campaigns that reach your audience at every touchpoint in their journey. From lead generation to conversion optimization, we implement tactics that drive results while providing transparent reporting so you can see exactly how your marketing dollars are performing.",
-        img: "https://cdn-icons-png.flaticon.com/512/4149/4149632.png",
-        benefits: [
-          "Omnichannel campaign strategies",
-          "Targeted lead generation",
-          "Marketing automation setup",
-          "ROI tracking and analysis",
-          "Customer journey mapping",
-          "Brand positioning"
         ],
       }
     };
@@ -1460,6 +1686,63 @@ if (centerTimelineContainer) {
     // Start observing the container
     observer.observe(centerTimelineContainer);
 }
+
+
+
+//   Running logos
+
+ document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.getElementById('partnersSlider');
+            const logos = slider.innerHTML;
+            
+            // Double the logos for seamless infinite loop
+            slider.innerHTML = logos + logos;
+            
+            // Pause on hover
+            slider.addEventListener('mouseenter', function() {
+                this.style.animationPlayState = 'paused';
+            });
+            
+            // Resume on mouse leave
+            slider.addEventListener('mouseleave', function() {
+                this.style.animationPlayState = 'running';
+            });
+            
+            // Adjust animation speed based on screen size
+            function adjustAnimationSpeed() {
+                if (window.innerWidth < 768) {
+                    slider.style.animationDuration = '20s';
+                } else {
+                    slider.style.animationDuration = '25s';
+                }
+            }
+            
+            // Initial adjustment
+            adjustAnimationSpeed();
+            
+            // Adjust on resize
+            window.addEventListener('resize', adjustAnimationSpeed);
+            
+            // Touch support for mobile devices
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            slider.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+                this.style.animationPlayState = 'paused';
+            }, {passive: true});
+            
+            slider.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                // If user didn't swipe significantly, resume animation after delay
+                if (Math.abs(touchEndX - touchStartX) < 50) {
+                    setTimeout(() => {
+                        this.style.animationPlayState = 'running';
+                    }, 1000);
+                }
+            }, {passive: true});
+        });
+
 
 
 // --- Distraction Stats Counter Logic (Runs every time it's visible) ---
