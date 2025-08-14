@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Creative Roadmap</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: #0f172a;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .roadmap-section {
+      max-width: 900px;
+      margin: 3rem auto;
+      color: white;
+      position: relative;
+      padding-left: 3rem;
+    }
+
+    .roadmap-title {
+      font-weight: 900;
+      font-size: 2.5rem;
+      margin-bottom: 3rem;
+      text-align: center;
+      line-height: 1.2;
+      background: linear-gradient(90deg, #3b82f6, #10b981);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 0 10px rgba(59, 130, 246, 0.3);
+    }
+
+    /* Wavy line path */
+    .wavy-line {
+      position: absolute;
+      left: 40px;
+      top: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(
+        to bottom,
+        #3b82f6,
+        #10b981,
+        #f59e0b,
+        #ec4899,
+        #8b5cf6,
+        #3b82f6
+      );
+      filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+      z-index: 1;
+      border-radius: 10px;
+    }
+
+    /* Starting circle */
+    .start-circle {
+      position: absolute;
+      left: 25px;
+      top: -15px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #3b82f6;
+      box-shadow: 0 0 15px 5px #3b82f688;
+      z-index: 2;
+      animation: pulseStart 2s infinite;
+    }
+
+    @keyframes pulseStart {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 15px 5px #3b82f688; }
+      50% { transform: scale(1.1); box-shadow: 0 0 20px 8px #3b82f6cc; }
+    }
+
+    /* Traveling ball */
+    .travel-ball {
+      position: absolute;
+      left: 25px;
+      top: -15px;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #3b82f6;
+      box-shadow: 0 0 15px 5px #3b82f688;
+      z-index: 10;
+      transform: translateY(0);
+      opacity: 0;
+      transition: all 0.5s ease;
+    }
+
+    /* Each step container */
+    .step {
+      position: relative;
+      margin-bottom: 5rem;
+      padding-left: 3.5rem;
+      z-index: 5;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.6s ease;
+    }
+
+    .step.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Text background */
+    .step-content {
+      background: rgba(15, 23, 42, 0.7);
+      backdrop-filter: blur(5px);
+      border-radius: 12px;
+      padding: 1.5rem;
+      border-left: 4px solid;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+    }
+
+    .step.active .step-content {
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Step-specific border colors */
+    .step:nth-child(1) .step-content { border-color: #3b82f6; }
+    .step:nth-child(2) .step-content { border-color: #10b981; }
+    .step:nth-child(3) .step-content { border-color: #f59e0b; }
+    .step:nth-child(4) .step-content { border-color: #ec4899; }
+    .step:nth-child(5) .step-content { border-color: #8b5cf6; }
+    .step:nth-child(6) .step-content { border-color: #3b82f6; }
+
+    /* Circles */
+    .step-circle {
+      position: absolute;
+      left: -3px;
+      top: 0;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: #3b82f6;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 0 15px 5px #3b82f688;
+      cursor: default;
+      user-select: none;
+      transition: all 0.4s ease;
+      z-index: 3;
+    }
+
+    .step.active .step-circle {
+      animation: pulseCircle 2s infinite;
+    }
+
+    /* Circle colors */
+    .step:nth-child(1) .step-circle { background: #3b82f6; box-shadow: 0 0 15px 5px #3b82f688; }
+    .step:nth-child(2) .step-circle { background: #10b981; box-shadow: 0 0 15px 5px #10b98188; }
+    .step:nth-child(3) .step-circle { background: #f59e0b; box-shadow: 0 0 15px 5px #f59e0b88; }
+    .step:nth-child(4) .step-circle { background: #ec4899; box-shadow: 0 0 15px 5px #ec489988; }
+    .step:nth-child(5) .step-circle { background: #8b5cf6; box-shadow: 0 0 15px 5px #8b5cf688; }
+    .step:nth-child(6) .step-circle { background: #3b82f6; box-shadow: 0 0 15px 5px #3b82f688; }
+
+    @keyframes pulseCircle {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .step h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 0.8rem;
+      letter-spacing: 0.02em;
+      background: linear-gradient(90deg, white, #cbd5e1);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .step p {
+      color: #e2e8f0;
+      line-height: 1.6;
+      font-size: 1.05rem;
+    }
+
+    /* Icon container */
+    .step-icon {
+      position: absolute;
+      left: -80px;
+      top: 0;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #3b82f6, #10b981);
+      border-radius: 15px;
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      filter: drop-shadow(0 0 5px rgba(59, 130, 246, 0.5));
+      transition: all 0.3s ease;
+      transform: scale(0.9);
+      opacity: 0.7;
+    }
+
+    .step.active .step-icon {
+      transform: scale(1);
+      opacity: 1;
+      animation: floatIcon 3s ease-in-out infinite;
+    }
+
+    /* Icon colors */
+    .step:nth-child(1) .step-icon { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+    .step:nth-child(2) .step-icon { background: linear-gradient(135deg, #10b981, #059669); }
+    .step:nth-child(3) .step-icon { background: linear-gradient(135deg, #f59e0b, #d97706); }
+    .step:nth-child(4) .step-icon { background: linear-gradient(135deg, #ec4899, #db2777); }
+    .step:nth-child(5) .step-icon { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
+    .step:nth-child(6) .step-icon { background: linear-gradient(135deg, #3b82f6, #2563eb); }
+
+    @keyframes floatIcon {
+      0%, 100% { transform: translateY(0) scale(1); }
+      50% { transform: translateY(-8px) scale(1.05); }
+    }
+
+    .step-icon svg {
+      width: 30px;
+      height: 30px;
+      fill: white;
+    }
+
+    /* Wavy line animation */
+    @keyframes wave {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(0); }
+      75% { transform: translateX(5px); }
+    }
+
+    .wavy-line {
+      animation: wave 8s ease-in-out infinite;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 640px) {
+      .roadmap-section {
+        padding-left: 2rem;
+        max-width: 95vw;
+      }
+
+      .wavy-line {
+        left: 30px;
+      }
+
+      .start-circle, .travel-ball {
+        left: 15px;
+      }
+
+      .step-icon {
+        left: -65px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .step-icon svg {
+        width: 22px;
+        height: 22px;
+      }
+
+      .step {
+        padding-left: 2.8rem;
+        margin-bottom: 4rem;
+      }
+
+      .step-circle {
+        left: -25px;
+        width: 25px;
+        height: 25px;
+        font-size: 1rem;
+      }
+      
+      .step-content {
+        padding: 1rem;
+      }
+      
+      .roadmap-title {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="roadmap-section" aria-label="Project Roadmap Timeline">
+    <h1 class="roadmap-title">
+      Project Development Journey
+    </h1>
+
+    <div class="wavy-line" aria-hidden="true"></div>
+    <div class="start-circle" aria-hidden="true"></div>
+    <div class="travel-ball" id="travelBall"></div>
+
+    <!-- Step 1: Planning -->
+    <article class="step" tabindex="0" aria-labelledby="step1-title" aria-describedby="step1-desc">
+      <div class="step-circle" aria-hidden="true">1</div>
+      <div class="step-icon" aria-hidden="true" title="Planning Icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path fill="none" stroke="white" stroke-width="3" d="M20 20h24v24H20z"/>
+          <line x1="20" y1="32" x2="44" y2="32" stroke="white" stroke-width="3"/>
+          <line x1="32" y1="20" x2="32" y2="44" stroke="white" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="step-content">
+        <h3 id="step1-title">Project Planning</h3>
+        <p id="step1-desc">Define project scope, objectives, and requirements. Create detailed specifications and establish milestones for successful project execution.</p>
+      </div>
+    </article>
+
+    <!-- Step 2: Development -->
+    <article class="step" tabindex="0" aria-labelledby="step2-title" aria-describedby="step2-desc">
+      <div class="step-circle" aria-hidden="true">2</div>
+      <div class="step-icon" aria-hidden="true" title="Development Icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path fill="none" stroke="white" stroke-width="3" d="M20 44h24v-8H20z"/>
+          <path fill="none" stroke="white" stroke-width="3" d="M32 44v6M40 44v6" stroke-linecap="round"/>
+          <circle cx="16" cy="32" r="6" stroke="white" stroke-width="3" fill="none"/>
+          <circle cx="48" cy="32" r="6" stroke="white" stroke-width="3" fill="none"/>
+          <line x1="22" y1="32" x2="42" y2="32" stroke="white" stroke-width="3" />
+        </svg>
+      </div>
+      <div class="step-content">
+        <h3 id="step2-title">Development Phase</h3>
+        <p id="step2-desc">Implement core features using modern frameworks. Focus on clean code architecture, scalability, and performance optimization.</p>
+      </div>
+    </article>
+
+    <!-- Step 3: Design -->
+    <article class="step" tabindex="0" aria-labelledby="step3-title" aria-describedby="step3-desc">
+      <div class="step-circle" aria-hidden="true">3</div>
+      <div class="step-icon" aria-hidden="true" title="Design Icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect x="12" y="12" width="40" height="40" rx="4" ry="4" fill="none" stroke="white" stroke-width="3"/>
+          <circle cx="32" cy="32" r="12" fill="none" stroke="white" stroke-width="3"/>
+          <line x1="32" y1="12" x2="32" y2="52" stroke="white" stroke-width="3"/>
+          <line x1="12" y1="32" x2="52" y2="32" stroke="white" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="step-content">
+        <h3 id="step3-title">UI/UX Design</h3>
+        <p id="step3-desc">Create intuitive user interfaces with engaging experiences. Implement responsive designs that work across all devices and platforms.</p>
+      </div>
+    </article>
+
+    <!-- Step 4: Testing -->
+    <article class="step" tabindex="0" aria-labelledby="step4-title" aria-describedby="step4-desc">
+      <div class="step-circle" aria-hidden="true">4</div>
+      <div class="step-icon" aria-hidden="true" title="Testing Icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <circle cx="32" cy="32" r="30" fill="none" stroke="white" stroke-width="3"/>
+          <path fill="none" stroke="white" stroke-width="4" stroke-linecap="round" d="M24 32l8 8 16-16"/>
+        </svg>
+      </div>
+      <div class="step-content">
+        <h3 id="step4-title">Quality Assurance</h3>
+        <p id="step4-desc">Conduct comprehensive testing including unit tests, integration tests, and user acceptance testing to ensure flawless performance.</p>
+      </div>
+    </article>
+
+    <!-- Step 5: Deployment -->
+    <article class="step" tabindex="0" aria-labelledby="step5-title" aria-describedby="step5-desc">
+      <div class="step-circle" aria-hidden="true">5</div>
+      <div class="step-icon" aria-hidden="true" title="Deployment Icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path fill="none" stroke="white" stroke-width="3" d="M32 12v40"/>
+          <polyline points="20,32 32,44 44,32" fill="none" stroke="white" stroke-width="3" stroke-linejoin="round"/>
+          <rect x="8" y="44" width="48" height="8" fill="none" stroke="white" stroke-width="3" rx="2"/>
+        </svg>
+      </div>
+      <div class="step-content">
+        <h3 id="step5-title">Deployment</h3>
+        <p id="step5-desc">Launch the application with zero downtime. Configure CI/CD pipelines, monitoring, and analytics for production environment.</p>
+      </div>
+    </article>
+
+    <!-- Step 6: Maintenance -->
+    <article class="step" tabindex="0" aria-labelledby="step6-title" aria-describedby="step6-desc">
+      <div class="step-circle" aria-hidden="true">6</div>
+      <div class="step-icon" aria-hidden="true" title="Maintenance Icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path fill="none" stroke="white" stroke-width="3" stroke-linecap="round" d="M32 12v6M32 30v6M32 48v6"/>
+          <circle cx="32" cy="24" r="6" fill="none" stroke="white" stroke-width="3"/>
+          <circle cx="32" cy="42" r="6" fill="none" stroke="white" stroke-width="3"/>
+        </svg>
+      </div>
+      <div class="step-content">
+        <h3 id="step6-title">Maintenance & Updates</h3>
+        <p id="step6-desc">Provide ongoing support, performance tuning, and feature enhancements based on user feedback and analytics.</p>
+      </div>
+    </article>
+  </section>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const steps = document.querySelectorAll('.step');
+      const travelBall = document.getElementById('travelBall');
+      const stepCircles = document.querySelectorAll('.step-circle');
+      const stepHeight = 180; // Approximate height between steps
+      const colors = ['#3b82f6', '#10b981', '#f59e0b', '#ec4899', '#8b5cf6', '#3b82f6'];
+      
+      // Initialize - show first step
+      steps[0].classList.add('active');
+      travelBall.style.opacity = '1';
+      travelBall.style.backgroundColor = colors[0];
+      
+      // Animate ball through steps
+      function animateBall() {
+        let delay = 0;
+        
+        steps.forEach((step, index) => {
+          setTimeout(() => {
+            // Move ball to current step
+            const ballPosition = index * stepHeight;
+            travelBall.style.transform = `translateY(${ballPosition}px)`;
+            travelBall.style.backgroundColor = colors[index];
+            travelBall.style.boxShadow = `0 0 15px 5px ${colors[index]}88`;
+            
+            // Activate current step
+            step.classList.add('active');
+            
+            // Pulse effect for current circle
+            stepCircles[index].style.animation = 'pulseCircle 2s infinite';
+            
+            // Remove pulse from previous circle
+            if (index > 0) {
+              stepCircles[index-1].style.animation = 'none';
+            }
+            
+          }, delay);
+          
+          delay += 1500; // 1.5s delay between steps
+        });
+        
+        // Reset and loop animation
+        setTimeout(() => {
+          steps.forEach(step => step.classList.remove('active'));
+          stepCircles.forEach(circle => circle.style.animation = 'none');
+          travelBall.style.transform = 'translateY(0)';
+          travelBall.style.backgroundColor = colors[0];
+          travelBall.style.boxShadow = `0 0 15px 5px ${colors[0]}88`;
+          steps[0].classList.add('active');
+          stepCircles[0].style.animation = 'pulseCircle 2s infinite';
+          
+          setTimeout(animateBall, 1000);
+        }, delay + 2000);
+      }
+      
+      // Start animation
+      setTimeout(animateBall, 1000);
+    });
+  </script>
+</body>
+</html>

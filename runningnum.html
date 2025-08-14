@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats Banner</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Modern Minimalist Design */
+        .stats-banner {
+            background: white;
+            border-radius: 12px;
+            padding: 40px 30px;
+            max-width: 1200px;
+            margin: 20px auto;
+            box-shadow: 0 5px 30px rgba(13, 42, 129, 0.1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(13, 42, 129, 0.1);
+        }
+
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .stat-card {
+            text-align: center;
+            min-width: 180px;
+            padding: 25px 20px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: #0d2a81;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover::after {
+            width: 100px;
+            background: #ff6b00; /* Accent color */
+        }
+
+        .stat-icon {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: #0d2a81;
+            transition: all 0.3s ease;
+        }
+
+        .stat-card:hover .stat-icon {
+            transform: scale(1.1);
+            color: #ff6b00; /* Accent color */
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin: 10px 0;
+            color: #0d2a81;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #555;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Animated Underline */
+        @keyframes underline {
+            0% { width: 0; opacity: 0; }
+            100% { width: 60px; opacity: 1; }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .stats-container {
+                gap: 15px;
+            }
+            .stat-card {
+                min-width: 150px;
+                padding: 20px 15px;
+            }
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .stats-banner {
+                padding: 30px 20px;
+            }
+            .stats-container {
+                grid-template-columns: 1fr 1fr;
+            }
+            .stat-card {
+                min-width: calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 400px) {
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            .stat-card {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="stats-banner">
+        <div class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <div class="stat-number counter" data-target="18">0</div>
+                <div class="stat-label">Happy Clients</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="stat-number counter" data-target="230">230K</div>
+                <div class="stat-label">Assessments</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-number counter" data-target="100">100+</div>
+                <div class="stat-label">Assessors</div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <div class="stat-number counter" data-target="15">0</div>
+                <div class="stat-label">Years Experience</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Simple counter animation
+            $('.counter').each(function() {
+                const $this = $(this);
+                const target = $this.data('target');
+                const suffix = $this.text().match(/\D+$/)?.[0] || '';
+                
+                // Check if already animated
+                if ($this.hasClass('animated')) return;
+                $this.addClass('animated');
+                
+                $({ count: 0 }).animate({ count: target }, {
+                    duration: 1500,
+                    easing: 'swing',
+                    step: function() {
+                        $this.text(Math.floor(this.count) + suffix);
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
