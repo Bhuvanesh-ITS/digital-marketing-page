@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <title>Digital Marketing Services</title>
     <style>
         * {
@@ -227,375 +228,28 @@
             }
         }
 
-         /* Marketing Banner Section - Exact size matching uploaded image */
-        .marketing-banner {
-            position: relative;
-            height: 200px;
-            background: linear-gradient(135deg, #0d2a81 0%, #1e40af 50%, #3b82f6 100%);
-            overflow: hidden;
-            color: white;
-            display: flex;
-            align-items: center;
-        }
-
-        .marketing-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(36, 238, 245, 0.15) 0%, transparent 40%),
-                radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 40%),
-                radial-gradient(circle at 60% 30%, rgba(36, 238, 245, 0.1) 0%, transparent 30%),
-                linear-gradient(45deg, transparent 30%, rgba(36, 238, 245, 0.05) 50%, transparent 70%);
-        }
-
-        .marketing-banner::after {
-            content: '';
-            position: absolute;
-            top: -20%;
-            right: 5%;
-            width: 150px;
-            height: 150px;
-            background: radial-gradient(circle, rgba(36, 238, 245, 0.2) 0%, rgba(36, 238, 245, 0.05) 50%, transparent 100%);
-            border-radius: 50%;
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        .marketing-banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.1"/><circle cx="90" cy="10" r="1" fill="white" opacity="0.1"/><circle cx="10" cy="90" r="1.5" fill="white" opacity="0.1"/></svg>');
-            animation: float 20s ease-in-out infinite;
-        }
-
-        .marketing-banner::after {
-            content: '';
-            position: absolute;
-            top: -20%;
-            right: 5%;
-            width: 150px;
-            height: 150px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: pulse 4s ease-in-out infinite;
-        }
-
-        .banner-container {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 20px;
-            position: relative;
-            z-index: 2;
-        }
-
-        .banner-content {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 100%;
-        }
-
-        .banner-text {
-            flex: 1;
-        }
-
-        .banner-title {
-            font-size: 1.8rem;
-            font-weight: bold;
-            margin-bottom: 0;
-            line-height: 1.2;
-            color: white;
-        }
-
-        .banner-title .highlight {
-            color: #24eef5;
-            text-shadow: 0 0 10px rgba(36, 238, 245, 0.3);
-        }
-
-        .banner-cta {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 12px 24px;
-            background:  linear-gradient(to bottom, #24eef5, #1ba6b3);
-            color: white;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 0.95rem;
-            backdrop-filter: blur(10px);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            position: relative;
-            overflow: hidden;
-            white-space: nowrap;
-        }
-
-        .cta-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.6s ease;
-        }
-
-        .cta-button:hover::before {
-            left: 100%;
-        }
-
-        .cta-button:hover {
-            background:  linear-gradient(to bottom, #24eef5, #1ba6b3);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:active {
-            transform: translateY(-1px) scale(1.02);
-        }
-
-        .phone-icon {
-            width: 16px;
-            height: 16px;
-            fill: currentColor;
-        }
-
-        /* Decorative quote marks */
-        .quote-mark {
-            position: absolute;
-            font-size: 120px;
-            opacity: 0.1;
-            color: white;
-            font-family: serif;
-            line-height: 1;
-        }
-
-        .quote-mark.top-right {
-            top: 20px;
-            right: 15%;
-            transform: rotate(15deg);
-        }
-
-        .quote-mark.bottom-left {
-            bottom: 20px;
-            left: 15%;
-            transform: rotate(180deg) scaleX(-1);
-        }
-
-        /* Add floating elements */
-        .floating-elements {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .floating-icon {
-            position: absolute;
-            font-size: 24px;
-            opacity: 0.15;
-            animation: floatIcons 12s ease-in-out infinite;
-            color: #24eef5;
-            text-shadow: 0 0 10px rgba(36, 238, 245, 0.3);
-        }
-
-        .floating-icon.chart {
-            top: 15%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-
-        .floating-icon.target {
-            top: 70%;
-            right: 15%;
-            animation-delay: 3s;
-            font-size: 20px;
-        }
-
-        .floating-icon.graph {
-            top: 30%;
-            right: 25%;
-            animation-delay: 6s;
-            font-size: 22px;
-        }
-
-        .floating-icon.seo {
-            bottom: 25%;
-            left: 20%;
-            animation-delay: 9s;
-            font-size: 18px;
-        }
-
-        .floating-icon.social {
-            top: 45%;
-            left: 5%;
-            animation-delay: 2s;
-            font-size: 16px;
-        }
-
-        .floating-icon.email {
-            top: 60%;
-            left: 75%;
-            animation-delay: 7s;
-            font-size: 19px;
-        }
-
-        /* CSS-based icons */
-        .floating-icon::before {
-            content: '';
-            display: inline-block;
-        }
-
-        .floating-icon.chart::before { content: '📊'; }
-        .floating-icon.target::before { content: '🎯'; }
-        .floating-icon.graph::before { content: '📈'; }
-        .floating-icon.seo::before { content: '🔍'; }
-        .floating-icon.social::before { content: '📱'; }
-        .floating-icon.email::before { content: '✉️'; }
-
-        /* Additional floating elements */
-        .floating-shape {
-            position: absolute;
-            border: 2px solid rgba(36, 238, 245, 0.2);
-            background: rgba(36, 238, 245, 0.05);
-            animation: floatShapes 10s ease-in-out infinite;
-        }
-
-        .floating-shape.circle {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            top: 20%;
-            right: 10%;
-            animation-delay: 1s;
-        }
-
-        .floating-shape.square {
-            width: 25px;
-            height: 25px;
-            border-radius: 4px;
-            top: 80%;
-            left: 70%;
-            animation-delay: 4s;
-            transform: rotate(45deg);
-        }
-
-        .floating-shape.triangle {
-            width: 0;
-            height: 0;
-            border: none;
-            border-left: 15px solid transparent;
-            border-right: 15px solid transparent;
-            border-bottom: 26px solid rgba(36, 238, 245, 0.2);
-            background: transparent;
-            top: 35%;
-            left: 85%;
-            animation-delay: 8s;
-        }
-
-        @keyframes floatIcons {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            33% { transform: translateY(-15px) rotate(5deg); }
-            66% { transform: translateY(-5px) rotate(-3deg); }
-        }
-
-        @keyframes floatShapes {
-            0%, 100% { transform: translateY(0px) scale(1); }
-            50% { transform: translateY(-20px) scale(1.1); }
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .marketing-banner {
-                height: 160px;
-            }
-
-            .banner-title {
-                font-size: 1.4rem;
-            }
-
-            .cta-button {
-                padding: 10px 20px;
-                font-size: 0.9rem;
-            }
-
-            .quote-mark {
-                font-size: 80px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .marketing-banner {
-                height: 140px;
-            }
-
-            .banner-content {
-                flex-direction: column;
-                justify-content: center;
-                text-align: center;
-                gap: 15px;
-            }
-
-            .banner-title {
-                font-size: 1.2rem;
-                margin-bottom: 10px;
-            }
-
-            .cta-button {
-                padding: 8px 16px;
-                font-size: 0.85rem;
-            }
-
-            .quote-mark {
-                display: none;
-            }
-
-            .floating-icon {
-                font-size: 16px;
-            }
-
-            .floating-shape {
-                transform: scale(0.7);
-            }
-        }
+        
     </style>
 </head>
     <body>
     <!-- Page 1 -->
     <section class="page">
         <div class="container">
-            <!-- Google My Business Section -->
+            <!--  Why Search Engine Optimization (SEO)?  -->
             <div class="section" data-section="gmb">
                 <div class="content">
-                    <h2>Google My Business</h2>
-                    <p>Transform your local presence with our comprehensive Google My Business optimization services. We help businesses establish a strong digital footprint that drives real customers through your doors.</p>
-                    <p>Our expert team specializes in:</p>
+                    <h2>Why Search Engine Optimization (SEO)?</h2>
+                    <p>In this competitive digital era, being only online isn’t enough for business. You need to be visible. SEO is one of the best digital marketing strategies to reach the potential audience at the right time. When potential customers search for products or services related to your business, SEO ensures that your business ranks high on top of the search engine results(Google, Bing).
+</p>
+                    <p class="fw-bold">Advantages of SEO service:</p>
                     <ul>
-                        <li>Complete GMB profile setup and verification</li>
-                        <li>Strategic keyword optimization for better visibility</li>
-                        <li>Review management and response strategies</li>
-                        <li>Local citation building and NAP consistency</li>
-                        <li>Performance tracking and monthly reporting</li>
+                        <li>Without ad spend, long-term visibility on search engines</li>
+                        <li>High-quality and targeted traffic</li>
+                        <li>Build high authority and brand trust in your industry</li>
+                        <li>Improve website speed, performance and overall experience</li>
+                        <li>Measurable results with sustainable growth</li>
                     </ul>
-                    <p>With our proven strategies, watch your business appear prominently in local search results and Google Maps, attracting more qualified leads and increasing your revenue.</p>
+                    <p>SEO attracts more organic traffic to your business. It is one of the cost-effective digital marketing strategies for you to attract Customers who are actively searching for what you provide.</p>
                 </div>
                 <div class="image-container">
                     <div class="vector-shape">
@@ -615,20 +269,22 @@
                 </div>
             </div>
 
-            <!-- Email Marketing Section -->
+            <!-- Why Search Engine Marketing(SEM)? -->
             <div class="section reverse" data-section="email">
                 <div class="content">
-                    <h2>Email Marketing</h2>
-                    <p>Unlock the power of direct communication with our advanced email marketing solutions. Build lasting relationships with your audience while driving consistent sales and engagement.</p>
-                    <p>Our comprehensive approach includes:</p>
+                    <h2>Why Search Engine Marketing(SEM)?</h2>
+                    <p>Search Engine Marketing is a paid advertisement strategy in digital marketing. It delivers instant visibility on top of the search engines (Google, Bing). SEO takes time to build, and SEM leverages paid ads to place your business at the top of the search engine results for targeted keywords.</p>
+                    <p class="fw-bold">Advantages of SEM service:</p>
                     <ul>
-                        <li>Strategic email campaign design and copywriting</li>
-                        <li>Advanced segmentation and personalization</li>
-                        <li>Automated drip campaigns and workflows</li>
-                        <li>A/B testing for optimal performance</li>
-                        <li>Detailed analytics and conversion tracking</li>
+                        <li>Instant online visibility for your business</li>
+                        <li>Increase website traffic and quality leads</li>
+                        <li>Full control over ad spend and budget</li>
+                        <li>Flexible budget and measurable results</li>
+                        <li>Better insights through advanced analytics</li>
+
                     </ul>
-                    <p>From welcome sequences to re-engagement campaigns, we create email experiences that your subscribers love to receive and act upon.</p>
+                    <p>SEM allows you to control who sees your ads based on location, search query and demographics. It is one of the fastest ways to reach the targeted audience, generate leads and maximize ROI.
+</p>
                 </div>
                 <div class="image-container">
                     <div class="vector-shape">
@@ -654,62 +310,24 @@
 
     
 
-        <!-- Marketing Banner Section -->
-    <section class="marketing-banner">
-        <!-- Floating elements -->
-        <div class="floating-elements">
-            <!-- Digital Marketing Icons -->
-            <div class="floating-icon chart"></div>
-            <div class="floating-icon target"></div>
-            <div class="floating-icon graph"></div>
-            <div class="floating-icon seo"></div>
-            <div class="floating-icon social"></div>
-            <div class="floating-icon email"></div>
-            
-            <!-- Geometric Shapes -->
-            <div class="floating-shape circle"></div>
-            <div class="floating-shape square"></div>
-            <div class="floating-shape triangle"></div>
-        </div>
-        
-        <!-- Decorative quote marks -->
-        <div class="quote-mark top-right">"</div>
-        <div class="quote-mark bottom-left">"</div>
-        
-        <div class="banner-container">
-            <div class="banner-content">
-                <div class="banner-text">
-                    <h2 class="banner-title">"Drive More Sales and Conversion with <span class="highlight">Digital Marketing Service"</span></h2>
-                </div>
-                <div class="banner-cta">
-                    <a href="#contact" class="cta-button">
-                        <svg class="phone-icon" viewBox="0 0 24 24">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-                        </svg>
-                        Get in Touch
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
+       
     <!-- Page 2 -->
     
         <div class="container">
-            <!-- Local SEO Section -->
+            <!--Why Social Media Marketing (SMM)? -->
             <div class="section" data-section="seo">
                 <div class="content">
-                    <h2>Local SEO</h2>
-                    <p>Dominate your local market with our proven local SEO strategies. We help businesses rank higher in local search results, attracting customers who are ready to buy.</p>
-                    <p>Our local SEO services include:</p>
+                    <h2>Why Social Media Marketing (SMM)?</h2>
+                    <p>Social Media Marketing is one of the more effective strategies to connect audience where they spend most of their time. Unlike SMO, SMM focuses on reaching a wide audience with more control through paid ad campaigns. SMM drives more conversions, increases followers and brand identity through paid ads on Facebook, Instagram, Twitter, LinkedIn and YouTube.</p>
+                    <p class="fw-bold">Advantages of SMM service:</p>
                     <ul>
-                        <li>Local keyword research and optimization</li>
-                        <li>Google My Business optimization and management</li>
-                        <li>Local citation building and directory submissions</li>
-                        <li>On-page SEO with local focus</li>
-                        <li>Local link building and community engagement</li>
+                        <li>Targeted Audience - interests, behavior and demographics</li>
+                        <li>High conversion through compelling ad copy</li>
+                        <li>Increase sales and lead generation</li>
+                        <li>Enhance brand credibility</li>
+                        <li>Detailed campaign performance insights</li>
                     </ul>
-                    <p>Position your business as the go-to choice in your area with our data-driven local SEO approach that delivers measurable results.</p>
+                    <p>With an SMM strategy, your business can run paid ads, collaborate with influencers and content strategies to increase followers, drive more conversions and build brand authority. It focuses on high ROI and ROAS.</p>
                 </div>
                 <div class="image-container">
                     <div class="vector-shape">
@@ -732,45 +350,7 @@
                 </div>
             </div>
 
-            <!-- Content Marketing Section -->
-            <div class="section reverse" data-section="content">
-                <div class="content">
-                    <h2>Content Marketing</h2>
-                    <p>Engage, educate, and convert your audience with compelling content that builds trust and drives action. Our content marketing strategies position you as an industry authority.</p>
-                    <p>Our content marketing expertise covers:</p>
-                    <ul>
-                        <li>Strategic content planning and editorial calendars</li>
-                        <li>Blog writing and article creation</li>
-                        <li>Social media content and visual assets</li>
-                        <li>Video content and multimedia production</li>
-                        <li>Content distribution and promotion strategies</li>
-                    </ul>
-                    <p>From blog posts that rank on Google to social media content that sparks conversations, we create content that your audience craves and search engines love.</p>
-                </div>
-                <div class="image-container">
-                    <div class="vector-shape">
-                        <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
-                            <defs>
-                                <linearGradient id="content-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#FFD93D;stop-opacity:1" />
-                                    <stop offset="50%" style="stop-color:#FF8C42;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#FF3C38;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                            <path d="M90,160 Q140,90 200,110 Q260,130 310,160 Q290,250 200,270 Q110,250 90,160 Z" fill="url(#content-gradient)" />
-                            <rect x="160" y="140" width="80" height="100" rx="8" fill="white" opacity="0.9"/>
-                            <line x1="170" y1="160" x2="230" y2="160" stroke="#FF8C42" stroke-width="3"/>
-                            <line x1="170" y1="180" x2="220" y2="180" stroke="#FFD93D" stroke-width="2"/>
-                            <line x1="170" y1="200" x2="230" y2="200" stroke="#FF3C38" stroke-width="2"/>
-                            <circle cx="180" cy="220" r="8" fill="#FF8C42"/>
-                            <circle cx="210" cy="220" r="6" fill="#FFD93D"/>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </section>
+           
 
     <script>
         // Intersection Observer for animations
@@ -823,3 +403,4 @@
     </script>
 </body>
 </html></li>
+
