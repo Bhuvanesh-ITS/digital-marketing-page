@@ -18,7 +18,8 @@
             background: white;
             overflow-x: hidden;
         }
-        /* Header Styles */
+        
+        /* Header Styles with Irregular Shapes */
         .page-header {
             text-align: center;
             padding: 60px 20px 40px;
@@ -406,11 +407,13 @@
                 font-size: 16px;
             }
         }
-
-
     </style>
 </head>
 <body>
+
+    <!-- -------------OUR DIGITAL MARKETING-------------
+    --------------SERVICES SECTION-------------- -->
+
     <!-- Page Header with Animated Title and Irregular Shapes -->
     <section class="page-header">
         <div class="header-shape shape-1"></div>
@@ -473,7 +476,7 @@
                     </div>
                 </div>
                 <div class="image-container">
-                    <img src="../images/sem.webp" alt="SEM Services" class="seo-image">
+                    <img src="../images/SEO.webp" alt="SEM Services" class="seo-image">
                     <div class="floating-tagline">Google Ads - Instant Visibility, Instant Results</div>
                 </div>
             </div>
@@ -482,7 +485,7 @@
     
     <!-- Page 2 -->
     <section class="page">
-        <div class="container-service">
+        <div class="container">
             <!--Why Social Media Marketing (SMM)? -->
             <div class="section" data-section="seo">
                 <div class="content">
@@ -503,7 +506,7 @@
                     </div>
                 </div>
                 <div class="image-container">
-                    <img src="../images/smm.webp" alt="SMM Services" class="seo-image">
+                    <img src="../images/SEO.webp" alt="SMM Services" class="seo-image">
                     <div class="floating-tagline">Social Ads - Reach More, Sale More</div>
                 </div>
             </div>
@@ -516,6 +519,7 @@
             threshold: 0.3,
             rootMargin: '0px 0px -50px 0px'
         };
+        
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
@@ -523,28 +527,31 @@
                 }
             });
         }, observerOptions);
+        
         // Observe all sections
         document.querySelectorAll('.section').forEach(section => {
             observer.observe(section);
         });
+        
         // Add some interactive hover effects
         
         // Parallax effect for floating elements
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
-            const parallax = scrolled * 0.5;
             
             document.querySelectorAll('.floating-circle').forEach((circle, index) => {
                 const speed = 0.2 + (index * 0.1);
                 circle.style.transform = `translateY(${scrolled * speed}px)`;
             });
         });
+        
         // Add stagger animation to content elements
         document.querySelectorAll('.section').forEach((section, index) => {
             section.style.animationDelay = `${index * 0.2}s`;
         });
+        
         // CTA Button hover effects
-        document.querySelectorAll('.cta-button').forEach(button => {
+        document.querySelectorAll('.cta-button-service').forEach(button => {
             button.addEventListener('mouseenter', () => {
                 button.style.transform = 'translateY(-3px) scale(1.02)';
             });

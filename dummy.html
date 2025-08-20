@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Cards with Smooth Transitions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .card-color {
+            background: whitesmoke;
+        }
+
+        .tab-btn {
+            position: relative;
+            overflow: hidden;
+            font-size: 1.1rem;
+            border-radius: 32px;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            min-width: 160px;
+            border: 1px solid #0D2A81;
+            background: white;
+            color: #0D2A81;
+            transition: all 0.3s ease;
+            margin: 0.3rem;
+            z-index: 1;
+        }
+        
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10%;
+            width: 120%;
+            height: 100%;
+            background: linear-gradient(to right, #24eef5, #1ba6b3);
+            transition: all 0.3s ease;
+            z-index: -1;
+            opacity: 0;
+            transform: translateX(-100%);
+            border-radius: 32px;
+        }
+        
+        .tab-btn:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .tab-btn:hover, .tab-btn.active-btn {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(13, 42, 129, 0.3);
+            z-index: 10;
+            color: white;
+            border-color: transparent;
+        }
+        
+        .tab-btn.active-btn {
+            background: linear-gradient(to right, #24eef5, #1ba6b3);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .tab-btn.active-btn::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        #centerContent img {
+            width: 80%;
+            max-width: 500px;
+            height: auto;
+        }
+
+        .description-box p {
+            font-size: 14px;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(13, 42, 129, 0.1);
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(13, 42, 129, 0.2);
+            border-color: rgba(36, 238, 245, 0.3);
+        }
+        
+        .benefit-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 14px !important;
+        }
+        
+        .benefit-item::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background-color: #0d2a81;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .benefits-container {
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .description-box {
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            height: 100%;
+        }
+        
+        .cta-section {
+            padding: 1.5rem;
+            background: white;
+            
+            text-align: center;
+        }
+        
+        .cta-button {
+            background: linear-gradient(to right, #24eef5, #1ba6b3);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 1rem;
+            text-align: center;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(13, 42, 129, 0.3);
+        }
+        
+        .cta-tagline {
+            font-weight: 600;
+            color: #0D2A81;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+        }
+        
+        .image-tagline {
+            text-align: center;
+            font-style: italic;
+            margin-top: 0.5rem;
+            color: #1ba6b3;
+            font-weight: 500;
+        }
+        
+        .content-wrapper {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .content-wrapper.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease forwards;
+        }
+    </style>
+</head>
+<body class="font-[Poppins]">
+    <section class="p-6 md:p-10 card-color">
+        <!-- TAB BUTTONS -->
+        <div class="flex flex-wrap justify-center gap-2 w-full mb-4">
+            <button class="tab-btn active-btn" data-tab="GOOGLE_MY_BUSINESS">GOOGLE MY BUSINESS</button>
+            <button class="tab-btn" data-tab="EMAIL_MARKETING_SERVICE">EMAIL MARKETING SERVICE</button>
+            <button class="tab-btn" data-tab="LOCAl_SEO_SERVICE">LOCAl SEO SERVICE</button>
+        </div>
+
+        <!-- BIG CARD SECTION -->
+        <div id="contentArea" class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 p-8 md:p-12 rounded-3xl shadow-lg max-w-7xl mx-auto transition-all duration-500 items-stretch service-card">
+            <div id="leftContent" class="text-left content-wrapper"></div>
+            <div id="centerContent" class="flex flex-col justify-center items-center content-wrapper"></div>
+            <div id="rightContent" class="text-left content-wrapper">
+                <div class="benefits-container content-wrapper"></div>
+                <div class="cta-section content-wrapper"></div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const data = {
+            GOOGLE_MY_BUSINESS: {
+                title: "Why google my business page?",
+                desc: "Many businesses want to pull customers to their doorstep. For those, Google My Business profile is key to their business. If someone searches for services and products that you provide in your area, your business profile appears on maps with accurate business details, reviews, updates, directions, your location, working hours, and photos. so they can choose your business with confidence. ",
+                img: "../images/googlemybusiness.webp",
+                benefits: [
+                    "More visibility in local Google searches & Maps results",
+                    "Build trust with authentic reviews & ratings",
+                    "Drive more calls, enquiries, and store visits",
+                    "Upload offers, updates, and photos on Google",
+                    "Stay ahead of local competitors"
+                ],
+                ctaTagline: "Ready to boost your local presence?",
+                imageTagline: "Your business, discovered locally"
+            },
+            EMAIL_MARKETING_SERVICE: {
+                title: "EMAIL MARKETING SERVICE",
+                desc: "Email marketing is more than newsletters. It’s cost-effective, measurable, and one of the best ways to drive repeat sales. You can reach your customers with personalized email marketing campaigns, automation, updates and offers, and you can turn customers into one-time buyers to loyal customers.",
+                img: "https://cdn.pixabay.com/photo/2016/06/13/17/30/mail-1454731_1280.png",
+                benefits: [
+                    "Directly reach your customers in their inbox",
+                    "Build long-term relationships & loyalty",
+                    "Cost-effective with huge ROI",
+                    "Better engagement",
+                    "Increase repeat purchases & sales conversions"
+                ],
+                ctaTagline: "Start connecting with your audience today!",
+                imageTagline: "Direct communication, better results"
+            },
+            LOCAl_SEO_SERVICE: {
+                title: "LOCAl SEO SERVICE",
+                desc: "Show your business in front of nearby people who are searching for services/products that you provide. Whether it’s “best salon in Chennai” or “electronic spare parts in Chennai”, local SEO ensures your business is at the top position. It’s a perfect strategy for small and medium businesses that want to focus on location-based lead generation and increase visibility and traffic.",
+                img: "https://cdn.pixabay.com/photo/2022/01/30/11/37/seo-6980503_1280.png",
+                benefits: [
+                    "Top rank in location-based searches",
+                    "Attract in-market customers",
+                    "Increase calls, visits and enquiries from locals",
+                    "Strengthen trust with local reviews & citations",
+                    "Compete effectively with bigger brands"
+                ],
+                ctaTagline: "Dominate your local market now!",
+                imageTagline: "Be the first choice in local searches"
+            },
+        };
+
+        function updateContent(tab) {
+            // Update tab buttons
+            document.querySelectorAll(".tab-btn").forEach(b => {
+                b.classList.remove("active-btn");
+            });
+
+            const activeBtn = [...document.querySelectorAll(".tab-btn")].find(btn => btn.getAttribute("data-tab") === tab);
+            activeBtn.classList.add("active-btn");
+
+            // Custom headings for each service
+            const benefitHeadings = {
+                'GOOGLE_MY_BUSINESS': 'Advantages of Google My Business',
+                'EMAIL_MARKETING_SERVICE': 'Advantages of Email Marketing',
+                'LOCAl_SEO_SERVICE': 'Advantages of Local SEO'
+            };
+
+            // Fade out current content
+            document.querySelectorAll('.content-wrapper').forEach(el => {
+                el.classList.remove('active');
+            });
+
+            // After a brief delay, update content and fade in
+            setTimeout(() => {
+                document.getElementById("leftContent").innerHTML = `
+                    <div class="description-box">
+                        <h2 class="text-2xl font-bold mb-4 text-[#0D2A81]">${data[tab].title}</h2>
+                        <p class="text-gray-600">${data[tab].desc}</p>
+                    </div>
+                `;
+                
+                document.getElementById("centerContent").innerHTML = `
+                    <div class="flex flex-col justify-center items-center">
+                        <img src="${data[tab].img}" alt="${tab} Image" class="w-48 h-48 object-contain">
+                        <p class="image-tagline mt-2">${data[tab].imageTagline}</p>
+                    </div>
+                `;
+                
+                const benefitsContainer = document.querySelector('.benefits-container');
+                benefitsContainer.innerHTML = `
+                    <h3 class="text-xl font-semibold mb-4 text-[#0D2A81]">${benefitHeadings[tab]}</h3>
+                    <div class="space-y-3">
+                        ${data[tab].benefits.map(benefit => `
+                            <div class="benefit-item">${benefit}</div>
+                        `).join("")}
+                    </div>
+                `;
+                
+                const ctaSection = document.querySelector('.cta-section');
+                ctaSection.innerHTML = `
+                    <p class="cta-tagline">${data[tab].ctaTagline}</p>
+                    <button class="cta-button">GET STARTED NOW</button>
+                `;
+                
+                // Fade in new content
+                document.querySelectorAll('.content-wrapper').forEach(el => {
+                    setTimeout(() => {
+                        el.classList.add('active');
+                    }, 50);
+                });
+            }, 300);
+        }
+
+        // Tab button click handler
+        document.querySelectorAll(".tab-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                updateContent(btn.getAttribute("data-tab"));
+            });
+        });
+
+        // Default selection on load
+        window.addEventListener("DOMContentLoaded", () => {
+            updateContent("GOOGLE_MY_BUSINESS");
+            
+            // Fade in initial content after a brief delay
+            setTimeout(() => {
+                document.querySelectorAll('.content-wrapper').forEach(el => {
+                    el.classList.add('active');
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
