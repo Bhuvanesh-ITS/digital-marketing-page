@@ -50,7 +50,7 @@
     .hero-section {
       width: 100%;
       background: whitesmoke;
-      padding: 80px 5% 100px 5%;
+      padding: 60px 5% 80px 5%;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -93,7 +93,7 @@
     
     .hero-text p { 
       font-size: 16px; 
-      color: #0d2a81; 
+      color: #555e68; 
       line-height: 1.8; 
       margin-bottom: 30px; 
       max-width: 600px; 
@@ -116,6 +116,7 @@
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
       transition: all 0.3s ease; 
       font-size: 16px;
+      margin-bottom: -20px;
     }
     
     .hero-btn:hover { 
@@ -258,8 +259,8 @@
         position: absolute;
         width: 700px;
         height: 700px;
-        top: -150px;
-        left: -200px;
+        top: -200px;
+        right: -200px;
         transform: rotate(-15deg);
         z-index: 1;
         opacity: 0.7;
@@ -272,6 +273,7 @@
     @media (max-width: 1200px) {
       .hero-image-container, .about-image-container {
         min-height: 350px;
+        
       }
     }
     
@@ -296,7 +298,7 @@
       }
       
       .hero-text, .about-text {
-        text-align: center;
+        text-align: left;
       }
       
       .hero-text p {
@@ -328,10 +330,25 @@
       }
     }
 
+     @media (max-width: 480px) {
+        .about-image-container {
+             margin-bottom: -50px;
+             margin-top: -20px;
+        }
+
+        .section-cta {
+            margin-top: 40px;
+        }
+
+        .hero-text h1 {
+        font-size: 26px;
+      }
+     }
+
      /* <!-- -------------OUR DIGITAL MARKETING-------------
     --------------SERVICES SECTION-------------- --> */
 
-     .page-header {
+    .page-header {
             text-align: center;
             padding: 60px 20px 40px;
             position: relative;
@@ -388,6 +405,9 @@
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 1s ease-out forwards;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
         }
         
         .page-header h1 {
@@ -400,54 +420,36 @@
             padding: 0 15px;
         }
         
-        
-        
         @media (min-width: 768px) {
             .page-header h1 {
                 font-size: 3rem;
             }
         }
-
-
-        .header-content-service {
-    position: relative;
-    z-index: 2;
-    opacity: 0;
-    transform: translateY(30px);
-    animation: fadeInUp 1s ease-out forwards;
-    width: 100%; /* Added to ensure full width */
-    max-width: 900px; /* Increased from 800px to accommodate the text */
-    margin: 0 auto; /* Center the container */
-}
         
         .page-header p {
-    font-size: 1.25rem;
-    color: #555;
-    font-weight: 500;
-    margin: 0 auto;
-    font-style: italic;
-    position: relative;
-    display: inline-block;
-    padding: 0 10px;
-    white-space: nowrap; /* Prevent text from wrapping */
-}
+            font-size: 1.25rem;
+            color: #555;
+            font-weight: 500;
+            margin: 0 auto;
+            font-style: italic;
+            position: relative;
+            display: inline-block;
+            padding: 0 10px;
+            white-space: nowrap;
+        }
         
         @media (max-width: 768px) {
-    /* ... existing mobile styles ... */
-    
-    .page-header p {
-        white-space: normal; /* Allow wrapping on mobile */
-        font-size: 1.1rem;
-    }
-}
+            .page-header p {
+                white-space: normal;
+                font-size: 1.1rem;
+            }
+        }
 
-@media (max-width: 480px) {
-    /* ... existing mobile styles ... */
-    
-    .page-header p {
-        font-size: 1rem;
-    }
-}
+        @media (max-width: 480px) {
+            .page-header p {
+                font-size: 1rem;
+            }
+        }
         
         @keyframes fadeInUp {
             from {
@@ -469,6 +471,7 @@
             }
         }
         
+        /* Page Styles */
         .page {
             min-height: 100vh;
             padding: 10px 0;
@@ -511,11 +514,12 @@
         }
         
         .content h2 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             color: #0d2a81;
             margin-bottom: 20px;
             position: relative;
             z-index: 2;
+            font-weight: 100px !important;
         }
         
         .content p {
@@ -537,6 +541,19 @@
             color: #666;
             margin: 8px 0;
             font-size: 14px;
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .content li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: #0d2a81;
+            font-weight: bold;
+            font-size: 1.2rem;
+            line-height: 1.5;
         }
         
         /* CTA Section Styles */
@@ -550,9 +567,15 @@
         .cta-tagline {
             font-size: 18px;
             font-weight: 500;
-            color: #0d2a81;
             margin-bottom: 20px;
             font-style: italic;
+            background: #f1f7ff; /* light banner background */
+            padding: 12px 18px;
+            border-radius: 8px;
+            display: inline-block;
+            line-height: 1.5;
+            color: #0d2a81; /* theme text color */
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
         }
         
         .cta-button-service {
@@ -641,6 +664,37 @@
             margin: 20px 0;
         }
         
+        /* SMM Slider Styles - UPDATED */
+        .smm-slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto;
+            overflow: hidden;
+            margin-bottom: 30px;
+           
+        }
+        
+        .smm-slider {
+            display: flex;
+            transition: transform 0.8s ease-in-out;
+            height: 100%;
+        }
+        
+        .smm-slide {
+            min-width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .smm-slide img {
+            width: 300px;
+            height: auto;
+            object-fit: contain;
+        }
+        
+        /* Responsive Styles */
         @media (max-width: 992px) {
             .content {
                 padding: 30px;
@@ -665,12 +719,12 @@
             }
             
             .shape-1, .shape-2, .shape-3 {
-                display: none; /* Hide shapes on mobile for better performance */
+                display: none;
             }
             
             .section {
                 flex-direction: column;
-                text-align: center;
+                text-align: left;
             }
             
             .reverse {
@@ -688,6 +742,10 @@
             }
             
             .seo-image {
+                width: 280px;
+            }
+            
+            .smm-slide img {
                 width: 280px;
             }
             
@@ -714,12 +772,14 @@
                 width: 250px;
             }
             
+            .smm-slide img {
+                width: 250px;
+            }
+            
             .floating-tagline {
                 font-size: 16px;
             }
         }
-
-
 
        /* market-banner-section */
 
@@ -1082,137 +1142,220 @@
 
 
 
-
+    /* ----------------------------- */
     /* Custom button styling */
+     /* ---------------------------------- */
 
+    .card-color {
+            background: whitesmoke;
+        }
 
-    .card-color{
-        background: whitesmoke;
+        .tab-btn {
+            position: relative;
+            overflow: hidden;
+            font-size: 1.1rem;
+            border-radius: 32px;
+            padding: 1rem 2rem;
+            font-weight: 600;
+            min-width: 160px;
+            border: 1px solid #0D2A81;
+            background: white;
+            color: #0D2A81;
+            transition: all 0.3s ease;
+            margin: 0.3rem;
+            z-index: 1;
+        }
+        
+        .tab-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -10%;
+            width: 120%;
+            height: 100%;
+            background: linear-gradient(to right, #24eef5, #1ba6b3);
+            transition: all 0.3s ease;
+            z-index: -1;
+            opacity: 0;
+            transform: translateX(-100%);
+            border-radius: 32px;
+        }
+        
+        .tab-btn:hover::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .tab-btn:hover, .tab-btn.active-btn {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 8px 20px rgba(13, 42, 129, 0.3);
+            z-index: 10;
+            color: white;
+            border-color: transparent;
+        }
+        
+        .tab-btn.active-btn {
+            background: linear-gradient(to right, #24eef5, #1ba6b3);
+            color: white;
+            border-color: transparent;
+        }
+        
+        .tab-btn.active-btn::before {
+            opacity: 1;
+            transform: translateX(0);
+        }
 
+        #centerContent img {
+            width: 80%;
+            max-width: 500px;
+            height: auto;
+        }
 
-    }
+        .description-box p {
+            font-size: 14px;
+        }
+        
+        .service-card {
+            transition: all 0.3s ease;
+            border: 1px solid rgba(13, 42, 129, 0.1);
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(13, 42, 129, 0.2);
+            border-color: rgba(36, 238, 245, 0.3);
+        }
+        
+        .benefit-item {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1rem;
+            font-size: 14px !important;
+        }
+        
+        .benefit-item::before {
+            content: ">";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 24px;
+            height: 24px;
+            background-color: #0d2a81;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .benefits-container {
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .description-box {
+            background: #f8f9ff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            height: 100%;
+        }
+        
+        .cta-section-card {
+            padding: 1.5rem;
+            background: white;
+            text-align: center;
+        }
+        
+        .cta-button-card {
+            background: linear-gradient(to right, #24eef5, #1ba6b3);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border-radius: 32px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 1rem;
+            text-align: center;
+            width: 100%;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(13, 42, 129, 0.3);
+        }
+        
+        .cta-tagline-card {
+            font-weight: 600;
+            color: #0D2A81;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            font-style: italic;
+            color: #0d2a81;
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        .images-tagline {
+            text-align: center;
+            margin-top: 2rem !important;
+            font-weight: bold;
+            font-style: italic;
+            color: #0d2a81;
+            
+        }
+        
+        .content-wrapper {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        
+        .content-wrapper.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+            100% {
+                transform: translateY(0px);
+            }
+        }
+        
+        .animate-fade-in-up {
+            animation: fadeInUp 0.5s ease forwards;
+        }
 
-
-    .tab-btn {
-      position: relative;
-      overflow: hidden;
-      font-size: 1.1rem;
-      border-radius: 32px;
-      padding: 1rem 2rem;
-      font-weight: 600;
-      min-width: 160px;
-      border: 1px solid #0D2A81;
-      background: white;
-      color: #0D2A81;
-      transition: all 0.3s ease;
-      margin: 0.3rem;
-      z-index: 1;
-    }
-    
-    .tab-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -10%; /* Extend beyond the left edge */
-      width: 120%; /* Make wider than the button */
-      height: 100%;
-      background: linear-gradient(to right, #24eef5, #1ba6b3);
-      transition: all 0.3s ease;
-      z-index: -1;
-      opacity: 0;
-      transform: translateX(-100%);
-      border-radius: 32px;
-    }
-    
-    .tab-btn:hover::before {
-      opacity: 1;
-      transform: translateX(0);
-    }
-    
-    .tab-btn:hover, .tab-btn.active-btn {
-      transform: translateY(-5px) scale(1.05);
-      box-shadow: 0 8px 20px rgba(13, 42, 129, 0.3);
-      z-index: 10;
-      color: white;
-      border-color: transparent;
-    }
-    
-    .tab-btn.active-btn {
-      background: linear-gradient(to right, #24eef5, #1ba6b3);
-      color: white;
-      border-color: transparent;
-    }
-    
-    .tab-btn.active-btn::before {
-      opacity: 1;
-      transform: translateX(0);
-    }
-
-
-    #centerContent img {
-  width: 80%;        /* or any fixed value like 400px */
-  max-width: 500px;   /* keeps it responsive */
-  height: auto;       /* maintains aspect ratio */
-}
-
-
-.description-box p{
-    font-size: 14px ;
-}
-
-    
-    /* Card styling */
-    .service-card {
-      transition: all 0.3s ease;
-      border: 1px solid rgba(13, 42, 129, 0.1);
-      background: white;
-      border-radius: 24px;
-    }
-    
-    .service-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 35px rgba(13, 42, 129, 0.2);
-      border-color: rgba(36, 238, 245, 0.3);
-    }
-    
-    .benefit-item {
-      position: relative;
-      padding-left: 2rem;
-      margin-bottom: 1rem;
-      font-size: 14px !important;
-    }
-    
-    .benefit-item::before {
-      content: ">";
-      position: absolute;
-      left: 0;
-      top: 0;
-      width: 24px;
-      height: 24px;
-      background-color: #0d2a81;
-      color: white;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: bold;
-    }
-    
-    .benefits-container {
-      background: #f8f9ff;
-      border-radius: 16px;
-      padding: 1.5rem;
-    }
-    
-    .description-box {
-      background: #f8f9ff;
-      border-radius: 16px;
-      padding: 1.5rem;
-      height: 100%;
-    }
-
-
+        /* ======================================= */
        /* Why Different Section */
+        /* ================================== */
+
+
         .why-different-section {
             padding: 80px 0;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
@@ -1524,6 +1667,7 @@
             overflow: hidden;
             border: none;
             cursor: pointer;
+            margin-bottom: -30px;
         }
 
         .cta-button-why:hover {
@@ -1591,6 +1735,10 @@
                 padding-left: 0;
             }
 
+            .section-description{
+                text-align: left;
+            }
+
             .spacer {
                 font-size: 1.5rem;
                 padding: 20px;
@@ -1605,11 +1753,17 @@
 
             .section-title {
                 font-size: 2rem;
+                text-align: center;
+            }
+
+            .section-description{
+                text-align: left;
             }
             
             .cta-button-why {
                 padding: 14px 30px;
                 font-size: 1rem;
+                margin-bottom: -60px;
             }
 
             .spacer {
@@ -1739,7 +1893,7 @@
 
  .partners-section {
             padding: 4rem 1rem;
-            background-color: whitesmoke;
+            background-color: white;
             text-align: center;
             overflow: hidden;
         }
@@ -1849,16 +2003,251 @@
         }
 
 
+         /* <!-- =============================================== -->
+     <!-- ---------------ROADMAP-------------------------- --> */
+
+    .container-roadmap {
+            max-width: 1400px;
+            width: 100%;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        
+        .header-roadmap {
+            background: #0d2a81;
+            color: white;
+            padding: 50px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header-roadmap::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: rotate(30deg);
+        }
+        
+        .header-roadmap h1 {
+            font-size: 2.8rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            position: relative;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .header-roadmap h1 span{
+            color: #1abec4;
+        }
+        
+        .roadmap-container {
+            padding: 40px 20px;
+            overflow-x: auto;
+            position: relative;
+        }
+        
+        .roadmap {
+            display: flex;
+            justify-content: center;
+            min-width: 1100px;
+            padding: 40px 0;
+            position: relative;
+        }
+        
+        .connector {
+            position: absolute;
+            top: 100px;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background: linear-gradient(to right, #3a7bd5, #00d2ff);
+            z-index: 1;
+        }
+        
+        .step-roadmap {
+            width: 220px;
+            margin: 0 15px;
+            position: relative;
+            padding: 30px 25px;
+            border-radius: 15px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            text-align: center;
+            z-index: 2;
+            
+        }
+        
+        
+        
+        .step-roadmap:hover {
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+        
+        .step-number-roadmap {
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: #0d2a81;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(58, 123, 213, 0.4);
+            z-index: 3;
+        }
+        
+        .step-icon-roadmap {
+            font-size: 2.8rem;
+            margin: 25px 0 20px;
+            background: #0040ff;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .step-title-roadmap {
+            font-size: 20px;
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        .step-content-roadmap {
+            color: #555;
+            line-height: 1.6;
+            font-size: 14px;
+            text-align: left;
+        }
+        
+        .cta-roadmap {
+            background: #f8f9fa;
+            padding: 60px 20px;
+            text-align: center;
+            position: relative;
+        }
+        
+        .cta-roadmap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background: linear-gradient(to right, #3a7bd5, #00d2ff);
+        }
+        
+        .cta-roadmap-title {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: #2c3e50;
+        }
+        
+        .cta-button-roadmap {
+            display: inline-block;
+            padding: 16px 45px;
+            background: linear-gradient(to bottom, #24eef5 , #1abec4);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(58, 123, 213, 0.4);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button-roadmap::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+            transition: 0.5s;
+        }
+        
+        .cta-button-roadmap:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(58, 123, 213, 0.6);
+        }
+        
+        .cta-button-roadmap:hover::before {
+            left: 100%;
+        }
+        
+        @media (max-width: 1200px) {
+            .roadmap {
+                min-width: 1000px;
+            }
+            
+            .step-roadmap {
+                width: 200px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-roadmap {
+                padding: 40px 20px;
+            }
+            
+            .header-roadmap h1 {
+                font-size: 2.2rem;
+            }
+            
+            .roadmap {
+                flex-direction: column;
+                align-items: center;
+                min-width: auto;
+            }
+            
+            .connector {
+                display: none;
+            }
+            
+            .step-roadmap {
+                width: 100%;
+                max-width: 400px;
+                margin: 30px 0;
+                opacity: 1;
+                transform: none;
+            }
+            
+            .step-roadmap:hover {
+                transform: translateY(-5px) scale(1.02);
+            }
+        }
+
 /* =================================== */
 /* DISTRACTION STATS SECTION STYLES    */
 /* =================================== */
 .distraction-stats-section {
     padding: 40px 5%;
-    background-color:linear-gradient(135deg, #0d2a81, #dddfe6);
+    background-color:linear-gradient(135deg, #0d2a81);
     box-shadow: 0 -5px 15px rgba(0,0,0,0.05), 0 5px 15px rgba(0,0,0,0.05);
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
-    background: linear-gradient(135deg, rgb(245, 240, 240));
+    background: #0d2a81;
 }
 .distraction-stats-container {
     max-width: 1200px;
@@ -1878,16 +2267,16 @@
 }
 .distraction-stat-item i {
     font-size: 36px;
-    color: #395dcb;
+    color: white;
 }
 .distraction-stat-text h3 {
     font-size: 32px;
     font-weight: 700;
-    color: #1A2C5B;
+    color: white;
 }
 .distraction-stat-text p {
     font-size: 15px;
-    color: #555e68;
+    color: white;
 }
 
 
@@ -2003,6 +2392,7 @@
         <p>
           We deliver the best digital marketing service for your business. By collaborating with us, Increase your businesses’ Digital presence, Boost your sales and Multiply ROI.
         </p>
+        
         <div class="hero-buttons">
           <a href="#" class="hero-btn">Get Free Audit</a>
           <a href="#" class="hero-btn">Book Consultation</a>
@@ -2132,7 +2522,7 @@
     --------------SERVICES SECTION-------------- -->
 
     <!-- Page Header with Animated Title and Irregular Shapes -->
-    <section class="page-header">
+   <section class="page-header">
         <div class="header-shape shape-1"></div>
         <div class="header-shape shape-2"></div>
         <div class="header-shape shape-3"></div>
@@ -2223,13 +2613,29 @@
                     </div>
                 </div>
                 <div class="image-container">
-                    <img src="../images/smm.webp" alt="SMM Services" class="seo-image">
+                    <!-- SMM Image Slider - UPDATED -->
+                    <div class="smm-slider-container">
+                        <div class="smm-slider">
+                            <div class="smm-slide">
+                                <img src="../images/smm1.webp" alt="SMM Example 1 - VIT Online Learning">
+                            </div>
+                            <div class="smm-slide">
+                                <img src="../images/smm2.webp" alt="SMM Example 2 - Trip.com Group">
+                            </div>
+                            <div class="smm-slide">
+                                <img src="../images/smm3.webp" alt="SMM Example 3 - Truliv Coliving">
+                            </div>
+                            <div class="smm-slide">
+                                <img src="../images/smm4.webp" alt="SMM Example 4 - Coursera Microsoft Program">
+                            </div>
+                        </div>
+                    </div>
                     <div class="floating-tagline">Social Ads - Reach More, Sale More</div>
                 </div>
             </div>
         </div>
     </section>
-    
+
 
   <!-- ===========banner section=========== -->
 
@@ -2278,26 +2684,26 @@
  <!-- GOOGLE MY BUSINESS SECTION -->
 
 
-<section class="font-[Poppins] p-6 md:p-10 card-color">
+<body class="font-[Poppins]">
+    <section class="p-6 md:p-10 card-color">
+        <!-- TAB BUTTONS -->
+        <div class="flex flex-wrap justify-center gap-2 w-full mb-4">
+            <button class="tab-btn active-btn" data-tab="GOOGLE_MY_BUSINESS">GOOGLE MY BUSINESS</button>
+            <button class="tab-btn" data-tab="EMAIL_MARKETING_SERVICE">EMAIL MARKETING SERVICE</button>
+            <button class="tab-btn" data-tab="LOCAl_SEO_SERVICE">LOCAl SEO SERVICE</button>
+        </div>
 
-  
+        <!-- BIG CARD SECTION -->
+        <div id="contentArea" class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 p-8 md:p-12 rounded-3xl shadow-lg max-w-7xl mx-auto transition-all duration-500 items-stretch service-card">
+            <div id="leftContent" class="text-left content-wrapper"></div>
+            <div id="centerContent" class="flex flex-col justify-center items-center content-wrapper"></div>
+            <div id="rightContent" class="text-left content-wrapper">
+                <div class="benefits-container content-wrapper"></div>
+                <div class="cta-section-card content-wrapper"></div>
+            </div>
+        </div>
+    </section>
 
-  <!-- TAB BUTTONS -->
-  <div class="flex flex-wrap justify-center gap-2 w-full mb-4"> <!-- Reduced margin-bottom -->
-    <button class="tab-btn active-btn" data-tab="GOOGLE_MY_BUSINESS">GOOGLE MY BUSINESS</button>
-    
-    <button class="tab-btn" data-tab="EMAIL_MARKETING_SERVICE">EMAIL MARKETING SERVICE</button>
-    <button class="tab-btn" data-tab="LOCAl_SEO_SERVICE">LOCAl SEO SERVICE</button>
-    
-  </div>
-
-  <!-- BIG CARD SECTION -->
-  <div id="contentArea" class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 p-8 md:p-12 rounded-3xl shadow-lg max-w-7xl mx-auto transition-all duration-500 items-stretch service-card">
-    <div id="leftContent" class="text-left animate-fade-in-up"></div>
-    <div id="centerContent" class="flex justify-center items-center animate-fade-in-up"></div>
-    <div id="rightContent" class="text-left animate-fade-in-up"></div>
-  </div>
-</section>
 
   
 
@@ -2311,90 +2717,7 @@
         <div class="partners-container">
             <div class="partners-slider" id="partnersSlider">
                 <!-- Real tech company logos (colorful) with fixed dimensions -->
-               <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
-                </div>
-                
-                <!-- Meta (Facebook) -->
-                <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta">
-                </div>
-                
-                <!-- X (Twitter) -->
-                <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.svg" alt="X" style="filter: invert(1);">
-                </div>
-                
-                <!-- LinkedIn -->
-                <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png" alt="LinkedIn">
-                </div>
-                
-                <!-- Google Analytics -->
-                <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/GAnalytics.svg" alt="Google Analytics">
-                </div>
-                
-                <!-- Google Search Console -->
-                <div class="partner-logo">
-                    <img src="https://developers.google.com/search/images/search-console-logo.png" alt="Google Search Console">
-                </div>
-                
-                <!-- Google Keyword Planner -->
-                <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg" alt="Google Keyword Planner">
-                </div>
-                
-                <!-- SEMrush -->
-                <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6c/SEMrush_Logo.svg" alt="SEMrush">
-                </div>
-                
-                <!-- Ahrefs -->
-                <div class="partner-logo">
-                    <img src="https://cdn.worldvectorlogo.com/logos/ahrefs-1.svg" alt="Ahrefs">
-                </div>
-                
-                <!-- Moz -->
-                <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Moz_logo.svg" alt="Moz">
-                </div>
-                
-                <!-- PageSpeed Insights -->
-                <div class="partner-logo">
-                    <img src="https://developers.google.com/speed/pagespeed/insights/images/psi-logo.png" alt="PageSpeed Insights">
-                </div>
-                
-                <!-- Screaming Frog -->
-                <div class="partner-logo">
-                    <img src="https://www.screamingfrog.co.uk/wp-content/themes/screamingfrog/public/images/logo.gif?204" alt="Screaming Frog">
-                </div>
-                
-                <!-- HubSpot -->
-                <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg" alt="HubSpot">
-                </div>
-                
-                <!-- Canva -->
-                <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" alt="Canva">
-                </div>
-                
-                <!-- Mailchimp -->
-                <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Mailchimp-freddie-wink.svg" alt="Mailchimp">
-                </div>
-                
-                <!-- Hootsuite -->
-                <div class="partner-logo">
-                    <img src="hooksuite.svg" alt="Hootsuite">
-                </div>
-                
-                <!-- Buffer -->
-                <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Buffer_Logo.svg" alt="Buffer">
-                </div>
-                
+               
                 <!-- Duplicate set for seamless loop -->
                 <div class="partner-logo">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
@@ -2405,7 +2728,7 @@
                 </div>
                 
                 <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/X_logo_2023_%28white%29.svg" alt="X" style="filter: invert(1);">
+                    <img src="//logotyp.us/file/twitter-x.svg" alt="Twitter X"/>
                 </div>
                 
                 <div class="partner-logo">
@@ -2417,7 +2740,7 @@
                 </div>
                 
                 <div class="partner-logo">
-                    <img src="https://developers.google.com/search/images/search-console-logo.png" alt="Google Search Console">
+                    <img src="../images/googlesearchconsolelogo.svg" alt="Google Search Console">
                 </div>
                 
                 <div class="partner-logo">
@@ -2425,7 +2748,7 @@
                 </div>
                 
                 <div class="partner-logo">
-                    <img src="https://www.semrush.com/#srf-icon-semrush-logo" alt="SEMrush">
+                    <img src="../images/semrush.png" alt="SEMrush"/>
                 </div>
                 
                 <div class="partner-logo">
@@ -2433,15 +2756,15 @@
                 </div>
                 
                 <div class="partner-logo">
-                    <img src="https://d2eebagvwr542h.cloudfront.net/static/img/moz-logo.04b8aa1d39f4.svg" alt="Moz">
+                    <img src="../images/Moz-logo.png" alt="Moz">
                 </div>
                 
                 <div class="partner-logo">
-                    <img src="pagespeedinsignt.png" alt="PageSpeed Insights">
+                    <img src="../images/pagespeed-insights-icon-2021.svg" alt="PageSpeed Insights">
                 </div>
                 
                 <div class="partner-logo">
-                    <img src="https://www.screamingfrog.co.uk/wp-content/uploads/2019/04/screaming-frog-seo-spider-tool.png" alt="Screaming Frog">
+                    <img src="../images/screaming-frog_logo.png" alt="Screaming Frog">
                 </div>
                 
                 <div class="partner-logo">
@@ -2453,7 +2776,7 @@
                 </div>
                 
                 <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/27/Mailchimp-freddie-wink.svg" alt="Mailchimp">
+                    <img src="../images/mailchimp.svg" alt="Mailchimp"/>
                 </div>
                 
                 <div class="partner-logo">
@@ -2461,13 +2784,69 @@
                 </div>
                 
                 <div class="partner-logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Buffer_Logo.svg" alt="Buffer">
+                    <img src="../images/Buffer-logo.png" alt="Buffer"/>
                 </div>
             </div>
         </div>
     </section>
 
 
+    <!-- =============================================== -->
+     <!-- ---------------ROADMAP-------------------------- -->
+      <!-- ============================================== -->
+
+
+     <div class="container-roadmap">
+        <div class="header-roadmap">
+            <h1 data-aos="fade-down">Roadmap - <span>“How We Work</span> for our clients”</h1>
+        </div>
+        
+        <div class="roadmap-container">
+            <div class="connector"></div>
+            
+            <div class="roadmap">
+                <div class="step-roadmap" >
+                    <div class="step-number-roadmap">1</div>
+                    <div class="step-icon-roadmap"><i class="fas fa-bullseye"></i></div>
+                    <h3 class="step-title-roadmap">Discover & Strategy</h3>
+                    <p class="step-content-roadmap">Understand your business goals, target audience. Then we create a result-driven digital marketing strategies for your business.</p>
+                </div>
+                
+                <div class="step-roadmap">
+                    <div class="step-number-roadmap">2</div>
+                    <div class="step-icon-roadmap"><i class="fas fa-search"></i></div>
+                    <h3 class="step-title-roadmap">Planning & Research</h3>
+                    <p class="step-content-roadmap">Our experienced team conducts keyword research, analyse, and choose the right platform for campaign-driven results.</p>
+                </div>
+                
+                <div class="step-roadmap">
+                    <div class="step-number-roadmap">3</div>
+                    <div class="step-icon-roadmap"><i class="fas fa-rocket"></i></div>
+                    <h3 class="step-title-roadmap">Implementation & Execution</h3>
+                    <p class="step-content-roadmap">From SEO to paid ads to social campaigns, we put all our experienced successful strategies, creativity, and the latest tools.</p>
+                </div>
+                
+                <div class="step-roadmap">
+                    <div class="step-number-roadmap">4</div>
+                    <div class="step-icon-roadmap"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="step-title-roadmap">Monitoring & Optimization</h3>
+                    <p class="step-content-roadmap">We monitoring and track campaign performance. measure KPIs. Optimize campaigns to maximize ROI.</p>
+                </div>
+                
+                <div class="step-roadmap" >
+                    <div class="step-number-roadmap">5</div>
+                    <div class="step-icon-roadmap"><i class="fas fa-chart-pie"></i></div>
+                    <h3 class="step-title-roadmap">Reporting & Growth</h3>
+                    <p class="step-content-roadmap">We provide measurable insights and recommendations to lift your business to the next level.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-roadmap">
+            <h2 class="cta-roadmap-title" data-aos="fade-up">Ready to Grow with Digital Marketing Services?</h2>
+            <a href="#contact" class="cta-button-roadmap" data-aos="fade-up" data-aos-delay="200">Get Started Today</a>
+        </div>
+    </div>
 
 <!-- NEW DISTRACTION STATS SECTION       -->
         <!-- =================================== -->
@@ -2516,82 +2895,71 @@
             <div class="faq-column">
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>How many team members can I invite?</span>
+                        <span>Why is IT Spaxios Innovation the best digital marketing agency in Chennai?</span>
                         <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
                     </button>
-                    <div class="faq-answer"><p>You can invite up to 10 team members on the Pro plan. For more members, please contact our sales team for an enterprise solution.</p></div>
+                    <div class="faq-answer"><p>At IT Spaxios Innovation, we don’t just run campaigns - we deliver results. Our experts take your business to the next level with creativity, strategies and result-driven techniques. We handled lots of successful brands. </p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>What is the maximum file upload size?</span>
+                        <span>How does a startup benefit from the best digital marketing service?</span>
                         <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
                     </button>
-                    <div class="faq-answer"><p>No more than 2GB. All files in your account must fit your allotted storage space. You can upgrade your storage at any time.</p></div>
+                    <div class="faq-answer"><p>Startups can compete with big fish with result result-driven digital marketing service. Create high-quality potential leads, show their brand to the target audience, increase ROI and scale their business. </p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>How do I reset my password?</span>
+                        <span>How can a digital marketing company help with local SEO in Chennai?</span>
                         <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
                     </button>
-                    <div class="faq-answer"><p>Click "Forgot password" on the login page, and we will send you a secure link to reset your password via email.</p></div>
+                    <div class="faq-answer"><p>If you are providing a location-based service, Local seo will help you to show your service to people who search for “near me” or “in Chennai”. Optimize GMB page, maintain reviews and ratings and focus on location-based keywords.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Can I cancel my subscription?</span>
+                        <span>How do you respond to campaigns that don't work?</span>
                         <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
                     </button>
-                    <div class="faq-answer"><p>Yes, you can cancel your subscription at any time from your account settings. Your plan will remain active until the end of the current billing cycle.</p></div>
+                    <div class="faq-answer"><p>For some businesses, campaigns do not reach expected results at first. That’s why optimization matters. We analyze what went wrong (targeting, ad copy, keywords, etc.), Run A/B testing to improve performance and continuously monitor & adjust until results are achieved.</p></div>
+                </div>
+                </div>
+                <div class="faq-column">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>What is the most effective digital marketing strategy for my business?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>Strategies will change depending on your business type, goals, and audience. For example, if you are running a location-based Local business, then Local SEO and Google My Business will work well. If you are an E-commerce business, then SEO, PPC and Social Media Ads will work. We customize strategies to maximize ROI for your specific business.</p></div>
+                </div>
+            
+            
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>Why is SEO so crucial for my business?</span>
+                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
+                    </button>
+                    <div class="faq-answer"><p>Someone searches related to your service/business on google. If your website does not appear on page 1, your competitors will get those customers. SEO helps you to increase visibility & traffic, build brand authority & trust, reduce ad spend with organic traffic, and generate long-term results.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>Do you provide additional support?</span>
+                        <span>What are the benefits of social media marketing for business?</span>
                         <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
                     </button>
-                    <div class="faq-answer"><p>Absolutely! We offer 24/7 premium support via chat and email for all our Pro and Enterprise plan customers.</p></div>
-                </div>
-            </div>
-            <div class="faq-column">
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>What technologies do you use?</span>
-                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-                    </button>
-                    <div class="faq-answer"><p>We use a modern tech stack including React, Node.js, and Python, but we always choose the best technology for your specific project needs.</p></div>
+                    <div class="faq-answer"><p>People are engaging their 95% time in social media. So that marketing on social media will 100% help you to boost your leads & sales, high ROI, increase brand identity, and more engagement.</p></div>
                 </div>
                 <div class="faq-item">
                     <button class="faq-question">
-                        <span>How long does a project take?</span>
+                        <span>What is a pay-per-click (PPC) campaign?</span>
                         <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
                     </button>
-                    <div class="faq-answer"><p>A typical website project takes 4-6 weeks from start to launch, but this can vary depending on the complexity and scope of the project.</p></div>
+                    <div class="faq-answer"><p>PPC is a digital advertising concept where you will pay only when someone clicks on your ad on platforms(Google, Facebook). Google Ads and Facebook Ads allow businesses to target specific keywords, demographics, and interests.</p></div>
                 </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Will my website be mobile-friendly?</span>
-                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-                    </button>
-                    <div class="faq-answer"><p>Yes, all websites we build are fully responsive, meaning they will look great and function perfectly on all devices.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Do you offer SEO services?</span>
-                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-                    </button>
-                    <div class="faq-answer"><p>Yes, we provide comprehensive SEO services, including on-page optimization, keyword research, and content strategy to help your site rank higher.</p></div>
-                </div>
-                <div class="faq-item">
-                    <button class="faq-question">
-                        <span>Can you redesign my existing site?</span>
-                        <div class="faq-icon"><i class="fa-solid fa-chevron-down"></i></div>
-                    </button>
-                    <div class="faq-answer"><p>Definitely. We specialize in redesigning existing websites to improve their look, feel, performance, and user experience.</p></div>
-                </div>
+                
             </div>
         </div>
     </div>
 </section>
 
-
+  
   <script>
 
 
@@ -2657,8 +3025,8 @@
 
 
 // Intersection Observer for animations
-        const observerOptions = {
-            threshold: 0.3,
+       const observerOptions = {
+            threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
         };
         
@@ -2693,7 +3061,7 @@
         });
         
         // CTA Button hover effects
-        document.querySelectorAll('.cta-button').forEach(button => {
+        document.querySelectorAll('.cta-button-service').forEach(button => {
             button.addEventListener('mouseenter', () => {
                 button.style.transform = 'translateY(-3px) scale(1.02)';
             });
@@ -2702,179 +3070,166 @@
                 button.style.transform = 'translateY(-3px) scale(1)';
             });
         });
-
+        
+        // SMM Slider functionality - UPDATED
+        document.addEventListener('DOMContentLoaded', function() {
+            const slider = document.querySelector('.smm-slider');
+            const slides = document.querySelectorAll('.smm-slide');
+            
+            let currentSlide = 0;
+            const slideCount = slides.length;
+            
+            // Function to update slider position
+            function updateSlider() {
+                slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            }
+            
+            // Next slide function
+            function nextSlide() {
+                currentSlide = (currentSlide + 1) % slideCount;
+                updateSlider();
+            }
+            
+            // Set up auto slide
+            setInterval(nextSlide, 3000);
+        });
 
         // =============================================
         // ---------------digital marketing cards-----------
 
+        const data = {
+            GOOGLE_MY_BUSINESS: {
+                title: "Why Google My Business Page?",
+                desc: "Many businesses want to pull customers to their doorstep. For those, Google My Business profile is key to their business. If someone searches for services and products that you provide in your area, your business profile appears on maps with accurate business details, reviews, updates, directions, your location, working hours, and photos. so they can choose your business with confidence. ",
+                img: "../images/googlemybusiness.webp",
+                benefits: [
+                    "More visibility in local Google searches & Maps results",
+                    "Build trust with authentic reviews & ratings",
+                    "Drive more calls, enquiries, and store visits",
+                    "Upload offers, updates, and photos on Google",
+                    "Stay ahead of local competitors"
+                ],
+                ctaTagline: "Ready to boost your local presence?",
+                ctaButtonText: "Get GMB Profile",
+                imageTagline: "Your business, discovered locally"
+            },
+            EMAIL_MARKETING_SERVICE: {
+                title: "Why Email Marketing Service?",
+                desc: "Email marketing is more than newsletters. It’s cost-effective, measurable, and one of the best ways to drive repeat sales. You can reach your customers with personalized email marketing campaigns, automation, updates and offers, and you can turn customers into one-time buyers to loyal customers.",
+                img: "../images/emailmarketing.webp",
+                benefits: [
+                    "Directly reach your customers in their inbox",
+                    "Build long-term relationships & loyalty",
+                    "Cost-effective with huge ROI",
+                    "Better engagement",
+                    "Increase repeat purchases & sales conversions"
+                ],
+                ctaTagline: "Start connecting with your audience today!",
+                ctaButtonText: "Start Email Marketing",
+                imageTagline: "Direct communication, better results"
+            },
+            LOCAl_SEO_SERVICE: {
+                title: "Why Local SEO Service?",
+                desc: "Show your business in front of nearby people who are searching for services/products that you provide. Whether it’s “best salon in Chennai” or “electronic spare parts in Chennai”, local SEO ensures your business is at the top position. It’s a perfect strategy for small and medium businesses that want to focus on location-based lead generation and increase visibility and traffic.",
+                img: "../images/localseo.webp",
+                benefits: [
+                    "Top rank in location-based searches",
+                    "Attract in-market customers",
+                    "Increase calls, visits and enquiries from locals",
+                    "Strengthen trust with local reviews & citations",
+                    "Compete effectively with bigger brands"
+                ],
+                ctaTagline: "Dominate your local market now!",
+                ctaButtonText: "Get Local SEO",
+                imageTagline: "Be the first choice in local searches"
+            },
+        };
 
-    const data = {
-      GOOGLE_MY_BUSINESS: {
-        title: "Why google my business page?",
-        desc: "Many businesses want to pull customers to their doorstep. For those, Google My Business profile is key to their business. If someone searches for services and products that you provide in your area, your business profile appears on maps with accurate business details, reviews, updates, directions, your location, working hours, and photos. so they can choose your business with confidence. ",
-        img: "../images/googlemybusiness.webp",
-        benefits: [
-         "More visibility in local Google searches & Maps results",
-         "Build trust with authentic reviews & ratings",
-         "Drive more calls, enquiries, and store visits",
-         "Upload offers, updates, and photos on Google",
-         "Stay ahead of local competitors"
+        function updateContent(tab) {
+            // Update tab buttons
+            document.querySelectorAll(".tab-btn").forEach(b => {
+                b.classList.remove("active-btn");
+            });
 
-          
-        ],
-      },
-      EMAIL_MARKETING_SERVICE: {
-        title: "EMAIL MARKETING SERVICE",
-        desc: "Email marketing is more than newsletters. It’s cost-effective, measurable, and one of the best ways to drive repeat sales. You can reach your customers with personalized email marketing campaigns, automation, updates and offers, and you can turn customers into one-time buyers to loyal customers.",
-        img: "../images/emailmarketing.webp",
-        benefits: [
-          "Directly reach your customers in their inbox",
-          "Build long-term relationships & loyalty",
-          "Cost-effective with huge ROI",
-          "Better engagement",
-          "Increase repeat purchases & sales conversions"
+            const activeBtn = [...document.querySelectorAll(".tab-btn")].find(btn => btn.getAttribute("data-tab") === tab);
+            activeBtn.classList.add("active-btn");
 
-        ],
-      },
-      LOCAl_SEO_SERVICE: {
-        title: "LOCAl SEO SERVICE",
-        desc: "Show your business in front of nearby people who are searching for services/products that you provide. Whether it’s “best salon in Chennai” or “electronic spare parts in Chennai”, local SEO ensures your business is at the top position. It’s a perfect strategy for small and medium businesses that want to focus on location-based lead generation and increase visibility and traffic.",
-        img: "../images/localseo.webp",
-        benefits: [
-               "Top rank in location-based searches",
-               "Attract in-market customers",
-               "Increase calls, visits and enquiries from locals",
-               "Strengthen trust with local reviews & citations",
-               "Compete effectively with bigger brands"
+            // Custom headings for each service
+            const benefitHeadings = {
+                'GOOGLE_MY_BUSINESS': 'Advantages of Google My Business',
+                'EMAIL_MARKETING_SERVICE': 'Advantages of Email Marketing',
+                'LOCAl_SEO_SERVICE': 'Advantages of Local SEO'
+            };
 
-        ],
-      },
-      
-    };
+            // Fade out current content
+            document.querySelectorAll('.content-wrapper').forEach(el => {
+                el.classList.remove('active');
+            });
 
-    function updateContent(tab) {
-      const fadeClass = "animate-fade-in-up";
+            // After a brief delay, update content and fade in
+            setTimeout(() => {
+                document.getElementById("leftContent").innerHTML = `
+                    <div class="description-box">
+                        <h2 class="text-2xl font-bold mb-4 text-[#0D2A81]">${data[tab].title}</h2>
+                        <p class="text-gray-600">${data[tab].desc}</p>
+                    </div>
+                `;
+                
+                document.getElementById("centerContent").innerHTML = `
+                    <div class="flex flex-col justify-center items-center">
+                        <img src="${data[tab].img}" alt="${tab} Image" class="w-48 h-48 object-contain">
+                        <p class="images-tagline mt-2">${data[tab].imageTagline}</p>
+                    </div>
+                `;
+                
+                const benefitsContainer = document.querySelector('.benefits-container');
+                benefitsContainer.innerHTML = `
+                    <h3 class="text-xl font-semibold mb-4 text-[#0D2A81]">${benefitHeadings[tab]}</h3>
+                    <div class="space-y-3">
+                        ${data[tab].benefits.map(benefit => `
+                            <div class="benefit-item">${benefit}</div>
+                        `).join("")}
+                    </div>
+                `;
+                
+                const ctaSection = document.querySelector('.cta-section-card');
+                ctaSection.innerHTML = `
+                    <p class="cta-tagline-card">${data[tab].ctaTagline}</p>
+                    <button class="cta-button-card">${data[tab].ctaButtonText}</button>
+                `;
+                
+                // Fade in new content
+                document.querySelectorAll('.content-wrapper').forEach(el => {
+                    setTimeout(() => {
+                        el.classList.add('active');
+                    }, 50);
+                });
+            }, 300);
+        }
 
-      document.querySelectorAll(".tab-btn").forEach(b => {
-        b.classList.remove("active-btn");
-      });
+        // Tab button click handler
+        document.querySelectorAll(".tab-btn").forEach(btn => {
+            btn.addEventListener("click", () => {
+                updateContent(btn.getAttribute("data-tab"));
+            });
+        });
 
-      const activeBtn = [...document.querySelectorAll(".tab-btn")].find(btn => btn.getAttribute("data-tab") === tab);
-      activeBtn.classList.add("active-btn");
-
-      document.getElementById("leftContent").innerHTML = `
-        <div class="${fadeClass} description-box">
-          <h2 class="text-2xl font-bold mb-4 text-[#0D2A81]">${data[tab].title}</h2>
-          <p class="text-gray-600">${data[tab].desc}</p>
-        </div>
-      `;
-      
-      document.getElementById("centerContent").innerHTML = `
-        <div class="${fadeClass} flex justify-center items-center">
-          <img src="${data[tab].img}" alt="${tab} Image" class="w-48 h-48 object-contain transition-transform duration-300 hover:scale-110">
-        </div>
-      `;
-      
-      document.getElementById("rightContent").innerHTML = `
-        <div class="${fadeClass}">
-          <div class="benefits-container">
-            <h3 class="text-xl font-semibold mb-4 text-[#0D2A81]">Key Benefits</h3>
-            <div class="space-y-3">
-              ${data[tab].benefits.map(benefit => `
-                <div class="benefit-item">${benefit}</div>
-              `).join("")}
-            </div>
-          </div>
-        </div>
-      `;
-    }
-
-    // Tab button click handler
-    document.querySelectorAll(".tab-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        updateContent(btn.getAttribute("data-tab"));
-      });
-    });
-
-    // Default selection on load
-    window.addEventListener("DOMContentLoaded", () => {
-      updateContent("GOOGLE_MY_BUSINESS");
-    });
-
-
+        // Default selection on load
+        window.addEventListener("DOMContentLoaded", () => {
+            updateContent("GOOGLE_MY_BUSINESS");
+            
+            // Fade in initial content after a brief delay
+            setTimeout(() => {
+                document.querySelectorAll('.content-wrapper').forEach(el => {
+                    el.classList.add('active');
+                });
+            }, 100);
+        });
+        
 
     // ======================================================== //
 // FINAL SCROLL-DRIVEN ZIGZAG LOGIC (CONTENT ONLY)          //
 // ======================================================== //
-const centerTimelineContainer = document.getElementById('center-timeline-container');
- 
-if (centerTimelineContainer) {
-    const marker = document.getElementById('timeline-marker');
-    const timelineItems = document.querySelectorAll('.timeline-item');
-    let revealedCount = 0;
-    let isScrolling = false;
- 
-    const revealContent = () => {
-        if (revealedCount >= timelineItems.length) {
-            window.removeEventListener('wheel', handleScroll);
-            return;
-        }
- 
-        // Reveal content for the next two items
-        const nextItem1 = timelineItems[revealedCount];
-        const nextItem2 = timelineItems[revealedCount + 1];
- 
-        if (nextItem1) {
-            nextItem1.classList.add('is-visible');
-        }
-        if (nextItem2) {
-            nextItem2.classList.add('is-visible');
-        }
- 
-        // Move marker to the latest revealed item's position
-        const targetItem = nextItem2 || nextItem1;
-        if (targetItem) {
-            const newTop = targetItem.offsetTop + (targetItem.offsetHeight / 2);
-            marker.style.top = `${newTop}px`;
-        }
-       
-        revealedCount += 2;
-    };
- 
-    const handleScroll = (event) => {
-        if (event.deltaY < 0) return; // Only scroll down
-       
-        if (!isScrolling) {
-            isScrolling = true;
-            revealContent();
-            setTimeout(() => {
-                isScrolling = false;
-            }, 1000); // 1-second cooldown between scrolls
-        }
-    };
- 
-    const observer = new IntersectionObserver((entries) => {
-        if (entries[0].isIntersecting) {
-            window.addEventListener('wheel', handleScroll);
-        } else {
-            window.removeEventListener('wheel', handleScroll);
-        }
-    }, { threshold: 0.1 });
- 
-    // --- Initial Setup ---
-    // Reveal the first item's CONTENT by default
-    if (timelineItems[0]) {
-        timelineItems[0].classList.add('is-visible');
-        revealedCount = 1;
- 
-        // Position marker at the first item
-        const firstItemTop = timelineItems[0].offsetTop + (timelineItems[0].offsetHeight / 2);
-        marker.style.top = `${firstItemTop}px`;
-    }
- 
-    // Start observing the container
-    observer.observe(centerTimelineContainer);
-}
 
 
 
@@ -3089,8 +3444,10 @@ if (faqItemsFinal.length > 0) {
         });
       }
 
+    //   ===========================================
+    // ------------ROAPMAP--------------------
 
-
+      
   </script>
 </body>
 </html>
