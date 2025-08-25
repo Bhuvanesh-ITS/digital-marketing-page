@@ -1588,7 +1588,7 @@
         /* ================================== */
 
 
-        .why-different-section {
+         .why-different-section {
             padding: 80px 0;
             background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 50%, #f1f3f4 100%);
             position: relative;
@@ -1632,7 +1632,7 @@
             border-radius: 2px;
         }
 
-        .section-title-why {
+        .section-title {
             font-size: 2.5rem;
             font-weight: bold;
             color: #0d2a81;
@@ -1716,13 +1716,13 @@
             font-size: 1.5rem;
             color: #0d2a81;
             font-weight: 600;
-            margin-bottom: 40px;
-            
+            margin-bottom: 20px;
+            margin-top: -20px;
         }
 
         /* Feature Points */
         .feature-points {
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .feature-point {
@@ -1730,8 +1730,6 @@
             align-items: flex-start;
             gap: 20px;
             padding: 15px 0;
-            margin-bottom: 10px;
-            
             
         }
 
@@ -1747,7 +1745,7 @@
             color: white;
             flex-shrink: 0;
             box-shadow: 0 8px 20px rgba(36, 238, 245, 0.3);
-            margin-top: -9px;
+            margin-top: 10px;
         }
 
         .feature-content h3 {
@@ -1866,7 +1864,7 @@
         }
 
         /* Desktop-only animations */
-        @media (max-width: 769px) {
+        @media (min-width: 769px) {
             .section-subtitle {
                 opacity: 0;
                 transform: translateY(-30px);
@@ -1879,14 +1877,13 @@
                 transition-delay: 0.2s;
             }
 
-            .section-title-why {
+            .section-title {
                 opacity: 0;
                 transform: translateY(-30px);
                 transition: all 0.8s ease;
-                font-size: 1.5rem;
             }
 
-            .section-title-why.animate {
+            .section-title.animate {
                 opacity: 1;
                 transform: translateY(0);
                 transition-delay: 0.4s;
@@ -1999,8 +1996,8 @@
                 height: 280px;
             }
 
-            .section-title-why {
-                font-size: 1.8rem;
+            .section-title {
+                font-size: 2rem;
                 text-align: center;
             }
 
@@ -2014,7 +2011,6 @@
                 margin-bottom: -60px;
             }
         }
-
    
     /* ======================================================== */
 /* FINAL SCROLL-DRIVEN ZIGZAG WORKFLOW STYLES (CORRECTED)   */
@@ -3205,7 +3201,7 @@
 
  // Intersection Observer for scroll-triggered animations
        
-        if (window.innerWidth > 768) {
+         if (window.innerWidth > 768) {
             const observerOptions = {
                 root: null,
                 rootMargin: '0px',
@@ -3220,7 +3216,7 @@
                         
                         // Animate header elements
                         const subtitle = section.querySelector('.section-subtitle');
-                        const title = section.querySelector('.section-title-why');
+                        const title = section.querySelector('.section-title');
                         const description = section.querySelector('.section-description');
                         
                         if (subtitle) subtitle.classList.add('animate');
@@ -3264,7 +3260,7 @@
                 if (section) {
                     const elementsToAnimate = [
                         '.section-subtitle',
-                        '.section-title-why',
+                        '.section-title',
                         '.section-description',
                         '.visual-content',
                         '.text-content',
@@ -3278,7 +3274,7 @@
                             element.classList.add('animate');
                         });
                     });
-                }
+                }6
             });
         }
 
