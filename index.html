@@ -50,7 +50,7 @@
    
     
     /* Hero Section Styles */
-     .hero-section {
+      .hero-section {
             width: 100%;
             background: whitesmoke;
             padding: 60px 5% 40px 5%;
@@ -63,28 +63,23 @@
         }
 
         /* --- MOBILE FIRST APPROACH --- */
-        /* Default styles are for mobile view (below 992px) */
-
         .hero-container {
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             display: flex;
-            flex-direction: column; /* Stacks items vertically on mobile */
+            flex-direction: column;
             align-items: center;
             gap: 30px;
             position: relative;
             z-index: 2;
         }
 
-        .hero-text { 
-            text-align: center; /* Center text on mobile */
-            order: 1; /* First item on mobile */
+        .hero-text {
+            text-align: center;
+            order: 1;
             width: 100%;
-            
         }
-
-        
 
         .hero-text h1 {
             font-size: 32px;
@@ -94,20 +89,19 @@
             margin-bottom: 20px;
         }
 
-        .hero-text span{
+        .hero-text h1 span {
             color: #1abec4;
         }
 
-        .hero-text p { 
-            font-size: 16px; 
-            color: #555e68; 
-            line-height: 1.8; 
-            
+        .hero-text p {
+            font-size: 16px;
+            color: #555e68;
+            line-height: 1.8;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
         }
-        
+
         .hero-text h1 p {
             font-size: 18px;
             font-weight: normal;
@@ -116,7 +110,7 @@
             line-height: 1.5;
             margin-bottom: 0;
         }
-        
+
         .hero-image-container {
             width: 80%;
             min-height: 300px;
@@ -126,36 +120,36 @@
             background-position: center;
             position: relative;
             z-index: 3;
-            order: 2; /* Second item on mobile */
+            order: 2;
+            border-radius: 10px;
         }
-        
-        .hero-buttons { 
-            display: flex; 
-            gap: 20px; 
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
             width: 100%;
-            margin-top: -10px ;
-            order: 3; /* Third item on mobile */
+            margin-top: -10px;
+            order: 3;
         }
 
-        .hero-btn { 
-            padding: 14px 35px; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            color: white; 
-            background-image: linear-gradient(to bottom, #24eef5, #1ba6b3); 
-            border: none; 
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-            transition: all 0.3s ease; 
+        .hero-btn {
+            padding: 14px 35px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            background-image: linear-gradient(to bottom, #24eef5, #1ba6b3);
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
             font-size: 16px;
-            
         }
 
-        .hero-btn:hover { 
-            transform: translateY(-3px); 
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
         }
 
         .hero-irregular-vector {
@@ -171,52 +165,44 @@
             background-repeat: no-repeat;
             background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='%23D0D8E9' d='M48.2,-64.8C62.2,-55.4,73.1,-41.2,78.2,-25.1C83.3,-9,82.6,8.9,76.5,23.6C70.4,38.3,58.9,49.8,45.8,58.2C32.7,66.6,18.1,72,-0.2,72.2C-18.4,72.4,-36.8,67.4,-49.5,57.1C-62.2,46.8,-69.2,31.2,-72.2,14.7C-75.2,-1.8,-74.2,-19.2,-66.9,-33.4C-59.6,-47.6,-46,-58.5,-31.6,-66.1C-17.3,-73.7,-2.1,-78,13.6,-76.1C29.3,-74.2,34.1,-74.1,48.2,-64.8Z' transform='translate(100 100)' /%3e%3c/svg%3e");
         }
-        
-        /* --- DESKTOP STYLES --- */
-        /* Changes apply only for screens wider than 992px */
 
+        /* --- DESKTOP STYLES --- */
         @media (min-width: 992px) {
             .hero-container {
-                display: grid; /* Using CSS Grid for desktop layout */
-                grid-template-columns: 1.5fr 1fr; /* Left column (text) is 1.5 times wider than right (image) */
-                grid-template-rows: auto auto; /* Two rows for text and buttons */
+                display: grid;
+                grid-template-columns: 1.5fr 1fr;
+                grid-template-rows: auto auto;
                 align-items: start;
-                gap: 20px 40px; /* 20px row gap, 40px column gap */
+                gap: 20px 40px;
             }
-
             .hero-text {
-                grid-column: 1 / 2; /* Place in the first column */
-                grid-row: 1 / 2;    /* Place in the first row */
-                text-align: left;   /* Align text to left on desktop */
-                order: unset;       /* Reset mobile order */
+                grid-column: 1 / 2;
+                grid-row: 1 / 2;
+                text-align: left;
+                order: unset;
             }
-
             .hero-image-container {
-                grid-column: 2 / 3; /* Place in the second column */
-                grid-row: 1 / 3;    /* Span across both rows (1st and 2nd) */
+                grid-column: 2 / 3;
+                grid-row: 1 / 3;
                 width: 100%;
                 min-height: 300px;
-                order: unset;       /* Reset mobile order */
+                order: unset;
                 margin-top: 10px;
-                margin-bottom: 60px;   /* Reduced top margin for better alignment */
+                margin-bottom: 60px;
             }
-
             .hero-buttons {
-                grid-column: 1 / 2; /* Place in the first column */
-                grid-row: 2 / 3;    /* Place in the second row, below text */
-                justify-content: flex-start; /* Align buttons to the left */
+                grid-column: 1 / 2;
+                grid-row: 2 / 3;
+                justify-content: flex-start;
                 width: auto;
-                order: unset;       /* Reset mobile order */
-                margin-top: 10px; 
-                margin-bottom: 40px;  /* Reduced top margin for better spacing */
+                order: unset;
+                margin-top: 10px;
+                margin-bottom: 40px;
             }
-            
-            /* Fix for paragraph alignment inside h1 */
             .hero-text h1 p {
                 text-align: left;
                 margin-left: 0;
             }
-
             .hero-text p {
                 text-align: left;
                 margin-left: 0;
@@ -229,32 +215,39 @@
                 font-size: 32px;
                 text-align: left;
             }
-            .hero-text p{
-                  text-align: left;
+            .hero-text p {
+                text-align: left;
             }
-
             .hero-irregular-vector {
                 width: 400px;
                 height: 400px;
             }
             .hero-container {
-                gap: 20px; /* Reduced gap on medium screens */
+                gap: 20px;
             }
-
             .hero-text h1 p {
                 text-align: left;
                 margin-left: 0;
             }
-
             .hero-text p {
                 text-align: left;
                 margin-left: 0;
             }
-
             .hero-buttons {
                 margin-bottom: 40px;
             }
             
+            /* Disable animation on mobile */
+            .hero-text .word-animation span {
+                animation: none !important;
+                opacity: 1 !important;
+                transform: none !important;
+                color: inherit !important;
+            }
+            
+            .hero-text .word-animation {
+                display: inline;
+            }
         }
 
         @media (max-width: 480px) {
@@ -267,7 +260,7 @@
                 text-align: left;
             }
             .hero-buttons {
-                flex-direction: column; 
+                flex-direction: column;
                 align-items: center;
                 gap: 15px;
                 margin-bottom: 40px;
@@ -280,214 +273,271 @@
                 font-size: 15px;
             }
             .hero-container {
-                gap: 15px; /* Further reduced gap on small screens */
+                gap: 15px;
             }
-
-            .hero-image-container{
+            .hero-image-container {
                 margin-top: -40px;
             }
         }
 
+        /* New Animation Styles */
+        @keyframes pop-up-wave {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+                color: #1abec4;
+            }
+            25% {
+                transform: translateY(-10px);
+                opacity: 1;
+                color: #1abec4;
+            }
+        }
+
+        .hero-text .word-animation {
+            display: inline-block;
+            color: #1abec4;
+        }
+
+        .hero-text .word-animation span {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(10px);
+            animation-name: pop-up-wave;
+            animation-duration: 0.8s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+            animation-fill-mode: forwards;
+            animation-delay: var(--delay);
+        }
 
      /* =================responsive style for about section=========== */
 
      /* About Section Styles - Simplified */
 
 
-      .section-title-why {
+      .section-title {
       color: #0D2A81;
       font-weight: 700;
       margin-bottom: 30px;
     }
 
-    .section-title-why span{
+    .section-title span{
         color: #1abec4;
     }
 
     .about-section {
-      width: 100%;
-      background-color: white;
-      padding: 80px 5%;
-      position: relative;
-      overflow: hidden;
-    }
-    
-    .about-container { 
-      max-width: 1200px; 
-      width: 100%; 
-      margin: 0 auto; 
-      display: flex; 
-      flex-direction: column; 
-      align-items: center; 
-      position: relative;
-      z-index: 2;
-    }
-    
-    .section-headline {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    
-    .section-headline h2 { 
-      font-size: 38px; 
-      color: #0d2a81; 
-      font-weight: 400; 
-      line-height: 1.4; 
-    }
-    
-    .section-headline h2 strong { 
-      font-weight: 700; 
-    }
-    
-    /* MODIFIED: About Content Layout restored to 2 columns */
-    .about-content { 
-      display: flex; 
-      align-items: center;
-      gap: 60px;
-      width: 100%; 
-    }
-    
-    /* ADDED: About Image Container for the left column */
-    .about-image-container {
-        flex: 1 1 45%;
-        min-height: 400px;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        position: relative;
-    }
-
-    /* NEW: PNG image that appears in front of the irregular shape */
-    .about-png-image {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-image: url('../images/female-removebg-preview.png');
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        z-index: 2;
-    }
-
-    /* MODIFIED: Irregular Vector Shape now behind the PNG */
-    .about-irregular-vector {
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-        z-index: 1;
-        /* New Irregular Vector for About Section */
-        background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='%23D1E8F8' d='M57.9,-54.6C72.5,-39.9,80.1,-19.9,78.2,-1.8C76.2,16.2,64.7,32.4,50.1,45.4C35.5,58.3,17.8,68,2.1,65.9C-13.5,63.9,-27,50.1,-41.8,36.9C-56.6,23.7,-72.7,11.8,-75.9,-2.7C-79.1,-17.2,-69.5,-34.4,-56,-49.3C-42.5,-64.2,-21.2,-76.8,-1.2,-75.7C18.9,-74.7,38.2,-69.2,57.9,-54.6Z' transform='translate(100 100)' /%3e%3c/svg%3e");
-    }
-
-    /* MODIFIED: About Text Styling for the right column */
-    .about-text { 
-      flex: 1 1 55%;
-      text-align: left;
-      margin-top: -70px;
-    }
-    
-    .about-text p { 
-      font-size: 16px; 
-      color: #555e68; 
-      line-height: 1.8; 
-      
-    }
-    
-    .section-cta { 
-      text-align: center; 
-      margin-top: 10px; 
-    }
-    
-    .section-cta .btn-primary { 
-      padding: 14px 35px; 
-      border-radius: 8px;  
-      text-decoration: none; 
-      font-weight: bold; 
-      color: white; 
-      background-image: linear-gradient(to bottom, #24eef5, #1ba6b3); 
-      border: none; 
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-      transition: all 0.3s ease; 
-      display: inline-block; 
-      white-space: nowrap;
-      
-    }
-    
-    .section-cta .btn-primary:hover { 
-      transform: translateY(-3px); 
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25); 
-    }
-    
-
-      @media (max-width: 1200px) {
-     .about-image-container {
-        min-height: 350px;
-        
-      }
-    }
-
-    @media (max-width: 992px) {
-      
-      .about-content {
-        flex-direction: column;
-      }
-      
-      
-
-      .about-image-container {
-          width: 70%;
-          min-height: 280px;
-          margin-bottom: 30px;
-          flex-basis: auto;
-      }
-      
-      .about-text {
-        text-align: left;
-      }
-      
-      
-    }
-    
-    @media (max-width: 768px) {
-      
-      
-      .section-headline h2 {
-        font-size: 28px;
-      }
-      
-      .about-text p {
-        font-size: 15px;
-      }
-
-      
-    }
-
-     @media (max-width: 480px) {
-        .about-image-container {
-             margin-bottom: -50px;
-             margin-top: -20px;
+            width: 100%;
+            background-color: white;
+            padding: 80px 5%;
+            position: relative;
+            overflow: hidden;
         }
 
-        .section-cta {
-            margin-top: 40px;
+        .about-container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-headline {
+            text-align: center;
+            margin-bottom: 40px;
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .section-headline h2 {
+            font-size: 38px;
+            color: #0d2a81;
+            font-weight: 400;
+            line-height: 1.4;
+        }
+
+        .headline-line {
+            display: block;
+            transition: transform 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            will-change: transform;
+        }
+
+        .section-headline h2 strong {
+            font-weight: 700;
+        }
+
+        /* MODIFIED: About Content Layout restored to 2 columns */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+            width: 100%;
+        }
+
+        /* ADDED: About Image Container for the left column */
+        .about-image-container {
+            flex: 1 1 45%;
+            min-height: 400px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            position: relative;
+        }
+
+        /* NEW: PNG image that appears in front of the irregular shape */
+        .about-png-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('../images/aboutsection.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 2;
+        }
+
+        /* MODIFIED: Irregular Vector Shape now behind the PNG */
+        .about-irregular-vector {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+            z-index: 1;
+            /* New Irregular Vector for About Section */
+            background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3e%3cpath fill='%23D1E8F8' d='M57.9,-54.6C72.5,-39.9,80.1,-19.9,78.2,-1.8C76.2,16.2,64.7,32.4,50.1,45.4C35.5,58.3,17.8,68,2.1,65.9C-13.5,63.9,-27,50.1,-41.8,36.9C-56.6,23.7,-72.7,11.8,-75.9,-2.7C-79.1,-17.2,-69.5,-34.4,-56,-49.3C-42.5,-64.2,-21.2,-76.8,-1.2,-75.7C18.9,-74.7,38.2,-69.2,57.9,-54.6Z' transform='translate(100 100)' /%3e%3c/svg%3e");
+        }
+
+        /* MODIFIED: About Text Styling for the right column */
+        .about-text {
+            flex: 1 1 55%;
+            text-align: left;
+            margin-top: -70px;
         }
 
         .about-text p {
-        font-size: 15px;
-        margin-top: 30px;
-      }
+            font-size: 16px;
+            color: #555e68;
+            line-height: 1.8;
+        }
 
-        
-     }
+        .highlight-theme {
+            color: #1ba6b3;
+        }
 
+        .section-cta {
+            text-align: center;
+            margin-top: 10px;
+        }
 
+        .section-cta .btn-primary {
+            padding: 14px 35px;
+            border-radius: 8px;  
+            text-decoration: none;
+            font-weight: bold;
+            color: white;
+            background-image: linear-gradient(to bottom, #24eef5, #1ba6b3);
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: inline-block;
+            white-space: nowrap;
+        }
 
+        .section-cta .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+        }
 
+        /* Desktop animation */
+        @media (min-width: 993px) {
+            .headline-line {
+                opacity: 1;
+                visibility: visible;
+            }
+            
+            .line-1 {
+                transform: translateX(-20%);
+                opacity: 0.7;
+            }
+            
+            .line-2 {
+                transform: translateX(20%);
+                opacity: 0.7;
+            }
+            
+            .line-1.animate {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            
+            .line-2.animate {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
 
+        @media (max-width: 1200px) {
+            .about-image-container {
+                min-height: 350px;
+            }
+        }
 
+        @media (max-width: 992px) {
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image-container {
+                width: 70%;
+                min-height: 280px;
+                margin-bottom: 30px;
+                flex-basis: auto;
+            }
+
+            .about-text {
+                text-align: left;
+            }
+            
+            .headline-line {
+                transform: none !important;
+                opacity: 1 !important;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section-headline h2 {
+                font-size: 28px;
+            }
+
+            .about-text p {
+                font-size: 15px;
+            }
+
+            .section-cta {
+                margin-top: 40px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .about-image-container {
+                margin-bottom: -50px;
+                margin-top: -20px;
+            }
+
+            .section-cta {
+                margin-top: 40px;
+            }
+
+            .about-text p {
+                font-size: 15px;
+                margin-top: 30px;
+            }
+        }
 
      /* <!-- -------------OUR DIGITAL MARKETING-------------
     --------------SERVICES SECTION-------------- --> */
@@ -1990,6 +2040,10 @@
             }
         }
 
+        .section-title{
+            font-size: 2rem;
+        }
+
         @media (max-width: 480px) {
             .main-visual {
                 width: 280px;
@@ -1997,7 +2051,7 @@
             }
 
             .section-title {
-                font-size: 2rem;
+                font-size: 1.8rem;
                 text-align: center;
             }
 
@@ -2518,8 +2572,6 @@
     color: white;
 }
 
-
-
 /* ======================================================== */
 /* FINAL PROFESSIONAL FAQ SECTION (CORRECT ICONS)           */
 /* ======================================================== */
@@ -2619,20 +2671,27 @@
   </style>
   
 </head>
-
+<body>
  <section class="hero-section">
         <div class="hero-irregular-vector"></div>
-        
+
         <div class="hero-container">
             <div class="hero-text">
-                <h1> Leading <span> Result-driven <br>digital marketing Company</span><br>in chennai <p><b class="highlight-theme">Digital presence / Boost traffic / More conversion</b></p></h1>
+                <h1>
+                    Leading <span>
+                        <span class="word-animation">Result-driven</span> 
+                        <span class="word-animation">digital</span><br> <span class="word-animation">marketing</span> <span class="word-animation">Company</span>
+                    </span>
+                    in chennai
+                    <p><b>Digital presence / Boost traffic / More conversion</b></p>
+                </h1>
                 <p>
-                  We deliver the best digital marketing service for your business. By collaborating with us, Increase your businesses' Digital presence, Boost your sales and Multiply ROI.
+                    We deliver the best digital marketing service for your business. By collaborating with us, Increase your businesses' Digital presence, Boost your sales and Multiply ROI.
                 </p>
             </div>
-            
+
             <div class="hero-image-container"></div>
-            
+
             <div class="hero-buttons">
                 <a href="#" class="hero-btn">Get Free Audit</a>
                 <a href="#" class="hero-btn">Book Consultation</a>
@@ -2640,31 +2699,35 @@
         </div>
     </section>
 
+
   <section class="about-section">
-    <div class="about-container">
-      <div class="section-headline">
-        <h2><strong>Why Digital Marketing </strong> is a perfect solution<br> for your business?</h2>
-      </div>
-      <div class="about-content">
-        <div class="about-image-container">
-          <div class="about-png-image"></div>
-          <div class="about-irregular-vector"></div>
+        <div class="about-container">
+            <div class="section-headline">
+                <h2>
+                    <span class="headline-line line-1"><strong>Why Digital Marketing </strong> is a perfect solution</span>
+                    <span class="headline-line line-2">for your business?</span>
+                </h2>
+            </div>
+            <div class="about-content">
+                <div class="about-image-container">
+                    <div class="about-png-image"></div>
+                    <div class="about-irregular-vector"></div>
+                </div>
+                <div class="about-text">
+                    <p>
+                        Struggle to generate leads? Then you are lagging in digital presence. In the current competitive generation, even an offline store needs digital marketing support to pull their audience/visitors. People are engaging in the digital world.
+                    </p>
+                    <p>
+                        <br>
+                        <strong class="highlight-theme">You can't grow your business only with pamphlets, posters and offline marketing tricks.</strong> Your audience are roaming like a fish in the ocean. Only a great fisherman can catch those fishes not with hooks, with equipped fishing nets and tricks - <strong class="highlight-theme">"Digital Marketing"</strong>
+                    </p>
+                </div>
+            </div>
+            <div class="section-cta">
+                <a href="#" class="btn-primary"><b>Discover Our Strategies ></b></a>
+            </div>
         </div>
-        <div class="about-text">
-          <p>
-            Struggle to generate leads? Then you are lagging in digital presence. In the current competitive generation, even an offline store needs digital marketing support to pull their audience/visitors. People are engaging in the digital world. 
-          </p>
-          <p>
-            <br>
-             <strong class="highlight-theme">You can't grow your business only with pamphlets, posters and offline marketing tricks.</strong> Your audience are roaming like a fish in the ocean. Only a great fisherman can catch those fishes not with hooks, with equipped fishing nets and tricks - <strong class="highlight-theme">"Digital Marketing"</strong>
-          </p>
-        </div>
-      </div>
-      <div class="section-cta">
-        <a href="#" class="btn-primary"><b>Discover Our Strategies ></b></a>
-      </div>
-    </div>
-  </section>
+    </section>
 
 
 
@@ -2678,7 +2741,7 @@
             <!-- Header -->
             <div class="section-header">
                 <div class="section-subtitle">About IT Spaxios Innovation</div>
-                <h2 class="section-title-why"><span>Why IT Spaxios Innovation </span> Different from Other Digital Marketing Agencies in Chennai?</h2>
+                <h2 class="section-title"><span>Why IT Spaxios Innovation </span> Different from Other Digital Marketing Agencies in Chennai?</h2>
                 <p class="section-description">
                     You can find a normal digital marketing agency on every corner, but <span class="highlight-text">only very few agencies like us can deliver better results for your business.</span> We don't just run campaigns like others; we are result-driven <span class="highlight-text">digital marketing service providers</span>. With an experienced digital marketing team, we focus on generating potential leads and conversions, increasing brand visibility and multiplying ROI.
                 </p>
@@ -3083,38 +3146,37 @@
 <!-- NEW DISTRACTION STATS SECTION       -->
         <!-- =================================== -->
         <section class="distraction-stats-section">
-            <div class="distraction-stats-container">
-                <div class="distraction-stat-item">
-                    <i class="fa-regular fa-face-smile"></i>
-                    <div class="distraction-stat-text">
-                        <h3 class="distraction-counter" data-target="54">0</h3>
-                        <p>Happy Clients</p>
-                    </div>
-                </div>
-                <div class="distraction-stat-item">
-                    <i class="fa-solid fa-print"></i>
-                    <div class="distraction-stat-text">
-                        <h3 class="distraction-counter" data-target="73">0</h3>
-                        <p>Projects completed</p>
-                    </div>
-                </div>
-                <div class="distraction-stat-item">
-                    <i class="fa-solid fa-headset"></i>
-                    <div class="distraction-stat-text">
-                       
-                        <p>24/7<br>Technical Support</p>
-                    </div>
-                </div>
-                <div class="distraction-stat-item">
-                    <i class="fa-solid fa-users-gear"></i>
-                    <div class="distraction-stat-text">
-                        
-                        <p>7+<br> of experience</p>
-                    </div>
-                </div>
+    <div class="distraction-stats-container">
+        <div class="distraction-stat-item">
+            <i class="fa-regular fa-face-smile"></i>
+            <div class="distraction-stat-text">
+                <h3 class="distraction-counter" data-target="54">0</h3>
+                <p>Happy Clients</p>
             </div>
-        </section>
-
+        </div>
+        <div class="distraction-stat-item">
+            <i class="fa-solid fa-print"></i>
+            <div class="distraction-stat-text">
+                <h3 class="distraction-counter" data-target="73">0</h3>
+                <p>Projects completed</p>
+            </div>
+        </div>
+        <div class="distraction-stat-item">
+            <i class="fa-solid fa-headset"></i>
+            <div class="distraction-stat-text">
+                <h3>24/7</h3>
+                <p>Technical Support</p>
+            </div>
+        </div>
+        <div class="distraction-stat-item">
+            <i class="fa-solid fa-users-gear"></i>
+            <div class="distraction-stat-text">
+                <h3>7+</h3>
+                <p>of experience</p>
+            </div>
+        </div>
+    </div>
+</section>
 
         <!---Faq Section-->
 <!--------------------------------------->
@@ -3193,6 +3255,97 @@
 
   
   <script>
+
+
+// JavaScript Code for 1st section
+       document.addEventListener("DOMContentLoaded", function() {
+            const wordsToAnimate = document.querySelectorAll('.word-animation');
+            const totalDuration = 0.7;
+            
+            // Check if screen width is greater than 768px (tablet/desktop)
+            if (window.innerWidth > 768) {
+                wordsToAnimate.forEach(wordElement => {
+                    const text = wordElement.textContent.trim();
+                    wordElement.textContent = '';
+                    const letters = text.split('');
+                    const letterCount = letters.length;
+
+                    letters.forEach((letter, index) => {
+                        const span = document.createElement('span');
+                        span.textContent = letter === ' ' ? '\u00A0' : letter;
+                        const delay = (index / letterCount) * totalDuration;
+                        span.style.setProperty('--delay', `${delay}s`);
+                        wordElement.appendChild(span);
+                    });
+                });
+            }
+            
+            // Handle window resize
+            window.addEventListener('resize', function() {
+                const wordsToAnimate = document.querySelectorAll('.word-animation');
+                
+                if (window.innerWidth <= 768) {
+                    // Remove animation spans on mobile
+                    wordsToAnimate.forEach(wordElement => {
+                        if (wordElement.querySelector('span')) {
+                            wordElement.textContent = wordElement.textContent;
+                        }
+                    });
+                }
+            });
+        });
+
+
+
+
+        //script for second  section  ---about section
+
+
+         document.addEventListener('DOMContentLoaded', function() {
+            const headlineLines = document.querySelectorAll('.headline-line');
+            const aboutSection = document.querySelector('.about-section');
+            
+            // Function to check if element is in viewport
+            function isInViewport(element) {
+                const rect = element.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Function to handle scroll event with throttling
+            let scrollTimeout;
+            function handleScroll() {
+                if (scrollTimeout) {
+                    cancelAnimationFrame(scrollTimeout);
+                }
+                
+                scrollTimeout = requestAnimationFrame(function() {
+                    if (isInViewport(aboutSection)) {
+                        headlineLines.forEach(line => {
+                            line.classList.add('animate');
+                        });
+                        
+                        // Remove event listener after animation is triggered
+                        window.removeEventListener('scroll', handleScroll);
+                    }
+                });
+            }
+            
+            // Only add the scroll effect on desktop screens
+            if (window.innerWidth > 992) {
+                window.addEventListener('scroll', handleScroll);
+                
+                // Check on initial load in case section is already in view
+                handleScroll();
+            } else {
+                // On mobile, show the text immediately without animation
+                headlineLines.forEach(line => {
+                    line.classList.add('animate');
+                });
+            }
+        });
 
 
 // ===================================================
@@ -3568,53 +3721,52 @@
 
 
 // --- Distraction Stats Counter Logic (Runs every time it's visible) ---
-    const distractionSection = document.querySelector('.distraction-stats-section');
- 
-    if (distractionSection) {
-        const distractionCounters = distractionSection.querySelectorAll('.distraction-counter');
- 
-        const startDistractionCounter = (counter) => {
-            const target = +counter.getAttribute('data-target');
-            counter.innerText = '0'; // Reset to 0
-           
-            const duration = 2000; // Animation duration
-            const startTime = performance.now();
-           
-            const update = (currentTime) => {
-                const elapsedTime = currentTime - startTime;
-                const progress = Math.min(elapsedTime / duration, 1);
-                const currentCount = Math.floor(progress * target);
-               
-                counter.innerText = currentCount.toLocaleString(); // Adds commas to large numbers
-               
-                if (progress < 1) {
-                    requestAnimationFrame(update);
-                } else {
-                    counter.innerText = target.toLocaleString();
-                }
-            };
-            requestAnimationFrame(update);
-        };
- 
-        const distractionObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // When visible, start animation
-                    distractionCounters.forEach(startDistractionCounter);
-                } else {
-                    // When not visible, reset to 0
-                    distractionCounters.forEach(counter => {
-                        counter.innerText = '0';
-                    });
-                }
-            });
-        }, {
-            threshold: 0.8 // Trigger when 80% of the element is in view
-        });
- 
-        distractionObserver.observe(distractionSection);
-    }
+   const distractionSection = document.querySelector('.distraction-stats-section');
 
+if (distractionSection) {
+    const distractionCounters = distractionSection.querySelectorAll('.distraction-counter');
+
+    const startDistractionCounter = (counter) => {
+        const target = +counter.getAttribute('data-target');
+        counter.innerText = '0'; // Reset to 0
+        
+        const duration = 2000; // Animation duration
+        const startTime = performance.now();
+        
+        const update = (currentTime) => {
+            const elapsedTime = currentTime - startTime;
+            const progress = Math.min(elapsedTime / duration, 1);
+            const currentCount = Math.floor(progress * target);
+            
+            counter.innerText = currentCount.toLocaleString(); // Adds commas to large numbers
+            
+            if (progress < 1) {
+                requestAnimationFrame(update);
+            } else {
+                counter.innerText = target.toLocaleString();
+            }
+        };
+        requestAnimationFrame(update);
+    };
+
+    const distractionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                // When visible, start animation
+                distractionCounters.forEach(startDistractionCounter);
+            } else {
+                // When not visible, reset to 0
+                distractionCounters.forEach(counter => {
+                    counter.innerText = '0';
+                });
+            }
+        });
+    }, {
+        threshold: 0.8 // Trigger when 80% of the element is in view
+    });
+
+    distractionObserver.observe(distractionSection);
+}
 
 
     // FAQ ACCORDION LOGIC                 //
